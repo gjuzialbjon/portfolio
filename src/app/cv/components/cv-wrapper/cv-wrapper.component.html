@@ -1,0 +1,40 @@
+<button routerLink="/">Go to Home</button>
+<hr>
+
+<div class="cv-wrapper">
+  <div class="cv-left">
+    <div class="section personal">
+      <p class="title">personal</p>
+      <ul>
+        <li>Email address</li>
+        <li>gjuzialbjon@gmail.com</li>
+        <li>Telephone number</li>
+        <li>+355 69 968 8599</li>
+        <li>Address</li>
+        <li>Albania / Durres / Rrashbull</li>
+        <li>LinkedIn</li>
+        <li>linkedin.com/in/albjon-gjuzi</li>
+        <li>Website</li>
+        <li>github.com/gjuzialbjon</li>
+      </ul>
+    </div>
+    <div class="section skills">
+      <p class="title">skills</p>
+      <div class="skill" *ngFor="let skill of skills">
+        <div class="name">
+          {{ skill.name }}
+        </div>
+        <div class="rating">
+          <progress max="100" [value]="skill.rating"> {{ skill.rating }} </progress>
+        </div>
+      </div>
+    </div> 
+    <div class="section languages">
+      <p class="title">languages</p>
+
+    </div>
+  </div>
+  <div class="cv-right">
+
+  </div>
+</div>
