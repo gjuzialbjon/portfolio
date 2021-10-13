@@ -1,8 +1,8 @@
 // CV 
-$cvWrapperWd: 950px;
+$cvWrapperMaxWd: 950px;
 $cvWrapperHt: 100%;
 $cvLeftWd: 280px;
-$cvRightWd: $cvWrapperWd - $cvLeftWd;
+$cvRightMaxWd: $cvWrapperMaxWd - $cvLeftWd;
 $cvLeftBg: #000000;
 $cvLeftClr: #ffffff;
 $cvRightMainClr: #050F34;
