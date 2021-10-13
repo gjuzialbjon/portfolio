@@ -1,0 +1,74 @@
+.cv-wrapper {
+  height: $cvWrapperHt;
+  width: $cvWrapperWd;
+  display: flex;
+  margin: 2rem auto;
+  border: 1px solid black;
+
+  .cv-left {
+    width: $cvLeftWd;
+    background-color: $cvLeftBg;
+    color: $cvLeftClr;
+    padding: $cvLeftPadding;
+
+    .section {
+      &:not(:first-child) {
+        border-top: 3px solid white;
+      }
+
+      padding-top: 1rem;
+
+      .title {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+
+    .personal, .languages {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li:nth-child(even) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 2rem;
+      
+      .skill {
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .rating {
+          width: 80px;
+          // padding-top: 8px;
+
+          progress {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .cv-right {
+    width: $cvRightWd;
+    color: $cvRightMainClr;
+    padding: $cvRightPadding;
+
+    .section {
+      .title {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
