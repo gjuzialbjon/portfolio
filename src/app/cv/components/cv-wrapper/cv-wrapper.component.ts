@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-cv-wrapper',
   templateUrl: './cv-wrapper.component.html',
-  styleUrls: ['./cv-wrapper.component.scss']
 })
 export class CvWrapperComponent implements OnInit {
 
@@ -13,37 +12,61 @@ export class CvWrapperComponent implements OnInit {
       rating: 100
     },
     {
-      name: 'Angular',
+      name: 'HTML5',
       rating: 100
     },
     {
-      name: 'Angular',
+      name: 'CSS3',
       rating: 100
     },
     {
-      name: 'Angular',
+      name: 'Debugging',
       rating: 100
     },
     {
-      name: 'Angular',
-      rating: 100
+      name: 'Typescript',
+      rating: 90
     },
     {
-      name: 'Angular',
-      rating: 100
+      name: 'NgRx',
+      rating: 90
     },
     {
-      name: 'Angular',
-      rating: 100
+      name: 'RxJs',
+      rating: 90
     },
     {
-      name: 'Angular',
-      rating: 100
+      name: 'Javascript',
+      rating: 90
     },
     {
-      name: 'Angular',
-      rating: 100
-    }
+      name: 'Npm',
+      rating: 90
+    },
+    {
+      name: 'Googling',
+      rating: 90
+    },
+    {
+      name: 'Version Control',
+      rating: 90
+    },
+    {
+      name: 'Scrum',
+      rating: 90
+    },
+    {
+      name: 'Linux',
+      rating: 90
+    },
+    {
+      name: 'NodeJS',
+      rating: 60
+    },
+    {
+      name: 'Java',
+      rating: 60
+    },
   ]
 
   constructor() { }

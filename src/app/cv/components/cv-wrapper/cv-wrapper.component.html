@@ -1,40 +1,90 @@
 <button routerLink="/">Go to Home</button>
-<hr>
+<hr />
 
 <div class="cv-wrapper">
-  <div class="cv-left">
-    <div class="section personal">
-      <p class="title">personal</p>
-      <ul>
-        <li>Email address</li>
-        <li>gjuzialbjon@gmail.com</li>
-        <li>Telephone number</li>
-        <li>+355 69 968 8599</li>
-        <li>Address</li>
-        <li>Albania / Durres / Rrashbull</li>
-        <li>LinkedIn</li>
-        <li>linkedin.com/in/albjon-gjuzi</li>
-        <li>Website</li>
-        <li>github.com/gjuzialbjon</li>
-      </ul>
-    </div>
-    <div class="section skills">
-      <p class="title">skills</p>
-      <div class="skill" *ngFor="let skill of skills">
-        <div class="name">
-          {{ skill.name }}
+    <div class="cv-left">
+        <div class="section personal">
+            <p class="title">personal</p>
+            <ul>
+                <li>Email address</li>
+                <li>gjuzialbjon@gmail.com</li>
+                <li>Telephone number</li>
+                <li>+355 69 968 8599</li>
+                <li>Address</li>
+                <li>Albania / Durres / Rrashbull</li>
+                <li>LinkedIn</li>
+                <li>linkedin.com/in/albjon-gjuzi</li>
+                <li>Website</li>
+                <li>github.com/gjuzialbjon</li>
+            </ul>
         </div>
-        <div class="rating">
-          <progress max="100" [value]="skill.rating"> {{ skill.rating }} </progress>
+        <div class="section skills">
+            <p class="title">skills</p>
+            <div class="skill" *ngFor="let skill of skills">
+                <div class="name">
+                    {{ skill.name }}
+                </div>
+                <div class="rating">
+                    <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
+                </div>
+            </div>
         </div>
-      </div>
-    </div> 
-    <div class="section languages">
-      <p class="title">languages</p>
-
+        <div class="section languages">
+            <p class="title">languages</p>
+            <ul>
+                <li>English</li>
+                <li>Highly proficient in speaking and in writing</li>
+                <li>Albanian</li>
+                <li>Native</li>
+                <li>Italian</li>
+                <li>Working knowledge</li>
+                <li>Spanish</li>
+                <li>Working knowledge</li>
+                <li>Turkish</li>
+                <li>Working knowledge</li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <div class="cv-right">
-
-  </div>
+    <div class="cv-right">
+        <p class="name">Albjon Gjuzi</p>
+        <p class="role">Frontend Developer</p>
+        <div class="section experience">
+            <p class="title">work experience</p>
+            <div class="work">
+                <div class="role-date">
+                    <div class="role">Frontend Developer</div>
+                    <div class="date">Feb 2021 - Present</div>
+                </div>
+                <div class="company">Impala Digital, Tirana</div>
+                <ul class="duties">
+                    <li>Bring mock-ups to life using HTML, CSS, JavaScript</li>
+                    <li>Expand features, rene code, and improve processes</li>
+                </ul>
+            </div>
+            <div class="work"></div>
+            <div class="work"></div>
+        </div>
+        <div class="section studies">
+            <p class="title">studies and certificates</p>
+        </div>
+        <div class="section">
+            <div class="mini-section interests">
+                <p class="title">Interests</p>
+                <ul class="interests-list">
+                    <li>Sports</li>
+                    <li>Music</li>
+                    <li>Memes</li>
+                </ul>
+            </div>
+            <div class="mini-section soft">
+                <p class="title">Soft Skills</p>
+                <ul class="soft-skills-list">
+                    <li>Communication</li>
+                    <li>Patience</li>
+                    <li>Critical thinking</li>
+                    <li>Teamwork and collaboration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
