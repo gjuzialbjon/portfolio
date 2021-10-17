@@ -1,5 +1,7 @@
 {
   "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1400
+  "files.autoSaveDelay": 1400,
+  "editor.formatOnPaste": true,
+  "editor.minimap.maxColumn": 140
 }

@@ -1,11 +1,22 @@
 // CV 
-$cvWrapperWd: 950px;
+$cvWrapperMaxWd: 950px;
 $cvWrapperHt: 100%;
 $cvLeftWd: 280px;
-$cvRightWd: $cvWrapperWd - $cvLeftWd;
+$cvRightMaxWd: $cvWrapperMaxWd - $cvLeftWd;
 $cvLeftBg: #000000;
 $cvLeftClr: #ffffff;
+$cvRightBg: #ffffff;
 $cvRightMainClr: #050F34;
-$cvRightScndClr: #050F34;
+$cvRightScndClr: #696F85;
 $cvLeftPadding: 2rem 2rem;
 $cvRightPadding: 4rem 3rem;
+
+// CV - Mobile
+$cvLeftMobilePadding: 2rem 1rem;
+$cvRightMobilePadding: 2rem 1rem;
+
+// Layout
+$bodyBg: #292929;
+
+// Header
+$headerHt: 53px;
