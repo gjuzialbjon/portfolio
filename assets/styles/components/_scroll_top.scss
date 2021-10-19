@@ -1,0 +1,19 @@
+.scroll-top {
+	position: fixed;
+	opacity: 0;
+	bottom: 3rem;
+	right: 1.6rem;
+
+	i {
+		font-size: xx-large;
+		color: purple;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.show-scroll-top {
+	opacity: 0.5;
+}
