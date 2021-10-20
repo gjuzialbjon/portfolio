@@ -34,6 +34,10 @@
           margin-bottom: 1rem;
         }
       }
+
+      a {
+        color: #ffffff;
+      }
     }
 
     .skills {
@@ -46,6 +50,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .name {
+          color: #ffffff;
+        }
 
         .rating {
           width: 80px;
@@ -98,6 +106,7 @@
         .soft {
           ul {
             color: $cvRightScndClr;
+            padding-left: 1.2rem;
           }
         }
       }
@@ -122,6 +131,7 @@
           font-size: 13px;
           font-weight: 500;
           margin-bottom: 0.4rem;
+          color: #000000;
         }
 
         .duties {
@@ -143,6 +153,7 @@
           .dep,
           .date {
             font-weight: 600;
+            color: #000000;
           }
         }
 
@@ -150,6 +161,7 @@
           font-size: 13px;
           font-weight: 500;
           margin-bottom: 0.4rem;
+          color: #000000;
         }
 
         .courses {
@@ -163,6 +175,14 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+
+      i {
+        color: #dd1b16 ;
+        font-size: 28px;
+        margin-right: 2px;
+      }
     }
 
     .usr-name {
