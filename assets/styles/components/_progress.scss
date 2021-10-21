@@ -1,4 +1,4 @@
-/* background: */
+/* Background: */
 progress::-webkit-progress-bar {
   background-color: #323232;
   width: 100%;
@@ -11,7 +11,7 @@ progress {
   border-radius: 5px;
 }
 
-/* value: */
+/* Value: */
 progress::-webkit-progress-value {
   background-color: #ffffff !important;
   height: 8px;
@@ -26,4 +26,5 @@ progress {
   color: #ffffff;
   height: 8px;
   border-radius: 5px;
+  width: 100%;
 }
