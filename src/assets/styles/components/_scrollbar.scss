@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #101426 $bodyBg;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+	background: $bodyBg;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #101426;
+	border-radius: 20px;
+	border: 3px solid $bodyBg;
+}

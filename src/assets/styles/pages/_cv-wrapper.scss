@@ -1,0 +1,225 @@
+@use '../abstracts' as *;
+@use '../configs' as *;
+
+.cv {
+  max-width: $cvWrapperMaxWd;
+  display: flex;
+  margin: 2rem auto;
+  box-shadow: $cvBoxShadow;
+}
+
+.cv__left {
+  width: $cvLeftWd;
+  background-color: $cvLeftBg;
+  color: $cvLeftClr;
+  padding: $cvLeftPadding;
+}
+
+.cv__left__section {
+  &:not(:first-child) {
+    border-top: 3px solid #ffffff;
+  }
+
+  padding-top: 1rem;
+}
+
+.cv__section__title {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.personal,
+.languages {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:nth-child(even) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+
+  a:hover {
+    color: #ffffff;
+  }
+}
+
+.skill {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill__name {
+  color: #ffffff;
+}
+
+.skill__rating {
+  width: 80px;
+}
+
+.cv-right {
+  background: $cvRightBg;
+  max-width: $cvRightMaxWd;
+  width: 100%;
+  color: $cvRightMainClr;
+  padding: $cvRightPadding;
+
+  .section {
+    border-top: 1px solid $cvRightScndClr;
+    padding-top: 1.5rem;
+
+    .title {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+
+      .interests {
+        padding: 0 0.8rem 0 0;
+      }
+
+      .interests-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          font-weight: 500;
+          line-height: 2rem;
+        }
+      }
+
+      .soft {
+        ul {
+          color: $cvRightScndClr;
+          padding-left: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .experience {
+    .work {
+      margin-bottom: 2.5rem;
+
+      .role-date {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.3rem;
+
+        .role,
+        .date {
+          font-weight: 600;
+        }
+      }
+
+      .company {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        color: #000000;
+        text-decoration: underline;
+      }
+
+      .duties {
+        padding-top: 0.8rem;
+        color: $cvRightScndClr;
+      }
+    }
+  }
+
+  .studies {
+    .study {
+      margin-bottom: 2.5rem;
+
+      .dep-date {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.3rem;
+
+        .dep,
+        .date {
+          font-weight: 600;
+          color: #000000;
+        }
+
+        .dep {
+          text-decoration: underline;
+        }
+      }
+
+      .school {
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        color: #000000;
+        text-decoration: underline;
+      }
+
+      .courses {
+        color: $cvRightScndClr;
+      }
+    }
+  }
+
+  .usr-role {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+    i {
+      color: #dd1b16;
+      font-size: 28px;
+      margin-right: 2px;
+    }
+  }
+
+  .usr-name {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
+
+@media screen and(max-width: $cvWrapperMaxWd) {
+  .cv-wrapper {
+    flex-direction: column;
+    margin: 0;
+    box-shadow: none;
+
+    .cv-left {
+      width: 100%;
+      padding: $cvLeftMobilePadding;
+
+      .section {
+        max-width: 400px;
+        margin: auto;
+      }
+    }
+
+    .cv-right {
+      max-width: 100%;
+      padding: $cvRightMobilePadding;
+    }
+  }
+}

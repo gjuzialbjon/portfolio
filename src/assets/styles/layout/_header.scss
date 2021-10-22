@@ -1,11 +1,14 @@
+@use '../abstracts' as *;
+
 .nav {
     height: $headerHt;
     width: 100%;
     background-color: #3b3b3b;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1099;
 }
 
 .nav > .nav-header {
@@ -56,8 +59,9 @@
     .nav > .nav-btn > label {
         display: inline-block;
         width: 50px;
-        height: 50px;
-        padding: 13px;
+        height: $headerHt;
+        padding: 15px;
+        margin-bottom: 0;
     }
     .nav > .nav-btn > label:hover,
     .nav #nav-check:checked ~ .nav-btn > label {
@@ -88,7 +92,7 @@
         height: 0px;
     }
     .nav > #nav-check:checked ~ .nav-links {
-        height: calc(100vh - 50px);
+        height: calc(102vh - #{$headerHt});
         overflow-y: auto;
     }
 }

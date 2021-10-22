@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class HeaderComponent implements OnInit {
+  navButton!: HTMLInputElement | null
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    this.navButton = document.getElementById('nav-check') as HTMLInputElement    
   }
 
+  closeMenu() {
+    this.navButton!.checked = false
+  }
 }

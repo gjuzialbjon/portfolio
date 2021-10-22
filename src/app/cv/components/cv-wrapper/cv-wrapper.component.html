@@ -1,118 +1,130 @@
-<div class="cv-wrapper">
-    <div class="cv-left">
-        <div class="section personal">
-            <p class="title">personal</p>
-            <ul>
-                <li>Email address</li>
-                <li>gjuzialbjon@gmail.com</li>
-                <li>Telephone number</li>
-                <li>+355 69 968 8599</li>
-                <li>Address</li>
-                <li>Albania / Durres / Rrashbull</li>
-                <li>LinkedIn</li>
-                <li>linkedin.com/in/albjon-gjuzi</li>
-                <li>Website</li>
-                <li>github.com/gjuzialbjon</li>
-            </ul>
-        </div>
-        <div class="section skills">
-            <p class="title">skills</p>
-            <div class="skill" *ngFor="let skill of skills">
-                <div class="name">
-                    {{ skill.name }}
-                </div>
-                <div class="rating">
-                    <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
-                </div>
-            </div>
-        </div>
-        <div class="section languages">
-            <p class="title">languages</p>
-            <ul>
-                <li>English</li>
-                <li>Highly proficient in speaking and in writing</li>
-                <li>Albanian</li>
-                <li>Native</li>
-                <li>Italian</li>
-                <li>Working knowledge</li>
-                <li>Spanish</li>
-                <li>Working knowledge</li>
-                <li>Turkish</li>
-                <li>Working knowledge</li>
-            </ul>
-        </div>
+<div class="cv" #cvContent>
+  <div class="cv__left">
+    <div class="cv__left__section personal">
+      <p class="cv__section__title"><i class="fas fa-address-card"></i> personal</p>
+      <ul>
+        <li>Email address</li>
+        <li><a href="mailto:albjon.gjuzi@gmail.com" target="_blank">gjuzialbjon@gmail.com</a></li>
+        <li>Telephone number</li>
+        <li><a href="tel:+355699688599">+355 69 968 8599</a></li>
+        <li>Address</li>
+        <li><a href="https://www.google.com/maps/place/Durres" target="_blank">Albania / Durres</a></li>
+        <li>LinkedIn</li>
+        <li><a href="https://www.linkedin.com/in/albjon-gjuzi/" target="_blank">linkedin.com/in/albjon-gjuzi</a></li>
+        <li>Website</li>
+        <li><a href="https://github.com/gjuzialbjon" target="_blank">github.com/gjuzialbjon</a></li>
+      </ul>
     </div>
-    <div class="cv-right">
-        <p class="usr-name">Albjon Gjuzi</p>
-        <p class="usr-role">Frontend Developer</p>
-        <div class="section experience">
-            <p class="title">work experience</p>
-            <div class="work">
-                <div class="role-date">
-                    <div class="role">Frontend Developer</div>
-                    <div class="date">Feb 2021 - Present</div>
-                </div>
-                <div class="company">Impala Digital, Tirana</div>
-                <ul class="duties">
-                    <li>Bring mock-ups to life using HTML, CSS, JavaScript</li>
-                    <li>Expand features, refine code, and improve processes</li>
-                </ul>
-            </div>
-            <div class="work">
-                <div class="role-date">
-                    <div class="role">Software Developer</div>
-                    <div class="date">Sep 2020 - Present</div>
-                </div>
-                <div class="company">Upwork, Durres</div>
-                <ul class="duties">
-                    <li>Freelance Software Developer</li>
-                </ul>
-            </div>
-            <div class="work">
-                <div class="role-date">
-                    <div class="role">Frontend Developer</div>
-                    <div class="date">Jan 2020 - Jul 2021</div>
-                </div>
-                <div class="company">We Are Fiber, Tirana</div>
-                <ul class="duties">
-                    <li>Design frontend within object-oriented Javascript frameworks like Angular</li>
-                    <li>Work closely with programmers and clients to meet project requirements, goals, and desired functionality</li>
-                </ul>
-            </div>
+    <div class="cv__left__section skills">
+      <p class="cv__section__title"><i class="fas fa-laptop-code"></i> skills</p>
+      <div class="skill" *ngFor="let skill of skills">
+        <a class="skill__name" [href]="skill.website" target="_blank">
+          {{ skill.name }}
+        </a>
+        <div class="skill__rating">
+          <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
         </div>
-        <div class="section studies">
-            <p class="title">studies and certificates</p>
-            <div class="study">
-                <div class="dep-date">
-                    <div class="dep">Bachelor of Computer Engineering</div>
-                    <div class="date">Aug 2015 - Aug 2019</div>
-                </div>
-                <div class="school">Bilkent University, Ankara, Turkey</div>
-                <p class="courses">
-                    Algorithms and programming, Application Lifecycle Management, Articial Intelligence, Automata Theory and Formal
-                    Languages, Computer organization Database Systems, Digital design, Fundamental Structures of Computer Science, Operating
-                    Systems, Software Engineering Project Management, Software Verification and Validation
-                </p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="mini-section interests">
-                <p class="title">Interests</p>
-                <ul class="interests-list">
-                    <li>Sports</li>
-                    <li>Music</li>
-                    <li>Memes</li>
-                </ul>
-            </div>
-            <div class="mini-section soft">
-                <p class="title">Soft Skills</p>
-                <ul class="soft-skills-list">
-                    <li>Communication</li>
-                    <li>Patience</li>
-                    <li>Critical thinking</li>
-                    <li>Teamwork and collaboration</li>
-                </ul>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="cv__left__section languages">
+      <p class="cv__section__title"><i class="fas fa-language"></i> languages</p>
+      <ul>
+        <li>English</li>
+        <li>Highly proficient in speaking and in writing</li>
+        <li>Albanian</li>
+        <li>Native</li>
+        <li>Italian</li>
+        <li>Working knowledge</li>
+        <li>Spanish</li>
+        <li>Working knowledge</li>
+        <li>Turkish</li>
+        <li>Working knowledge</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cv-right">
+    <p class="usr-name">Albjon Gjuzi</p>
+    <p class="usr-role"><i class="fab fa-angular"></i> Frontend Developer</p>
+    <div class="section experience">
+      <p class="cv__section__title"><i class="fas fa-business-time"></i> work experience</p>
+      <div class="work">
+        <div class="role-date">
+          <div class="role">Frontend Developer</div>
+          <div class="date">Feb 2021 - Present</div>
+        </div>
+        <a class="company" href="https://impaladigital.com/" target="_blank">
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/impala.png" width="30px" alt="" />
+          Impala Digital, Tirana
+        </a>
+        <ul class="duties">
+          <li>Bring mock-ups to life using HTML, CSS, JavaScript</li>
+          <li>Expand features, refine code, and improve processes</li>
+        </ul>
+      </div>
+      <div class="work">
+        <div class="role-date">
+          <div class="role">Software Developer</div>
+          <div class="date">Sep 2020 - Present</div>
+        </div>
+        <a class="company" href="https://www.upwork.com/" target="_blank">
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/upwork.png" width="30px" alt="" />
+          Upwork, Durres
+        </a>
+        <ul class="duties">
+          <li>Freelance Software Developer</li>
+        </ul>
+      </div>
+      <div class="work">
+        <div class="role-date">
+          <div class="role">Frontend Developer</div>
+          <div class="date">Jan 2020 - Jul 2021</div>
+        </div>
+        <a class="company" href="https://www.wearefiber.com/en/" target="_blank">
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/fiber.png" width="30px" alt="" />
+          We Are Fiber, Tirana
+        </a>
+        <ul class="duties">
+          <li>Design frontend within object-oriented Javascript frameworks like Angular</li>
+          <li>Work closely with programmers and clients to meet project requirements, goals, and desired functionality</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section studies">
+      <p class="cv__section__title"><i class="fas fa-graduation-cap"></i> studies and certificates</p>
+      <div class="study">
+        <div class="dep-date">
+          <a class="dep" href="https://w3.cs.bilkent.edu.tr/en/" target="_blank">Bachelor of Computer Engineering</a>
+          <div class="date">Aug 2015 - Aug 2019</div>
+        </div>
+        <a class="school" href="https://w3.bilkent.edu.tr/bilkent/" target="_blank">
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/bilkent.png" width="25px" alt="" />
+          Bilkent University, Ankara, Turkey
+        </a>
+        <p class="courses">
+          Algorithms and programming, Application Lifecycle Management, Artificial Intelligence, Automata Theory and Formal Languages,
+          Computer organization Database Systems, Digital design, Fundamental Structures of Computer Science, Operating Systems, Software
+          Engineering Project Management, Software Verification and Validation
+        </p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="mini-section interests">
+        <p class="cv__section__title"><i class="fas fa-info-circle"></i> Interests</p>
+        <ul class="interests-list">
+          <li>Sports</li>
+          <li>Music</li>
+          <li>Memes</li>
+        </ul>
+      </div>
+      <div class="mini-section soft">
+        <p class="cv__section__title"><i class="fas fa-user"></i> Soft Skills</p>
+        <ul class="soft-skills-list">
+          <li>Communication</li>
+          <li>Patience</li>
+          <li>Critical thinking</li>
+          <li>Teamwork and collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
