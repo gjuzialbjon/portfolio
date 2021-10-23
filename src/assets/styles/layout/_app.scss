@@ -1,18 +1,19 @@
 @use '../abstracts' as *;
 
 body {
-  background: $bodyBg;
-  color: #ffffff;
+  background: var(--body__bg);
+  color: var(--body__clr);
   height: 100%;
+  overflow: hidden;
 }
-
 
 .main-content {
   display: flex;
+  flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
-  height: fit-content;
-  overflow-y: scroll;
+  height: calc(100vh - #{$headerHt});
+  overflow-y: auto;
 }
 
 @media screen and(max-width: 1100px) {

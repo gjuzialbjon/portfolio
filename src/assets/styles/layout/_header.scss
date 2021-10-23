@@ -1,98 +1,102 @@
 @use '../abstracts' as *;
 
 .nav {
-    height: $headerHt;
-    width: 100%;
-    background-color: #3b3b3b;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1099;
+  height: $headerHt;
+  width: 100%;
+  background-color: var(--header__bg);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1099;
 }
 
 .nav > .nav-header {
-    display: inline;
+  display: inline;
+  cursor: pointer;
 }
 
 .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 22px;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
+  display: inline-block;
+  font-size: 22px;
+  color: var(--header__title__clr);
+  padding: 10px 10px 10px 10px;
 }
 
 .nav > .nav-btn {
-    display: none;
+  display: none;
 }
 
 .nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
+  display: inline;
+  float: right;
+  font-size: 18px;
 }
 
 .nav > .nav-links > span {
-    display: inline-block;
-    padding: 13px 15px 13px 15px;
-    text-decoration: none;
-    color: #efefef;
-    cursor: pointer;
-    font-weight: 500;
+  display: inline-block;
+  padding: 13.3px 20px 13.3px 20px;
+  text-decoration: none;
+  color: var(--header__menu__clr);
+  cursor: pointer;
+  font-weight: 500;
 }
 
-.nav > .nav-links > span:hover, .nav > .nav-links > span.active {
-    background-color: rgba(0, 0, 0, 0.3);
+.nav > .nav-links > span:hover,
+.nav > .nav-links > span.active {
+  background-color: var(--header__menu__item__hover__bg);
+  color: var(--header__menu__item__hover__clr);
+  transition: 0.3s all ease-in;
 }
 
 .nav > #nav-check {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 600px) {
-    .nav > .nav-btn {
-        display: inline-block;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-    .nav > .nav-btn > label {
-        display: inline-block;
-        width: 50px;
-        height: $headerHt;
-        padding: 15px;
-        margin-bottom: 0;
-    }
-    .nav > .nav-btn > label:hover,
-    .nav #nav-check:checked ~ .nav-btn > label {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    .nav > .nav-btn > label > span {
-        display: block;
-        width: 25px;
-        height: 10px;
-        border-top: 2px solid #eee;
-    }
-    .nav > .nav-links {
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: #333;
-        height: 0px;
-        transition: all 0.3s ease-in;
-        overflow-y: hidden;
-        top: 50px;
-        left: 0px;
-    }
-    .nav > .nav-links > span {
-        display: block;
-        width: 100%;
-    }
-    .nav > #nav-check:not(:checked) ~ .nav-links {
-        height: 0px;
-    }
-    .nav > #nav-check:checked ~ .nav-links {
-        height: calc(102vh - #{$headerHt});
-        overflow-y: auto;
-    }
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: $headerHt;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid var(--header__mobile__toggle__clr);
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: var(--body__bg);
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > span {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(102vh - #{$headerHt});
+    overflow-y: hidden;
+  }
 }

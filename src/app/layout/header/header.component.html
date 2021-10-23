@@ -1,6 +1,6 @@
-<div class="nav">
+<div class="nav" id="header">
   <input type="checkbox" id="nav-check" />
-  <div class="nav-header">
+  <div class="nav-header" (click)="closeMenu()" routerLink="home">
     <div class="nav-title">Albjoni</div>
   </div>
   <div class="nav-btn">
@@ -16,17 +16,17 @@
       <i class="fas fa-home"></i>
       Home
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="projects" routerLinkActive="active">
+    <!-- <span class="menu-item" (click)="closeMenu()" routerLink="projects" routerLinkActive="active">
       <i class="fas fa-tasks"></i>
       Projects
-    </span>
+    </span> -->
     <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active">
       <i class="fas fa-file-alt"></i>
       CV
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="contact" routerLinkActive="active">
+    <!-- <span class="menu-item" (click)="closeMenu()" routerLink="contact" routerLinkActive="active">
       <i class="fas fa-paper-plane"></i>
       Contact
-    </span>
+    </span> -->
   </div>
 </div>

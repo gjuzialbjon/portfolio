@@ -15,9 +15,6 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  ul li {
     list-style: none;
   }
 
@@ -32,14 +29,35 @@
     padding: 6px;
     box-sizing: border-box;
     text-decoration: none;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(0deg, #ddd, #fff);
+    box-shadow: 0 2px 5px var(--footer__btn__shadow__clr);
+    background: #ffffff;
     transition: 0.5s;
   }
 
   ul li a:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 7px 7px var(--footer__btn__hover__shadow__clr);
     text-decoration: none;
+  }
+
+  ul li:nth-child(1) a:hover {
+    background: #02a6e7;
+  }
+
+  ul li:nth-child(2) a:hover {
+    background: #2867B2;
+  }
+
+  ul li:nth-child(3) a:hover {
+    background: #6cc644;
+  }
+
+  ul li:nth-child(4) a:hover {
+    background: #c13584;
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  }
+
+  ul li:nth-child(5) a:hover {
+    background: #4267B2;
   }
 
   ul li a .fab {
@@ -59,11 +77,11 @@
   }
 
   ul li:nth-child(2) a:hover .fab {
-    color: #3b5998;
+    color: #2867B2;
   }
 
   ul li:nth-child(3) a:hover .fab {
-    color: #000000;
+    color: #6cc644;
   }
 
   ul li:nth-child(4) a:hover .fab {
@@ -71,14 +89,14 @@
   }
 
   ul li:nth-child(5) a:hover .fab {
-    color: #007bb6;
+    color: #4267B2;
   }
 
   .copyright {
     margin-top: 1rem;
 
     a {
-      color: rgb(214, 202, 202);
+      color: var(--copyright__clr);
     }
   }
 }

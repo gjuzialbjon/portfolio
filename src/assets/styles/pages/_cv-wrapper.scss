@@ -6,18 +6,19 @@
   display: flex;
   margin: 2rem auto;
   box-shadow: $cvBoxShadow;
+  border: var(--cv__border);
 }
 
 .cv__left {
   width: $cvLeftWd;
-  background-color: $cvLeftBg;
-  color: $cvLeftClr;
+  background-color: var(--cv_left__bg);
+  color: var(--cv_left__clr);
   padding: $cvLeftPadding;
 }
 
 .cv__left__section {
   &:not(:first-child) {
-    border-top: 3px solid #ffffff;
+    border-top: 3px solid var(--cv_left__section__border__clr);
   }
 
   padding-top: 1rem;
@@ -71,50 +72,12 @@
   width: 80px;
 }
 
-.cv-right {
-  background: $cvRightBg;
+.cv__right {
+  background: var(--cv_right__bg);
   max-width: $cvRightMaxWd;
   width: 100%;
-  color: $cvRightMainClr;
+  color: var(--cv_right__primary__text__clr);
   padding: $cvRightPadding;
-
-  .section {
-    border-top: 1px solid $cvRightScndClr;
-    padding-top: 1.5rem;
-
-    .title {
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    &:last-child {
-      display: flex;
-      justify-content: space-between;
-
-      .interests {
-        padding: 0 0.8rem 0 0;
-      }
-
-      .interests-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-          font-weight: 500;
-          line-height: 2rem;
-        }
-      }
-
-      .soft {
-        ul {
-          color: $cvRightScndClr;
-          padding-left: 1.2rem;
-        }
-      }
-    }
-  }
 
   .experience {
     .work {
@@ -141,7 +104,7 @@
 
       .duties {
         padding-top: 0.8rem;
-        color: $cvRightScndClr;
+        color: var(--cv_right__secondary__text__clr);
       }
     }
   }
@@ -175,7 +138,7 @@
       }
 
       .courses {
-        color: $cvRightScndClr;
+        color: var(--cv_right__secondary__text__clr);
       }
     }
   }
@@ -201,25 +164,56 @@
   }
 }
 
+.cv__right__section {
+  border-top: 1px solid var(--cv_right__secondary__text__clr);
+  padding-top: 1.5rem;
+
+  &:last-child {
+    display: flex;
+    justify-content: space-between;
+
+    .interests {
+      padding: 0 0.8rem 0 0;
+      min-width: 147px;
+    }
+  }
+}
+
+.interests-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-weight: 500;
+    line-height: 2rem;
+  }
+}
+
+.soft-skills-list {
+  color: var(--cv_right__secondary__text__clr);
+  padding-left: 1.2rem;
+}
+
 @media screen and(max-width: $cvWrapperMaxWd) {
-  .cv-wrapper {
+  .cv {
     flex-direction: column;
     margin: 0;
     box-shadow: none;
+  }
 
-    .cv-left {
-      width: 100%;
-      padding: $cvLeftMobilePadding;
+  .cv__left {
+    width: 100%;
+    padding: $cvLeftMobilePadding;
+  }
 
-      .section {
-        max-width: 400px;
-        margin: auto;
-      }
-    }
+  .cv__left__section {
+    max-width: 400px;
+    margin: auto;
+  }
 
-    .cv-right {
-      max-width: 100%;
-      padding: $cvRightMobilePadding;
-    }
+  .cv__right {
+    max-width: 100%;
+    padding: $cvRightMobilePadding;
   }
 }
