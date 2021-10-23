@@ -43,11 +43,24 @@
             "outputPath": "dist/portofolio",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "extractCss": true,
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              {
+                "input": "src/assets/styles/themes/dark.scss",
+                "inject": false,
+                "bundleName": "dark"
+              },
+              {
+                "input": "src/assets/styles/themes/light.scss",
+                "inject": false,
+                "bundleName": "light"
+              }
+            ],
             "scripts": []
           },
           "configurations": {

@@ -27,6 +27,20 @@
   display: none;
 }
 
+.nav-theme {
+  margin-left: 2rem;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  outline: none;
+  color: var(--header__theme__btn__clr);
+  background: var(--header__theme__btn__bg);
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .nav > .nav-links {
   display: inline;
   float: right;
@@ -35,7 +49,7 @@
 
 .nav > .nav-links > span {
   display: inline-block;
-  padding: 13.3px 20px 13.3px 20px;
+  padding: 11.8px 20px;
   text-decoration: none;
   color: var(--header__menu__clr);
   cursor: pointer;
@@ -85,7 +99,7 @@
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: $headerHt;
     left: 0px;
   }
   .nav > .nav-links > span {
@@ -94,6 +108,7 @@
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;
+    transition: height 0.3s ease-in;
   }
   .nav > #nav-check:checked ~ .nav-links {
     height: calc(102vh - #{$headerHt});
