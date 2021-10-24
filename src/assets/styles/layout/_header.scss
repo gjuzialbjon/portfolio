@@ -11,16 +11,15 @@
   z-index: 1099;
 }
 
-.nav > .nav-header {
+.nav > .nav-header, .nav > .nav-theme-wrapper {
   display: inline;
   cursor: pointer;
 }
 
 .nav > .nav-header > .nav-title {
   display: inline-block;
-  font-size: 22px;
   color: var(--header__title__clr);
-  padding: 10px 10px 10px 10px;
+  padding: 0px 10px;
 }
 
 .nav > .nav-btn {
@@ -28,17 +27,10 @@
 }
 
 .nav-theme {
+  display: inline;
   margin-left: 2rem;
-  border: 0;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  outline: none;
-  color: var(--header__theme__btn__clr);
-  background: var(--header__theme__btn__bg);
-
-  &:focus {
-    outline: none;
-  }
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .nav > .nav-links {

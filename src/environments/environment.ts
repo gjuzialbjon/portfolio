@@ -6,7 +6,7 @@ import { ThemesEnum } from "src/app/core/enums/themes-enum";
 
 export const environment = {
   production: false,
-  defaultTheme: ThemesEnum.light
+  defaultTheme: ThemesEnum.dark
 };
 
 /*

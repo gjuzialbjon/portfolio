@@ -1,12 +1,15 @@
 <div class="nav" id="header">
   <input type="checkbox" id="nav-check" />
   <div class="nav-header" (click)="closeMenu()" routerLink="home">
-    <div class="nav-title">A</div>
+    <div class="nav-title">
+      <img src="../../../assets/media/icons/favicon.png" width="50px" height="50px" alt="" />
+    </div>
   </div>
-  <button class="nav-theme" (click)="toggleTheme()" [title]="(theme | async) === Themes.dark ? 'Toggle light theme' : 'Toggle dark theme'">
-    <i *ngIf="(theme | async) === Themes.dark" class="fas fa-sun"></i>
-    <i *ngIf="(theme | async) === Themes.light" class="fas fa-moon"></i>
-  </button>
+  <div class="nav-theme-wrapper">
+    <i *ngIf="(theme | async) === Themes.dark" title="Tooggle light theme" (click)="toggleTheme()" class="nav-theme fas fa-sun"></i>
+    <i *ngIf="(theme | async) === Themes.light" title="Toggle dark theme" (click)="toggleTheme()" class="nav-theme fas fa-moon"></i>
+  </div>
+
   <div class="nav-btn">
     <label for="nav-check">
       <span></span>
@@ -16,17 +19,17 @@
   </div>
 
   <div class="nav-links" id="nav-links">
-    <span class="menu-item" (click)="closeMenu()" routerLink="home" routerLinkActive="active">
+    <span class="menu-item" (click)="closeMenu()" routerLink="home" routerLinkActive="active" title="Homepage">
       <i class="fas fa-home" style="width: 25px"></i>
       Home
     </span>
-    <!-- <span class="menu-item" (click)="closeMenu()" routerLink="projects" routerLinkActive="active">
-      <i class="fas fa-tasks"></i>
+    <span class="menu-item" (click)="closeMenu()" routerLink="projects" routerLinkActive="active" title="See some of my projects">
+      <i class="fas fa-tasks" style="width: 25px"></i>
       Projects
-    </span> -->
-    <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active">
-      <i class="fas fa-file-alt" style="width: 20px"></i>
-      CV
+    </span>
+    <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active" title="CV (Curriculum Vitae)">
+      <i class="fas fa-file-alt" style="width: 25px"></i>
+      Resume
     </span>
     <!-- <span class="menu-item" (click)="closeMenu()" routerLink="contact" routerLinkActive="active">
       <i class="fas fa-paper-plane"></i>

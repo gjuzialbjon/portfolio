@@ -47,7 +47,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }],
+            "assets": [
+              "src/favicon.png",
+              { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }
+            ],
             "styles": [
               "src/styles.scss",
               {
