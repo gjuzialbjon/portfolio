@@ -1,10 +1,11 @@
 @use '../abstracts' as *;
 
 body {
-  background: var(--body__bg);
+  background-color: var(--body__bg);
   color: var(--body__clr);
   height: 100%;
   overflow: hidden;
+  transition: all 0.7s;
 }
 
 .main-content {

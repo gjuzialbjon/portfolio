@@ -8,7 +8,12 @@ import { BehaviorSubject, Observable } from 'rxjs'
   providedIn: 'root',
 })
 export class ThemeService {
-  theme = environment.defaultTheme || ThemesEnum.dark
+  defaultLocalTheme = localStorage.getItem('default-theme')
+  theme =
+    environment.production && (this.defaultLocalTheme === ThemesEnum.dark || this.defaultLocalTheme === ThemesEnum.light)
+      ? this.defaultLocalTheme
+      : environment.defaultTheme || ThemesEnum.dark
+
   themeSubject = new BehaviorSubject(this.theme)
 
   constructor(@Inject(DOCUMENT) private document: Document) {
@@ -40,6 +45,7 @@ export class ThemeService {
 
     this.theme = theme
     this.themeSubject.next(theme)
+    localStorage.setItem('default-theme', theme)
   }
 
   getTheme(): Observable<ThemesEnum> {
