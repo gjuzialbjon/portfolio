@@ -1,4 +1,7 @@
 @use '../abstracts' as *;
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
 
 .nav {
   height: $headerHt;
@@ -11,15 +14,15 @@
   z-index: 1099;
 }
 
-.nav > .nav-header, .nav > .nav-theme-wrapper {
+.nav > .nav-header,
+.nav > .nav-theme-wrapper {
   display: inline;
   cursor: pointer;
 }
 
 .nav > .nav-header > .nav-title {
   display: inline-block;
-  color: var(--header__title__clr);
-  padding: 0px 10px;
+  height: $headerHt;
 }
 
 .nav > .nav-btn {
@@ -59,7 +62,7 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@include media-breakpoint-down(sm) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;

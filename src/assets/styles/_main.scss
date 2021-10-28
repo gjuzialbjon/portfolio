@@ -1,4 +1,9 @@
+/* Might include bootstrap overriding vars */
 @use './base';
+
+// Now we can use bootstrap 
+@use '~bootstrap/scss/bootstrap';
+
 @use './components';
 @use './layout';
 @use './pages';
