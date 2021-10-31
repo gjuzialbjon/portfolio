@@ -21,7 +21,7 @@
         <a class="skill__name" [href]="skill.website" target="_blank">
           {{ skill.name }}
         </a>
-        <div class="skill__rating">
+        <div class="skill__rating" [title]="skill.rating + '%'">
           <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
         </div>
       </div>
@@ -53,8 +53,7 @@
           <div class="date">Feb 2021 - Present</div>
         </div>
         <a class="company" href="https://impaladigital.com/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/impala.png" width="30px" alt="" />
-          Impala Digital, Tirana
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/impala.png" width="30px" alt="" />Impala Digital, Tirana
         </a>
         <ul class="duties">
           <li>Bring mock-ups to life using HTML, CSS, JavaScript</li>
@@ -67,8 +66,7 @@
           <div class="date">Sep 2020 - Present</div>
         </div>
         <a class="company" href="https://www.upwork.com/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/upwork.png" width="30px" alt="" />
-          Upwork, Durres
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/upwork.png" width="30px" alt="" />Upwork, Durres
         </a>
         <ul class="duties">
           <li>Freelance Software Developer</li>
@@ -80,8 +78,7 @@
           <div class="date">Jan 2020 - Jul 2021</div>
         </div>
         <a class="company" href="https://www.wearefiber.com/en/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/fiber.png" width="30px" alt="" />
-          We Are Fiber, Tirana
+          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/fiber.png" width="30px" alt="" />We Are Fiber, Tirana
         </a>
         <ul class="duties">
           <li>Design frontend within object-oriented Javascript frameworks like Angular</li>

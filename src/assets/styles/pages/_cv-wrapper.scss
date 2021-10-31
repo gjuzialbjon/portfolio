@@ -78,90 +78,6 @@
   width: 100%;
   color: var(--cv_right__primary__text__clr);
   padding: $cvRightPadding;
-
-  .experience {
-    .work {
-      margin-bottom: 2.5rem;
-
-      .role-date {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.3rem;
-
-        .role,
-        .date {
-          font-weight: 600;
-        }
-      }
-
-      .company {
-        font-size: 13px;
-        font-weight: 500;
-        margin-bottom: 0.4rem;
-        color: #000000;
-        text-decoration: underline;
-      }
-
-      .duties {
-        padding-top: 0.8rem;
-        color: var(--cv_right__secondary__text__clr);
-      }
-    }
-  }
-
-  .studies {
-    .study {
-      margin-bottom: 2.5rem;
-
-      .dep-date {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.3rem;
-
-        .dep,
-        .date {
-          font-weight: 600;
-          color: #000000;
-        }
-
-        .dep {
-          text-decoration: underline;
-        }
-      }
-
-      .school {
-        font-size: 13px;
-        font-weight: 500;
-        margin-bottom: 0.4rem;
-        color: #000000;
-        text-decoration: underline;
-      }
-
-      .courses {
-        color: var(--cv_right__secondary__text__clr);
-      }
-    }
-  }
-
-  .usr-role {
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-
-    i {
-      color: #dd1b16;
-      font-size: 28px;
-      margin-right: 2px;
-    }
-  }
-
-  .usr-name {
-    font-weight: 600;
-    font-size: 2rem;
-  }
 }
 
 .cv__right__section {
@@ -177,6 +93,92 @@
       min-width: 147px;
     }
   }
+}
+
+.experience {
+  .work {
+    margin-bottom: 2.5rem;
+
+    .role-date {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+
+      .role,
+      .date {
+        font-weight: 600;
+      }
+    }
+
+    .duties {
+      padding-top: 0.8rem;
+      color: var(--cv_right__secondary__text__clr);
+    }
+  }
+}
+
+.company {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #000000;
+  text-decoration: underline;
+
+  img {
+    margin-right: .3rem;
+  }
+}
+
+.study {
+  margin-bottom: 2.5rem;
+
+  .dep-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+
+    .dep,
+    .date {
+      font-weight: 600;
+      color: #000000;
+    }
+
+    .dep {
+      text-decoration: underline;
+    }
+  }
+
+  .school {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .courses {
+    color: var(--cv_right__secondary__text__clr);
+  }
+}
+
+.usr-role {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+
+  i {
+    color: #dd1b16;
+    font-size: 28px;
+    margin-right: 2px;
+  }
+}
+
+.usr-name {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .interests-list {

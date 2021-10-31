@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { DesignService } from './core/layout/design.service'
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'portofolio'
+  showBreadcrumb
 
-  constructor() {}
+  constructor(private designService: DesignService) {
+    this.showBreadcrumb = this.designService.canShowBreadcrumb()
+  }
 }

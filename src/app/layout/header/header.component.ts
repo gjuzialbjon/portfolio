@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.navButton = document.getElementById('nav-check') as HTMLInputElement
+    this.navButton = document.getElementById('my-nav-check') as HTMLInputElement
   }
 
   closeMenu() {

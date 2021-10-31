@@ -49,6 +49,11 @@ export class CvWrapperComponent implements OnInit {
       website: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
+      name: 'GraphQL',
+      rating: 90,
+      website: 'https://graphql.org/',
+    },
+    {
       name: 'Npm',
       rating: 90,
       website: 'https://www.npmjs.com/',

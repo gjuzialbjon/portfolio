@@ -3,7 +3,7 @@
 
 // Now we can use bootstrap 
 @use '~bootstrap/scss/bootstrap';
-
+@use './animations';
 @use './components';
 @use './layout';
 @use './pages';
