@@ -14,26 +14,26 @@ export class HomeWrapperComponent implements OnInit {
   leftClrUpdated(event: Event) {
     const clr = (event.target as HTMLInputElement).value
     document.documentElement.style.setProperty('--box__cube__left__clr', clr)
-    this.checkChanges()
+    // this.checkChanges()
   }
 
   topClrUpdated(event: Event) {
     const clr = (event.target as HTMLInputElement).value
     document.documentElement.style.setProperty('--box__cube__top__clr', clr)
-    this.checkChanges()
+    // this.checkChanges()
   }
 
   frontClrUpdated(event: Event) {
     const clr = (event.target as HTMLInputElement).value
     document.documentElement.style.setProperty('--box__cube__front__clr', clr)
-    this.checkChanges()
+    // this.checkChanges()
   }
 
-  checkChanges() {
-    this.changes++
+  // checkChanges() {
+  //   this.changes++
 
-    if (this.changes > 200) {
-      alert('Too many changes')
-    }
-  }
+  //   if (this.changes > 200) {
+  //     alert('Too many changes')
+  //   }
+  // }
 }
