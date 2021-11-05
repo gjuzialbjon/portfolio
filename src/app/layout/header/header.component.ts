@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
-import { ThemesEnum } from 'src/app/core/enums/themes-enum'
+import { Themes } from 'src/app/core/enums/themes'
 import { ThemeService } from 'src/app/core/layout/theme.service'
 import { environment } from 'src/environments/environment'
 
@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment'
 })
 export class HeaderComponent implements OnInit {
   navButton!: HTMLInputElement | null
-  Themes = ThemesEnum
-  theme!: Observable<ThemesEnum>
+  Themes = Themes
+  theme!: Observable<Themes>
 
   constructor(private themeService: ThemeService) {}
 

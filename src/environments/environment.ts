@@ -2,11 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { ThemesEnum } from "src/app/core/enums/themes-enum";
+import { Themes } from "src/app/core/enums/themes";
 
 export const environment = {
   production: false,
-  defaultTheme: ThemesEnum.dark
+  defaultTheme: Themes.dark
 };
 
 /*

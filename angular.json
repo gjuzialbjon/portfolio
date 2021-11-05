@@ -43,7 +43,6 @@
             "outputPath": "dist/portofolio",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "extractCss": true,
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",

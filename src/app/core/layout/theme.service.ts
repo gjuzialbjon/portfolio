@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core'
 import { DOCUMENT } from '@angular/common'
 import { environment } from 'src/environments/environment'
-import { ThemesEnum } from '../enums/themes-enum'
+import { Themes } from '../enums/themes'
 import { BehaviorSubject, Observable } from 'rxjs'
 
 @Injectable({
@@ -10,9 +10,9 @@ import { BehaviorSubject, Observable } from 'rxjs'
 export class ThemeService {
   defaultLocalTheme = localStorage.getItem('default-theme')
   theme =
-    environment.production && (this.defaultLocalTheme === ThemesEnum.dark || this.defaultLocalTheme === ThemesEnum.light)
+    environment.production && (this.defaultLocalTheme === Themes.dark || this.defaultLocalTheme === Themes.light)
       ? this.defaultLocalTheme
-      : environment.defaultTheme || ThemesEnum.dark
+      : environment.defaultTheme || Themes.dark
 
   themeSubject = new BehaviorSubject(this.theme)
 
@@ -21,14 +21,14 @@ export class ThemeService {
   }
 
   toggleTheme() {
-    if (this.theme === ThemesEnum.dark) {
-      this.loadStyle(ThemesEnum.light)
+    if (this.theme === Themes.dark) {
+      this.loadStyle(Themes.light)
     } else {
-      this.loadStyle(ThemesEnum.dark)
+      this.loadStyle(Themes.dark)
     }
   }
 
-  loadStyle(theme: ThemesEnum) {
+  loadStyle(theme: Themes) {
     const head = this.document.getElementsByTagName('head')[0]
 
     let themeLink = this.document.getElementById('client-theme') as HTMLLinkElement
@@ -48,7 +48,7 @@ export class ThemeService {
     localStorage.setItem('default-theme', theme)
   }
 
-  getTheme(): Observable<ThemesEnum> {
+  getTheme(): Observable<Themes> {
     return this.themeSubject.asObservable()
   }
 }
