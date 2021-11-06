@@ -1,3 +1,5 @@
+@use '../vendors/bs' as *;
+
 .footer {
   position: relative;
   padding: 3rem;
@@ -44,7 +46,7 @@
   }
 
   ul li:nth-child(2) a:hover {
-    background: #2867B2;
+    background: #2867b2;
   }
 
   ul li:nth-child(3) a:hover {
@@ -53,11 +55,11 @@
 
   ul li:nth-child(4) a:hover {
     background: #c13584;
-    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
   }
 
   ul li:nth-child(5) a:hover {
-    background: #4267B2;
+    background: #4267b2;
   }
 
   ul li a .fab {
@@ -77,7 +79,7 @@
   }
 
   ul li:nth-child(2) a:hover .fab {
-    color: #2867B2;
+    color: #2867b2;
   }
 
   ul li:nth-child(3) a:hover .fab {
@@ -89,7 +91,7 @@
   }
 
   ul li:nth-child(5) a:hover .fab {
-    color: #4267B2;
+    color: #4267b2;
   }
 
   .copyright {

@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy --base-href=.",
-    "docs": "compodoc -p tsconfig.doc.json -s"
+    "docs": "compodoc -p tsconfig.doc.json -s -o"
   },
   "private": true,
   "dependencies": {

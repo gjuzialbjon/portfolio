@@ -19,12 +19,32 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@helpers/*": [
+        "src/app/core/helpers/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@layout-services/*": [
+        "src/app/core/layout/*"
+      ],
+      "@enums/*": [
+        "src/app/core/enums/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
 }

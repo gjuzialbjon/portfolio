@@ -1,12 +1,9 @@
 @use '../abstracts' as *;
-@import 'node_modules/bootstrap/scss/functions';
-@import 'node_modules/bootstrap/scss/variables';
-@import 'node_modules/bootstrap/scss/mixins';
+@use '../vendors/bs' as *;
 
 .my-nav {
   height: $headerHt;
-  width: 100%;
-  background-color: var(--header__bg);
+  background-color: #151a30;
   position: sticky;
   top: 0;
   left: 0;
@@ -14,25 +11,25 @@
   z-index: 1099;
 }
 
-.my-nav > .my-nav-header,
-.my-nav > .my-nav-theme-wrapper {
+.my-nav-header,
+.my-nav-theme-wrapper {
   display: inline;
   cursor: pointer;
 }
 
-.my-nav > .my-nav-header > .my-nav-title {
+.my-nav-title {
   display: inline-block;
   padding-left: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
-.my-nav > .my-nav-btn {
+.my-nav-btn {
   display: none;
 }
 
 .my-nav-theme-wrapper {
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
 .my-nav-theme {
@@ -42,76 +39,81 @@
   cursor: pointer;
 }
 
-.my-nav > .my-nav-links {
+.my-nav-links {
   display: inline;
   float: right;
   font-size: 18px;
 }
 
-.my-nav > .my-nav-links > span {
+.my-nav-links > span {
   display: inline-block;
   padding: 11.8px 20px;
   text-decoration: none;
-  color: var(--header__menu__clr);
   cursor: pointer;
   font-weight: 500;
 }
 
-.my-nav > .my-nav-links > span:hover,
-.my-nav > .my-nav-links > span.active {
-  background-color: var(--header__menu__item__hover__bg);
+.my-nav-links > span:hover,
+.my-nav-links > span.active {
   color: var(--header__menu__item__hover__clr);
-  transition: 0.3s all ease-in;
+  transition: 0.2s all ease-in;
 }
 
-.my-nav > #my-nav-check {
+#my-nav-check {
   display: none;
 }
 
 @include media-breakpoint-down(sm) {
-  .my-nav > .my-nav-btn {
+  .my-nav-btn {
     display: inline-block;
     position: absolute;
     right: 0px;
     top: 0px;
   }
-  .my-nav > .my-nav-btn > label {
+
+  .my-nav-btn > label {
     display: inline-block;
     width: 50px;
     height: $headerHt;
     padding: 15px;
     margin-bottom: 0;
   }
-  .my-nav > .my-nav-btn > label:hover,
-  .my-nav #my-nav-check:checked ~ .my-nav-btn > label {
+
+  .my-nav-btn > label:hover,
+  #my-nav-check:checked ~ .my-nav-btn > label {
     background-color: rgba(0, 0, 0, 0.3);
   }
-  .my-nav > .my-nav-btn > label > span {
+
+  .my-nav-btn > label > span {
     display: block;
     width: 25px;
     height: 10px;
     border-top: 2px solid var(--header__mobile__toggle__clr);
   }
-  .my-nav > .my-nav-links {
+
+  .my-nav-links {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: var(--body__bg);
+    background-color: #222b45;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: $headerHt;
     left: 0px;
   }
-  .my-nav > .my-nav-links > span {
+
+  .my-nav-links > span {
     display: block;
     width: 100%;
   }
-  .my-nav > #my-nav-check:not(:checked) ~ .my-nav-links {
+
+  #my-nav-check:not(:checked) ~ .my-nav-links {
     height: 0px;
     transition: height 0.3s ease-in;
   }
-  .my-nav > #my-nav-check:checked ~ .my-nav-links {
+
+  #my-nav-check:checked ~ .my-nav-links {
     height: calc(102vh - #{$headerHt});
     overflow-y: hidden;
   }

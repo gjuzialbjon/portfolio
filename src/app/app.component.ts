@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { DesignService } from './core/layout/design.service'
+import { DesignService } from '@layout-services/design.service'
 
 @Component({
   selector: 'app-root',

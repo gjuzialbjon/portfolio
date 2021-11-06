@@ -1,15 +1,14 @@
-<div class="my-nav d-flex align-items-center justify-content-md-between justify-content-start" id="header">
+<div class="my-nav d-flex align-items-center justify-content-md-between" id="header">
   <input type="checkbox" id="my-nav-check" />
   <div class="my-nav-header" (click)="closeMenu()" routerLink="home">
     <div class="my-nav-title">
       <span>Albjon's Website</span>
     </div>
   </div>
-  <div class="my-nav-theme-wrapper">
+  <!-- <div class="my-nav-theme-wrapper">
     <i *ngIf="(theme | async) === Themes.dark" title="Tooggle light theme" (click)="toggleTheme()" class="my-nav-theme fas fa-sun"></i>
     <i *ngIf="(theme | async) === Themes.light" title="Toggle dark theme" (click)="toggleTheme()" class="my-nav-theme fas fa-moon"></i>
-  </div>
-
+  </div> -->
   <div class="my-nav-btn">
     <label for="my-nav-check">
       <span></span>

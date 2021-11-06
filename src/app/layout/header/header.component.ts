@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
-import { Themes } from 'src/app/core/enums/themes'
-import { ThemeService } from 'src/app/core/layout/theme.service'
-import { environment } from 'src/environments/environment'
+import { Themes } from '@enums/themes'
+import { ThemeService } from '@layout-services/theme.service'
 
 @Component({
   selector: 'app-header',

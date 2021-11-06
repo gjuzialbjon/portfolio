@@ -1,9 +1,12 @@
 /* Might include bootstrap overriding vars */
-@use './base';
+@use './overrides/bs-override' as *;
 
-// Now we can use bootstrap 
-@use '~bootstrap/scss/bootstrap';
+@use './base';
 @use './animations';
 @use './components';
 @use './layout';
 @use './pages';
+@use './shame/shame';
+
+// Now we can use bootstrap
+@import '~bootstrap/scss/bootstrap';

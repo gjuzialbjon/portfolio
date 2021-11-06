@@ -1,18 +1,17 @@
 @use '../abstracts' as *;
 @use '../configs' as *;
+@use '../vendors/bs' as *;
 
 .cv {
   max-width: $cvWrapperMaxWd;
   display: flex;
   margin: 2rem auto;
   box-shadow: $cvBoxShadow;
-  border: var(--cv__border);
 }
 
 .cv__left {
   width: $cvLeftWd;
   background-color: var(--cv_left__bg);
-  color: var(--cv_left__clr);
   padding: $cvLeftPadding;
 }
 
@@ -51,10 +50,6 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
-
-  a:hover {
-    color: #ffffff;
-  }
 }
 
 .skill {
@@ -73,11 +68,10 @@
 }
 
 .cv__right {
-  background: var(--cv_right__bg);
-  max-width: $cvRightMaxWd;
   width: 100%;
-  color: var(--cv_right__primary__text__clr);
   padding: $cvRightPadding;
+  background: var(--cv_right__bg);
+  color: var(--cv_right__primary__text__clr);
 }
 
 .cv__right__section {
@@ -112,7 +106,6 @@
 
     .duties {
       padding-top: 0.8rem;
-      color: var(--cv_right__secondary__text__clr);
     }
   }
 }
@@ -125,7 +118,7 @@
   text-decoration: underline;
 
   img {
-    margin-right: .3rem;
+    margin-right: 0.3rem;
   }
 }
 
@@ -154,10 +147,10 @@
     margin-bottom: 0.4rem;
     color: #000000;
     text-decoration: underline;
-  }
 
-  .courses {
-    color: var(--cv_right__secondary__text__clr);
+    img {
+      margin-right: .4rem;
+    }
   }
 }
 
@@ -197,11 +190,13 @@
   padding-left: 1.2rem;
 }
 
-@media screen and(max-width: $cvWrapperMaxWd) {
+@include media-breakpoint-down(sm) {
   .cv {
     flex-direction: column;
-    margin: 0;
     box-shadow: none;
+    margin: 1rem 0 0;
+    border-radius: 1.5rem;
+    overflow: hidden;
   }
 
   .cv__left {
