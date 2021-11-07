@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeWrapperComponent } from './components/home-wrapper/home-wrapper.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { HomeWrapperComponent } from './components/home-wrapper/home-wrapper.com
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    NgbModule
   ]
 })
 export class HomeModule { }

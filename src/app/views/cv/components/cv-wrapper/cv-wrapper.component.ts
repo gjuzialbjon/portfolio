@@ -10,47 +10,47 @@ export class CvWrapperComponent implements OnInit {
   skills = [
     {
       name: 'Angular',
-      rating: 100,
+      rating: 87,
       website: 'https://angular.io/',
     },
     {
       name: 'HTML5',
-      rating: 100,
+      rating: 95,
       website: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
     },
     {
       name: 'CSS3',
-      rating: 100,
+      rating: 75,
       website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
     {
       name: 'Debugging',
-      rating: 100,
+      rating: 80,
       website: 'https://www.techopedia.com/definition/16373/debugging',
     },
     {
       name: 'Typescript',
-      rating: 90,
+      rating: 85,
       website: 'https://www.typescriptlang.org/',
     },
     {
       name: 'NgRx',
-      rating: 90,
+      rating: 70,
       website: 'https://ngrx.io/',
     },
     {
       name: 'RxJs',
-      rating: 90,
+      rating: 65,
       website: 'https://rxjs.dev/',
     },
     {
       name: 'Javascript',
-      rating: 90,
+      rating: 78,
       website: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
       name: 'GraphQL',
-      rating: 90,
+      rating: 83,
       website: 'https://graphql.org/',
     },
     {
@@ -65,7 +65,7 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'Version Control',
-      rating: 90,
+      rating: 85,
       website: 'https://git-scm.com/',
     },
     {
@@ -75,7 +75,7 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'Linux',
-      rating: 90,
+      rating: 70,
       website: 'https://ubuntu.com/',
     },
     {

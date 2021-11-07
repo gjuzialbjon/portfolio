@@ -4,7 +4,7 @@
 .my-nav {
   height: $headerHt;
   background-color: #151a30;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -81,7 +81,7 @@
 
   .my-nav-btn > label:hover,
   #my-nav-check:checked ~ .my-nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #e9dbdb2f;
   }
 
   .my-nav-btn > label > span {

@@ -1,147 +1,242 @@
-<p class="h5 my-2 text-center">Try editting the side colors of the boxes</p>
+<div class="home-wrapper d-flex flex-column-reverse align-items-center justify-content-between">
+  <div class="home-left">
+    <p class="intro mb-4 mb-md-0">
+      <span
+        *ngFor="let letter of introArr; let i = index"
+        [id]="'letter-' + i"
+        class="d-inline-block"
+        style="animation-delay: 0s"
+        (mouseenter)="animateLetter(i)"
+        (mouseleave)="removeAnimateLetter(i)"
+        >{{ letter === ' ' ? '&nbsp;' : letter }} <wbr *ngIf="letter === ' '"
+      /></span>
+      <!-- <a href="https://www.google.com/maps/place/Durr%C3%ABs/">Durrës, Albania</a>. -->
+    </p>
+    <!-- <button class="btn btn-primary" (click)="openModal(firstQuestion)">Open modal</button> -->
+  </div>
+  <div class="home-right">
+    <div class="home-box-wrapper">
+      <section class="abs-center box-container">
+        <div class="cube cube1">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube2">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube3">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube4">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube5">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube6">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube7">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube8">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube9">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube10">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube11">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube12">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube13">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube14">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube15">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube16">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube17">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube18">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube19">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube20">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube21">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube22">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube23">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube24">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube25">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube26">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+        <div class="cube cube27">
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+        </div>
+      </section>
+    </div>
 
-<div class="d-flex align-items-center justify-content-center">
-  <input type="color" class="mx-3" id="leftclr" value="#d53a33" (input)="leftClrUpdated($event)" />
-  <input type="color" class="mx-3" id="topclr" value="#1d9099" (input)="topClrUpdated($event)" />
-  <input type="color" class="mx-3" id="frontclr" value="#e7ac20" (input)="frontClrUpdated($event)" />
+    <p class="my-2 text-center text-warning">Try editting the side colors of the boxes</p>
+
+    <div class="d-flex align-items-center justify-content-center">
+      <input type="color" class="mx-3" id="leftclr" value="#d53a33" (input)="clrUpdated('left', $event)" />
+      <input type="color" class="mx-3" id="topclr" value="#1d9099" (input)="clrUpdated('top', $event)" />
+      <input type="color" class="mx-3" id="frontclr" value="#e7ac20" (input)="clrUpdated('front', $event)" />
+    </div>
+  </div>
 </div>
 
-<div class="home-box-wrapper">
-  <section class="abs-center box-container">
-    <div class="cube cube1">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
+
+
+<ng-template #firstQuestion let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">You already spotted the issue with the text, right?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Yeah sure... just</p>
+
+    <div class="d-flex flex-column flex-wrap">
+      <button
+        class="btn mb-3"
+        [disabled]="wrongFirstAnswers.includes('a')"
+        [class.btn-danger]="wrongFirstAnswers.includes('a')"
+        [class.btn-secondary]="firstAnswer !== 'a'"
+        [class.btn-primary]="firstAnswer === 'a'"
+        (click)="solveFirst('a')"
+      >
+        {{
+          wrongFirstAnswers.includes('a')
+            ? 'Oops, not this one'
+            : firstAnswer === 'a'
+            ? 'Final answer? (Click again)'
+            : 'rotate X-axis 90 degree'
+        }}
+      </button>
+      <button
+        class="btn mb-3"
+        [disabled]="wrongFirstAnswers.includes('b')"
+        [class.btn-danger]="wrongFirstAnswers.includes('b')"
+        [class.btn-secondary]="firstAnswer !== 'b'"
+        [class.btn-primary]="firstAnswer === 'b'"
+        (click)="solveFirst('b')"
+      >
+        {{
+          wrongFirstAnswers.includes('b')
+            ? 'Oops, not this one'
+            : firstAnswer === 'b'
+            ? 'Final answer? (Click again)'
+            : 'rotate Y-axis 90 degree'
+        }}
+      </button>
+      <button
+        class="btn mb-3"
+        [disabled]="wrongFirstAnswers.includes('c')"
+        [class.btn-danger]="wrongFirstAnswers.includes('c')"
+        [class.btn-secondary]="firstAnswer !== 'c'"
+        [class.btn-primary]="firstAnswer === 'c'"
+        (click)="solveFirst('c')"
+      >
+        {{
+          wrongFirstAnswers.includes('c')
+            ? 'Oops, not this one'
+            : firstAnswer === 'c'
+            ? 'Final answer? (Click again)'
+            : 'rotate X-axis 180 degree'
+        }}
+      </button>
+      <button
+        class="btn mb-3"
+        [class.btn-secondary]="firstAnswer !== 'd'"
+        [class.btn-primary]="firstAnswer === 'd'"
+        (click)="solveFirst('d')"
+      >
+        {{ firstAnswer === 'd' ? 'Final answer? (Click again)' : 'rotate Y-axis 180 degree' }}
+      </button>
     </div>
-    <div class="cube cube2">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube3">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube4">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube5">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube6">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube7">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube8">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube9">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube10">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube11">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube12">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube13">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube14">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube15">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube16">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube17">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube18">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube19">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube20">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube21">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube22">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube23">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube24">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube25">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube26">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-    <div class="cube cube27">
-      <div class="front"></div>
-      <div class="left"></div>
-      <div class="top"></div>
-    </div>
-  </section>
-</div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="didntSpot()">Didn't spot it yet</button>
+  </div>
+</ng-template>

@@ -1,3 +1,6 @@
 @use '../abstracts' as *;
 
 
+.main-content {
+    padding-top: $headerHt;
+}

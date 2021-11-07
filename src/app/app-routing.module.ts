@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'cv',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'projects',
     loadChildren: () => import('./views//projects/projects.module').then((m) => m.ProjectsModule),
   },
-  {
-    path: 'settings',
-    loadChildren: () => import('./views//settings/settings.module').then((m) => m.SettingsModule),
-  },
+  // {
+  //   path: 'settings',
+  //   loadChildren: () => import('./views//settings/settings.module').then((m) => m.SettingsModule),
+  // },
 ]
 
 @NgModule({
