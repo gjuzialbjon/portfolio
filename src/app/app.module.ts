@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollTopComponent } from './layout/scroll-top/scroll-top.component';
 import { SettingsComponent } from './layout/settings/settings.component';
 import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
+import { BackgroundComponent } from './layout/background/background.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
     ScrollTopComponent,
     SettingsComponent,
     BreadcrumbComponent,
+    BackgroundComponent,
   ],
   imports: [
     BrowserModule,

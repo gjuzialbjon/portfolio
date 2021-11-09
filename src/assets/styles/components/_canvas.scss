@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+#background-canvas-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background-canvas {
+    position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: #{$headerHt};
+  left: 0;
+  width: 100%;
+  height: calc(100vh - #{$headerHt});
+  z-index: -1;
+}

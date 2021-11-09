@@ -10,7 +10,7 @@
 }
 
 .cv__left {
-  width: $cvLeftWd;
+  min-width: $cvLeftWd;
   background-color: var(--cv_left__bg);
   padding: $cvLeftPadding;
 }
@@ -59,10 +59,6 @@
   justify-content: space-between;
 }
 
-.skill__name {
-  color: #ffffff;
-}
-
 .skill__rating {
   width: 80px;
 }
@@ -71,11 +67,10 @@
   width: 100%;
   padding: $cvRightPadding;
   background: var(--cv_right__bg);
-  color: var(--cv_right__primary__text__clr);
 }
 
 .cv__right__section {
-  border-top: 1px solid var(--cv_right__secondary__text__clr);
+  border-top: 1px solid var(--cv_right__section__border__clr);
   padding-top: 1.5rem;
 
   &:last-child {
@@ -114,8 +109,8 @@
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 0.4rem;
-  color: #000000;
   text-decoration: underline;
+  color: #ffffff;
 
   img {
     margin-right: 0.3rem;
@@ -133,7 +128,7 @@
     .dep,
     .date {
       font-weight: 600;
-      color: #000000;
+      color: #fff;
     }
 
     .dep {
@@ -145,8 +140,8 @@
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 0.4rem;
-    color: #000000;
     text-decoration: underline;
+    color: #fff;
 
     img {
       margin-right: .4rem;
@@ -186,7 +181,6 @@
 }
 
 .soft-skills-list {
-  color: var(--cv_right__secondary__text__clr);
   padding-left: 1.2rem;
 }
 

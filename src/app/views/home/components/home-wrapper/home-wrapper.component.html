@@ -1,6 +1,6 @@
 <div class="home-wrapper d-flex flex-column-reverse align-items-center justify-content-between">
-  <div class="home-left">
-    <p class="intro mb-4 mb-md-0">
+  <div class="home-left mt-5">
+    <p class="intro mb-4 mb-md-0 text-center text-md-left">
       <span
         *ngFor="let letter of introArr; let i = index"
         [id]="'letter-' + i"
@@ -8,8 +8,8 @@
         style="animation-delay: 0s"
         (mouseenter)="animateLetter(i)"
         (mouseleave)="removeAnimateLetter(i)"
-        >{{ letter === ' ' ? '&nbsp;' : letter }} <wbr *ngIf="letter === ' '"
-      /></span>
+        >{{ letter }}&nbsp;</span
+      >
       <!-- <a href="https://www.google.com/maps/place/Durr%C3%ABs/">Durrës, Albania</a>. -->
     </p>
     <!-- <button class="btn btn-primary" (click)="openModal(firstQuestion)">Open modal</button> -->
@@ -165,8 +165,6 @@
   </div>
 </div>
 
-
-
 <ng-template #firstQuestion let-modal>
   <div class="modal-header">
     <h4 class="modal-title">You already spotted the issue with the text, right?</h4>
@@ -230,13 +228,14 @@
         class="btn mb-3"
         [class.btn-secondary]="firstAnswer !== 'd'"
         [class.btn-primary]="firstAnswer === 'd'"
+        [class.btn-success]="solvedFirst"
         (click)="solveFirst('d')"
       >
-        {{ firstAnswer === 'd' ? 'Final answer? (Click again)' : 'rotate Y-axis 180 degree' }}
+        {{ solvedFirst ? 'Well done' : firstAnswer === 'd' ? 'Final answer? (Click again)' : 'rotate Y-axis 180 degree' }}
       </button>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="didntSpot()">Didn't spot it yet</button>
+    <button type="button" class="btn btn-light" (click)="didntSpot()" *ngIf="!solvedFirst">Didn't spot it yet</button>
   </div>
 </ng-template>

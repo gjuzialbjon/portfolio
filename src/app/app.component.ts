@@ -12,4 +12,8 @@ export class AppComponent {
   constructor(private designService: DesignService) {
     this.showBreadcrumb = this.designService.canShowBreadcrumb()
   }
+
+  ngOnInit() {
+    
+  }
 }

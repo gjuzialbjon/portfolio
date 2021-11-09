@@ -1,8 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
-import * as p5 from 'p5'
-
 @Component({
   selector: 'app-home-wrapper',
   templateUrl: './home-wrapper.component.html',
@@ -11,7 +9,7 @@ export class HomeWrapperComponent implements OnInit {
   @ViewChild('firstQuestion') firstQuestion: any
   firstAnswer = 'none'
   intro = `Hi, I'm Albjon, your next website Front-end developer :)`
-  introArr = this.intro.split('')
+  introArr = this.intro.split(' ')
 
   changes = 0
   solvedFirst
@@ -24,29 +22,7 @@ export class HomeWrapperComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    new p5((p) => {
-      let y = 100
-
-      p.setup = () => {
-        p.createCanvas(document.documentElement.clientWidth, document.documentElement.clientHeight)
-        p.stroke(255) // Set line drawing color to white
-        p.frameRate(30)
-        p.noLoop()
-      }
-
-      p.draw = () => {
-        p.background('#222b45')
-        y = y - 1
-        if (y < 0) {
-          y = p.height
-        }
-        p.line(0, y, p.width, y)
-      }
-
-      p.mousePressed = () => {
-        p.redraw()
-      }
-    }, document.getElementsByTagName('body')[0] as HTMLElement)
+   
   }
 
   ngAfterViewInit() {
@@ -66,15 +42,18 @@ export class HomeWrapperComponent implements OnInit {
     this.modalService.open(content, { centered: true })
   }
 
-  didntSpot() {}
+  didntSpot() {
+    this.modalService.dismissAll()
+  }
 
   solveFirst(choice: string) {
     if (choice === this.firstAnswer) {
-      // Final firstAnswer chosen
-      console.log('Final firstAnswer chosen?')
       if (choice === 'd') {
         localStorage.setItem('solvedFirst', 'yes')
-        this.modalService.dismissAll()
+        this.solvedFirst = true
+        setTimeout(() => {
+          this.modalService.dismissAll()
+        }, 1250)
       } else {
         this.wrongFirstAnswers.push(choice)
         this.firstAnswer = 'none'
