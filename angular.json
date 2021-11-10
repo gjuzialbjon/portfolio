@@ -66,14 +66,9 @@
             ],
             "scripts": [
               {
-                "input": "node_modules/@code-dot-org/p5/lib/p5.min.js",
+                "input": "src/assets/js/oscillator.js",
                 "inject": true,
-                "bundleName": "p5"
-              },
-              {
-                "input": "node_modules/@code-dot-org/p5.play/lib/p5.play.js",
-                "inject": true,
-                "bundleName": "p5.play"
+                "bundleName": "oscillator"
               }
             ]
           },
