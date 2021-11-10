@@ -12,6 +12,7 @@
 .cv__left {
   min-width: $cvLeftWd;
   background-color: var(--cv_left__bg);
+  background: var(--cv_left__bg);
   padding: $cvLeftPadding;
 }
 
@@ -67,6 +68,7 @@
   width: 100%;
   padding: $cvRightPadding;
   background: var(--cv_right__bg);
+  background-color: var(--cv_right__bg);
 }
 
 .cv__right__section {
@@ -79,7 +81,7 @@
 
     .interests {
       padding: 0 0.8rem 0 0;
-      min-width: 147px;
+      min-width: 153px;
     }
   }
 }

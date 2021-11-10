@@ -1,5 +1,9 @@
 @use '../abstracts' as *;
 
+html, body {
+    scroll-behavior: smooth;
+    max-height: max-content;
+}
 
 .main-content {
     padding-top: $headerHt;

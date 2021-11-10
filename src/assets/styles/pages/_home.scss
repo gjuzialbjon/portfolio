@@ -4,6 +4,8 @@
 .intro {
   word-break: break-word;
   overflow-wrap: break-word;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 
   span {
     font-size: 4.3rem;
@@ -12,7 +14,6 @@
     transition: color 0.2s ease-in-out;
     cursor: crosshair;
   }
-  // transform: rotateY(180deg);
 }
 
 @include media-breakpoint-down(md) {
@@ -22,4 +23,3 @@
     }
   }
 }
-

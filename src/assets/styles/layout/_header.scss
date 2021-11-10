@@ -114,7 +114,7 @@
   }
 
   #my-nav-check:checked ~ .my-nav-links {
-    height: calc(102vh - #{$headerHt});
+    height: 100vh;
     overflow-y: hidden;
   }
 }

@@ -26,10 +26,16 @@ export class HomeWrapperComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    this.promptFirstQuestion()
+  }
+
+  promptFirstQuestion() {
     if (!this.solvedFirst) {
       setTimeout(() => {
-        this.modalService.open(this.firstQuestion)
+        this.modalService.open(this.firstQuestion, { centered: true })
       }, 3500)
+    } else {
+      this.fixIntro()
     }
   }
 
@@ -44,16 +50,18 @@ export class HomeWrapperComponent implements OnInit {
 
   didntSpot() {
     this.modalService.dismissAll()
+    this.promptFirstQuestion()
   }
 
   solveFirst(choice: string) {
     if (choice === this.firstAnswer) {
       if (choice === 'd') {
+        this.fixIntro()
         localStorage.setItem('solvedFirst', 'yes')
         this.solvedFirst = true
         setTimeout(() => {
           this.modalService.dismissAll()
-        }, 1250)
+        }, 1150)
       } else {
         this.wrongFirstAnswers.push(choice)
         this.firstAnswer = 'none'
@@ -61,6 +69,11 @@ export class HomeWrapperComponent implements OnInit {
     } else {
       this.firstAnswer = choice
     }
+  }
+
+  fixIntro() {
+    const intro = document.getElementById('intro') as HTMLElement
+    intro.style.transform = 'none'
   }
 
   animateLetter(index: number) {
