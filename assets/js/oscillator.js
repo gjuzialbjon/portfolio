@@ -1,6 +1,6 @@
-function initOsciliator(remove) {
+function initOsciliator(start) {
   console.log('Inside oscillator...')
-  if (!remove) {
+  if (start) {
     var ctx,
       hue,
       logo,
@@ -140,10 +140,10 @@ function initOsciliator(remove) {
     // ----------------------------------------------------------------------------------------
 
     function init(event) {
-      document.removeEventListener('mousemove', init)
+      document.removeEventListener('mousemove', init, { passive: false })
       document.removeEventListener('touchstart', init, { passive: false })
 
-      document.addEventListener('mousemove', mousemove)
+      document.addEventListener('mousemove', mousemove, { passive: false })
       document.addEventListener('touchmove', mousemove, { passive: false })
       document.addEventListener('touchstart', touchstart, { passive: false })
 
