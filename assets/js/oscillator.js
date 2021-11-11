@@ -1,5 +1,5 @@
-function initOsciliator(start) {
-  if (start) {
+function initOsciliator(init) {
+  if (init) {
     var ctx,
       hue,
       logo,
@@ -181,7 +181,7 @@ function initOsciliator(start) {
       ctx.lineWidth = 1
 
       if (color == 1) {
-        ctx.strokeStyle = 'hsla(346,98%,56%,0.25)'
+        ctx.strokeStyle = 'rgb(255,255,255)'
       } else {
         ctx.strokeStyle = 'hsla(171,98%,56%,0.25)'
       }
@@ -199,6 +199,11 @@ function initOsciliator(start) {
     function resize() {
       ctx.canvas.width = window.innerWidth
       ctx.canvas.height = window.innerHeight
+
+      if (window.innerWidth < 1025) {
+        stop()
+        removeListeners()
+      }
     }
 
     function start() {
@@ -262,6 +267,10 @@ function initOsciliator(start) {
 
     resize()
   } else {
+    removeListeners()
+  }
+
+  function removeListeners() {
     document.body.removeEventListener('orientationchange', resize)
     window.removeEventListener('resize', resize)
     window.removeEventListener('focus', start)
