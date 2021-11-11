@@ -1,5 +1,4 @@
 function initOsciliator(start) {
-  console.log('Inside oscillator...')
   if (start) {
     var ctx,
       hue,
