@@ -1,6 +1,5 @@
-function initOsciliator(remove) {
-  console.log('Inside oscillator...')
-  if (!remove) {
+function initOsciliator(init) {
+  if (init) {
     var ctx,
       hue,
       logo,
@@ -140,10 +139,10 @@ function initOsciliator(remove) {
     // ----------------------------------------------------------------------------------------
 
     function init(event) {
-      document.removeEventListener('mousemove', init)
+      document.removeEventListener('mousemove', init, { passive: false })
       document.removeEventListener('touchstart', init, { passive: false })
 
-      document.addEventListener('mousemove', mousemove)
+      document.addEventListener('mousemove', mousemove, { passive: false })
       document.addEventListener('touchmove', mousemove, { passive: false })
       document.addEventListener('touchstart', touchstart, { passive: false })
 
@@ -182,7 +181,7 @@ function initOsciliator(remove) {
       ctx.lineWidth = 1
 
       if (color == 1) {
-        ctx.strokeStyle = 'hsla(346,98%,56%,0.25)'
+        ctx.strokeStyle = 'rgb(255,255,255)'
       } else {
         ctx.strokeStyle = 'hsla(171,98%,56%,0.25)'
       }
@@ -200,6 +199,11 @@ function initOsciliator(remove) {
     function resize() {
       ctx.canvas.width = window.innerWidth
       ctx.canvas.height = window.innerHeight
+
+      if (window.innerWidth < 1025) {
+        stop()
+        removeListeners()
+      }
     }
 
     function start() {
@@ -263,6 +267,10 @@ function initOsciliator(remove) {
 
     resize()
   } else {
+    removeListeners()
+  }
+
+  function removeListeners() {
     document.body.removeEventListener('orientationchange', resize)
     window.removeEventListener('resize', resize)
     window.removeEventListener('focus', start)

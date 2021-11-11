@@ -15,8 +15,6 @@ export class HomeWrapperComponent implements OnInit {
   solvedFirst
   wrongFirstAnswers: string[] = []
 
-  animations = ['animate__animated', 'animate__rubberBand']
-
   constructor(private modalService: NgbModal, private el: ElementRef, private renderer: Renderer2) {
     this.solvedFirst = localStorage.getItem('solvedFirst') === 'yes'
   }
@@ -78,8 +76,7 @@ export class HomeWrapperComponent implements OnInit {
 
   animateLetter(index: number) {
     const el = document.getElementById(`letter-${index}`)
-    el?.classList.add(this.animations[0])
-    el?.classList.add(this.animations[1])
+    el?.classList.add('rubberBand')
     if (el) {
       el.style.color = 'var(--box__cube__left__clr)'
     }
@@ -87,8 +84,7 @@ export class HomeWrapperComponent implements OnInit {
 
   removeAnimateLetter(index: number) {
     const el = document.getElementById(`letter-${index}`)
-    el?.classList.remove(this.animations[0])
-    el?.classList.remove(this.animations[1])
+    el?.classList.remove('rubberBand')
     if (el) {
       el.style.color = '#fff'
     }
