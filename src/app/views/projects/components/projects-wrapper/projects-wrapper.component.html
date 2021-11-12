@@ -5,7 +5,7 @@
       <div class="carousel-img-wrapper cp" routerLink="../{{project.f}}">
         <img [src]="project.path" alt="{{ project.title }}" width="100%" />
       </div>
-      <div class="carousel-caption drop-shadow-carousel cp" routerLink="../{{project.f}}">
+      <div class="carousel-caption drop-shadow-carousel cp" [id]="project.f" routerLink="../{{project.f}}">
         <h4>{{ project.title }}</h4>
         <p>{{ project.desc }}</p>
       </div>

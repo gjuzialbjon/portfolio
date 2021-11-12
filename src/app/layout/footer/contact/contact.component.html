@@ -1,0 +1,43 @@
+<form id="contact-form" class="contact-form p-3" [formGroup]="contactForm" (ngSubmit)="onSendMessage()">
+  <div class="form-group">
+    <label for="name" class="text-muted">Name &ast;</label>
+    <input
+      type="text"
+      class="form-control"
+      [class.is-invalid]="name.invalid && (name.dirty || name.touched)"
+      formControlName="name"
+      id="name"
+      placeholder="Albjon Gjuzi"
+    />
+    <div class="invalid-feedback">Please provide a name.</div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="text-muted">Email address &ast;</label>
+    <input
+      type="email"
+      class="form-control"
+      [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
+      formControlName="email"
+      id="email"
+      placeholder="gjuzialbjon@gmail.com"
+    />
+    <div class="invalid-feedback">Please provide a valid email address.</div>
+  </div>
+  <div class="form-group is-invalid">
+    <label for="message" class="text-muted">Message &ast;</label>
+    <textarea
+      class="form-control"
+      id="message"
+      [class.is-invalid]="message.invalid && (message.dirty || message.touched)"
+      formControlName="message"
+      rows="4"
+      placeholder="I have an amazing idea about a project regarding..."
+    ></textarea>
+    <div class="invalid-feedback">Please provide a message.</div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-info" [disabled]="sending">Send message <i class="dm fas fa-paper-plane"></i></button>
+  </div>
+</form>
+
+<div *ngIf="status" class="text-center text-{{ status.status }}" class="contact-form-status mt-2">{{ status.msg }}</div>

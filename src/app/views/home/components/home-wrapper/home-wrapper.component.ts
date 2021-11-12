@@ -11,6 +11,10 @@ export class HomeWrapperComponent implements OnInit {
   intro = `Hi, I'm Albjon, your next website Front-end developer :)`
   introArr = this.intro.split(' ')
 
+  left = '#d53a33'
+  front = '#e7ac20'
+  top = '#1d9099'
+
   changes = 0
   solvedFirst
   wrongFirstAnswers: string[] = []
@@ -19,11 +23,10 @@ export class HomeWrapperComponent implements OnInit {
     this.solvedFirst = localStorage.getItem('solvedFirst') === 'yes'
   }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
+    this.resetCubeColors()
     this.promptFirstQuestion()
   }
 
@@ -88,5 +91,11 @@ export class HomeWrapperComponent implements OnInit {
     if (el) {
       el.style.color = '#fff'
     }
+  }
+
+  resetCubeColors() {
+    document.documentElement.style.setProperty(`--box__cube__left__clr`, this.left)
+    document.documentElement.style.setProperty(`--box__cube__top__clr`, this.top)
+    document.documentElement.style.setProperty(`--box__cube__front__clr`, this.front)
   }
 }

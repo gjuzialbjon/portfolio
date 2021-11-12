@@ -158,9 +158,9 @@
     <p class="my-2 text-center text-warning">Try editting the side colors of the boxes</p>
 
     <div class="d-flex align-items-center justify-content-center">
-      <input type="color" class="mx-3" id="leftclr" value="#d53a33" (input)="clrUpdated('left', $event)" />
-      <input type="color" class="mx-3" id="topclr" value="#1d9099" (input)="clrUpdated('top', $event)" />
-      <input type="color" class="mx-3" id="frontclr" value="#e7ac20" (input)="clrUpdated('front', $event)" />
+      <input type="color" class="mx-3" id="leftclr" [value]="left" (input)="clrUpdated('left', $event)" />
+      <input type="color" class="mx-3" id="topclr" [value]="top" (input)="clrUpdated('top', $event)" />
+      <input type="color" class="mx-3" id="frontclr" [value]="front" (input)="clrUpdated('front', $event)" />
     </div>
   </div>
 </div>

@@ -1,0 +1,97 @@
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { environment } from '@env/environment'
+
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styles: [],
+})
+export class ContactComponent implements OnInit {
+  contactForm: FormGroup
+  sending = false
+
+  statuses = [
+    { status: 'success', msg: 'Message sent successfully. Thank you :)' },
+    { status: 'error', msg: 'Something went wrong, please try again. :(' },
+    { status: 'info', msg: 'Sending message via Albjon Airlines...' },
+    { status: 'warning', msg: 'Please provide all fields as requested :/' },
+  ]
+
+  status: any = null
+
+  constructor(private _fb: FormBuilder, private http: HttpClient) {
+    this.contactForm = this._fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required]],
+    })
+  }
+
+  ngOnInit(): void {}
+
+  onSendMessage() {
+    if (this.contactForm.invalid) {
+      this.name.markAsDirty()
+      this.email.markAsDirty()
+      this.message.markAsDirty()
+      this.startSendAnimation(false)
+      this.status = this.statuses[3]
+
+      setTimeout(() => {
+        this.status = null
+      }, 1500)
+      return
+    }
+
+    this.status = this.statuses[2]
+
+    const email = this.contactForm.value
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' })
+    this.http
+      .post(environment.formspree, { name: email.name, replyto: email.email, message: email.message }, { headers: headers })
+      .subscribe(
+        (response) => {
+          this.startSendAnimation()
+        },
+        (err) => {
+          console.error(err)
+          this.startSendAnimation(false)
+          this.status = this.statuses[1]
+        }
+      )
+
+    this.contactForm.reset()
+  }
+
+  get name() {
+    return this.contactForm.controls.name
+  }
+  get email() {
+    return this.contactForm.controls.email
+  }
+  get message() {
+    return this.contactForm.controls.message
+  }
+
+  startSendAnimation(valid = true) {
+    this.sending = true
+
+    const form = document.getElementById('contact-form') as HTMLElement
+    form.classList.add(valid ? 'message-sending' : 'message-not-sending')
+
+    if (valid) {
+      setTimeout(() => {
+        form.classList.remove('message-sending')
+        this.sending = false
+        this.status = this.statuses[0]
+      }, 3000)
+    } else {
+      setTimeout(() => {
+        form.classList.remove('message-not-sending')
+        this.sending = false
+      }, 1500)
+    }
+  }
+}

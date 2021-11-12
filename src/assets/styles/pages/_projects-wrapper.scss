@@ -6,19 +6,33 @@
   margin: 1rem auto;
 }
 
-.drop-shadow-carousel {
-  filter: drop-shadow(0 0 1rem rgb(91, 96, 117));
+#agency {
+  color: #fff;
+}
+
+#agente {
+  color: #000080;
+}
+
+#tip {
+  color: black;
 }
 
 @include media-breakpoint-down(sm) {
   .projects-wrapper {
-    border-radius: 1.5rem;
-    overflow: hidden;
     min-width: 100%;
     margin: 0;
   }
 
   .drop-shadow-carousel {
-    filter: drop-shadow(0 0 .5rem rgb(69, 72, 82));
+    filter: drop-shadow(0 0 0.5rem rgb(69, 72, 82));
+  }
+
+  #swp { 
+    color: #000;
+  }
+
+  #agency {
+    color: #ffd700;
   }
 }
