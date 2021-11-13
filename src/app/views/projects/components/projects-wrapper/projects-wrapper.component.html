@@ -2,10 +2,10 @@
 <div class="projects-wrapper mt-md-5 mt-3">
   <ngb-carousel *ngIf="projects">
     <ng-template ngbSlide *ngFor="let project of projects" >
-      <div class="carousel-img-wrapper cp" routerLink="../{{project.f}}">
+      <div class="carousel-img-wrapper">
         <img [src]="project.path" alt="{{ project.title }}" width="100%" />
       </div>
-      <div class="carousel-caption drop-shadow-carousel cp" [id]="project.f" routerLink="../{{project.f}}">
+      <div class="carousel-caption drop-shadow-carousel" [id]="project.f">
         <h4>{{ project.title }}</h4>
         <p>{{ project.desc }}</p>
       </div>

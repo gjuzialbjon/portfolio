@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from '@env/environment'
+import { NavigationEnd, Router } from '@angular/router'
 
 @Component({
   selector: 'app-contact',
@@ -21,7 +22,7 @@ export class ContactComponent implements OnInit {
 
   status: any = null
 
-  constructor(private _fb: FormBuilder, private http: HttpClient) {
+  constructor(private _fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.contactForm = this._fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -29,7 +30,14 @@ export class ContactComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) {
+        this.status = null
+        this.contactForm.reset()
+      }
+    })
+  }
 
   onSendMessage() {
     if (this.contactForm.invalid) {
@@ -87,6 +95,10 @@ export class ContactComponent implements OnInit {
         this.sending = false
         this.status = this.statuses[0]
       }, 3000)
+
+      setTimeout(() => {
+        this.status = null
+      }, 5000)
     } else {
       setTimeout(() => {
         form.classList.remove('message-not-sending')
