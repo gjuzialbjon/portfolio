@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'projects',
     loadChildren: () => import('./views//projects/projects.module').then((m) => m.ProjectsModule),
   },
-  // {
-  //   path: 'settings',
-  //   loadChildren: () => import('./views//settings/settings.module').then((m) => m.SettingsModule),
-  // },
+  {
+    path: '**',
+    redirectTo: 'home',
+  }
 ]
 
 @NgModule({

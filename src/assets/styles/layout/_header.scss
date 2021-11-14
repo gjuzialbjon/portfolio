@@ -3,7 +3,7 @@
 
 .my-nav {
   height: $headerHt;
-  background-color: #151a30;
+  background-color: var(--header__bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -81,7 +81,8 @@
 
   .my-nav-btn > label:hover,
   #my-nav-check:checked ~ .my-nav-btn > label {
-    background-color: #e9dbdb2f;
+    background-color: rgb(104, 107, 158);
+    background-color: rgba(233, 219, 219, 0.184);
   }
 
   .my-nav-btn > label > span {

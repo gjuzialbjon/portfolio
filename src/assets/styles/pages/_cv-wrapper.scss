@@ -2,6 +2,11 @@
 @use '../configs' as *;
 @use '../vendors/bs' as *;
 
+.download-cv {
+  min-width: 300px;
+  // color: #ffffff !important;
+}
+
 .cv {
   max-width: $cvWrapperMaxWd;
   display: flex;
@@ -12,7 +17,7 @@
 .cv__left {
   min-width: $cvLeftWd;
   background-color: var(--cv_left__bg);
-  background: var(--cv_left__bg);
+  background-color: var(--cv_left__bg-a);
   padding: $cvLeftPadding;
 }
 
@@ -67,15 +72,15 @@
 .cv__right {
   width: 100%;
   padding: $cvRightPadding;
-  background: var(--cv_right__bg);
   background-color: var(--cv_right__bg);
+  background-color: var(--cv_right__bg-a);
 }
 
 .cv__right__section {
   border-top: 1px solid var(--cv_right__section__border__clr);
   padding-top: 1.5rem;
 
-  &:last-child {
+  &:nth-child(5) {
     display: flex;
     justify-content: space-between;
 
@@ -146,7 +151,7 @@
     color: #fff;
 
     img {
-      margin-right: .4rem;
+      margin-right: 0.4rem;
     }
   }
 }
@@ -187,6 +192,10 @@
 }
 
 @include media-breakpoint-down(sm) {
+  .download-cv {
+    min-width: 100%;
+  }
+
   .cv {
     flex-direction: column;
     box-shadow: none;

@@ -6,7 +6,7 @@ progress::-webkit-progress-bar {
   border-radius: 5px;
 }
 progress {
-  background-color: var();
+  background-color: var(--progress__bar__bg);
   height: 8px;
   border-radius: 5px;
 }

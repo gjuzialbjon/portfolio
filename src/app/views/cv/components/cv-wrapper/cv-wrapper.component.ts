@@ -1,11 +1,14 @@
+import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import * as FileSaver from 'file-saver'
+import { FileSaverService } from 'ngx-filesaver'
 
 @Component({
   selector: 'app-cv-wrapper',
   templateUrl: './cv-wrapper.component.html',
 })
 export class CvWrapperComponent implements OnInit {
-  @ViewChild('cvContent') cvContent!: ElementRef
+  downloading = false
 
   skills = [
     {
@@ -90,7 +93,21 @@ export class CvWrapperComponent implements OnInit {
     },
   ]
 
-  constructor() {}
+  constructor(private _fileSaverService: FileSaverService, private _http: HttpClient) {}
 
   ngOnInit(): void {}
+
+  downloadCV() {
+    this.downloading = true
+    this._http
+      .get('assets/media/pdf/cv.pdf', {
+        responseType: 'blob' as 'json', // This must be a Blob type
+      })
+      .subscribe((res: any) => {
+        var file = new Blob([res], { type: 'application/pdf' })
+        this._fileSaverService.save(file, 'Albjon_Gjuzi_CV')
+        this.downloading = false;
+      })
+
+  }
 }

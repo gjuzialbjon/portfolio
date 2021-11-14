@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-home-wrapper',
@@ -7,7 +6,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 })
 export class HomeWrapperComponent implements OnInit {
   @ViewChild('firstQuestion') firstQuestion: any
-  firstAnswer = 'none'
   intro = `Hi, I'm Albjon, your next website Front-end developer :)`
   introArr = this.intro.split(' ')
 
@@ -16,65 +14,19 @@ export class HomeWrapperComponent implements OnInit {
   top = '#1d9099'
 
   changes = 0
-  solvedFirst
-  wrongFirstAnswers: string[] = []
 
-  constructor(private modalService: NgbModal, private el: ElementRef, private renderer: Renderer2) {
-    this.solvedFirst = localStorage.getItem('solvedFirst') === 'yes'
+  constructor(private el: ElementRef, private renderer: Renderer2) {
   }
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.resetCubeColors()
-    this.promptFirstQuestion()
-  }
-
-  promptFirstQuestion() {
-    if (!this.solvedFirst) {
-      setTimeout(() => {
-        this.modalService.open(this.firstQuestion, { centered: true })
-      }, 3500)
-    } else {
-      this.fixIntro()
-    }
   }
 
   clrUpdated(position: string, event: Event) {
     const clr = (event.target as HTMLInputElement).value
     document.documentElement.style.setProperty(`--box__cube__${position}__clr`, clr)
-  }
-
-  openModal(content: any) {
-    this.modalService.open(content, { centered: true })
-  }
-
-  didntSpot() {
-    this.modalService.dismissAll()
-    this.promptFirstQuestion()
-  }
-
-  solveFirst(choice: string) {
-    if (choice === this.firstAnswer) {
-      if (choice === 'd') {
-        this.fixIntro()
-        localStorage.setItem('solvedFirst', 'yes')
-        this.solvedFirst = true
-        setTimeout(() => {
-          this.modalService.dismissAll()
-        }, 1150)
-      } else {
-        this.wrongFirstAnswers.push(choice)
-        this.firstAnswer = 'none'
-      }
-    } else {
-      this.firstAnswer = choice
-    }
-  }
-
-  fixIntro() {
-    const intro = document.getElementById('intro') as HTMLElement
-    intro.style.transform = 'none'
   }
 
   animateLetter(index: number) {

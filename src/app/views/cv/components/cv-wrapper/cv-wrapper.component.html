@@ -1,4 +1,4 @@
-<div class="cv" #cvContent>
+<div class="cv">
   <div class="cv__left">
     <div class="cv__left__section personal">
       <p class="cv__section__title"><i class="fas fa-address-card"></i> personal</p>
@@ -21,7 +21,7 @@
         <a class="skill__name" [href]="skill.website" target="_blank">
           {{ skill.name }}
         </a>
-        <div class="skill__rating" >
+        <div class="skill__rating">
           <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
         </div>
       </div>
@@ -53,7 +53,7 @@
           <div class="date">Feb 2021 - Present</div>
         </div>
         <a class="company" href="https://impaladigital.com/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/impala.png" width="30px" alt="" />Impala Digital, Tirana
+          <img src="assets/media/companies/impala.png" width="30px" alt="" />Impala Digital, Tirana
         </a>
         <ul class="duties text-muted">
           <li>Bring mock-ups to life using HTML, CSS, JavaScript</li>
@@ -66,7 +66,7 @@
           <div class="date">Sep 2020 - Present</div>
         </div>
         <a class="company" href="https://www.upwork.com/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/upwork.png" width="30px" alt="" />Upwork, Durres
+          <img src="assets/media/companies/upwork.png" width="30px" alt="" />Upwork, Durres
         </a>
         <ul class="duties text-muted">
           <li>Freelance Software Developer</li>
@@ -78,7 +78,7 @@
           <div class="date">Jan 2020 - Jul 2021</div>
         </div>
         <a class="company" href="https://www.wearefiber.com/en/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/fiber.png" width="30px" alt="" />We Are Fiber, Tirana
+          <img src="assets/media/companies/fiber.png" width="30px" alt="" />We Are Fiber, Tirana
         </a>
         <ul class="duties text-muted">
           <li>Design frontend within object-oriented Javascript frameworks like Angular</li>
@@ -94,7 +94,7 @@
           <div class="date">Aug 2015 - Aug 2019</div>
         </div>
         <a class="school" href="https://w3.bilkent.edu.tr/bilkent/" target="_blank">
-          <img src="https://gjuzialbjon.github.io/portofolio/assets/media/companies/bilkent.png" width="25px" alt="" />Bilkent University, Ankara, Turkey
+          <img src="assets/media/companies/bilkent.png" width="25px" alt="" />Bilkent University, Ankara, Turkey
         </a>
         <p class="courses mt-2 text-muted">
           Algorithms and programming, Application Lifecycle Management, Artificial Intelligence, Automata Theory and Formal Languages,
@@ -121,6 +121,9 @@
           <li>Teamwork and collaboration</li>
         </ul>
       </div>
+    </div>
+    <div class="text-center my-3">
+      <button class="btn btn-info download-cv" [disabled]="downloading" (click)="downloadCV()">{{ downloading ? 'Downloading CV...' : 'Download CV'}} <i class="fas fa-download"></i></button>
     </div>
   </div>
 </div>
