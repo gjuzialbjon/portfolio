@@ -18,10 +18,10 @@ const routes: Routes = [
         path: 'list',
         component: ProjectsWrapperComponent,
       },
-      // {
-      //   path: ':id',
-      //   component: ProjectDetailsComponent,
-      // },
+      {
+        path: ':id',
+        component: ProjectDetailsComponent,
+      },
     ],
   },
 ]

@@ -9,11 +9,12 @@
 		color: var(--scroll__top__clr);
 	}
 
-	&:hover {
+	&.show-scroll-top:hover {
 		opacity: 1;
 	}
 }
 
 .show-scroll-top {
 	opacity: 0.5;
+	cursor: pointer;
 }

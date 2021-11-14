@@ -1,9 +1,45 @@
 @use '../vendors/bs' as *;
+@use '../overrides/bs-override' as bs;
 
 .projects-wrapper {
   max-width: 900px;
   min-width: 700px;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
+}
+
+.project-details {
+  min-width: 600px;
+  margin: 1.5rem auto;
+}
+
+.project-detail-img-div {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+
+  // &:hover {
+  //   box-shadow: 2px 4px 12px rgb(255, 253, 253);
+  // }
+}
+
+.project-detail-img-div:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+}
+
+.project-detail-img-div:hover:after {
+  transition-duration: 0.17s;
+  border-bottom: 60px solid silver;
+  border-right: 60px solid bs.$body-bg;
+}
+
+.project-detail-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 #agency {
@@ -19,16 +55,17 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .projects-wrapper {
+  .projects-wrapper,
+  .project-details {
     min-width: 100%;
-    margin: 0;
+    margin: 1rem auto;
   }
 
   .drop-shadow-carousel {
     filter: drop-shadow(0 0 0.5rem rgb(69, 72, 82));
   }
 
-  #swp { 
+  #swp {
     color: #000;
   }
 

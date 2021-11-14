@@ -1,1 +1,8 @@
-<p>scroll-top works!</p>
+<div
+  class="scroll-top p-2"
+  [ngClass]="{ 'show-scroll-top': windowScrolled }"
+  title="Scroll to top"
+  (click)="scrollToTop()"
+>
+  <i class="fas fa-arrow-circle-up"></i>
+</div>

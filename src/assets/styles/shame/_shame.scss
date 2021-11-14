@@ -6,3 +6,15 @@
 .cp {
   cursor: pointer;
 }
+
+.viewer-backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.viewer-button::before {
+  transform: scale(1.5);
+}
+
+.viewer-toolbar > ul > li::before {
+  transform: scale(1.5);
+}

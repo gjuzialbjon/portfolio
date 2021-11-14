@@ -1,1 +1,25 @@
-<p>project-details works!</p>
+<div class="project-details" *ngIf="project">
+  <div class="title-and-desc mb-3 d-flex align-items-center flex-nowrap">
+    <button class="btn btn-info mr-4" routerLink="../list"><i class="fas fa-arrow-left"></i></button>
+
+    <span class="proj-title">
+      <strong>{{ project.title }}</strong
+      >: {{ project.desc }}</span
+    >
+  </div>
+
+  <div class="all-project-images">
+    <div class="d-flex flex-wrap align-items-center justify-content-center" ngxViewer [viewerOptions]="viewerOptions">
+      <div class="project-detail-img-div m-2 cp" *ngFor="let img of project.imgs">
+        <img
+          class="project-detail-img"
+          loading="lazy"
+          src="assets/media/{{ project.f }}/{{ img }}.png"
+          (error)="mimg.src = errorImg"
+          #mimg
+          alt="{{ img }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
