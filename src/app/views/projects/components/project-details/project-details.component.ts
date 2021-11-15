@@ -39,7 +39,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.project = this.projectsService.allProjects[this.id]
 
     if (this.project) {
-      console.log(this.id, ' exits', this.project)
+      // console.log(this.id, ' exits', this.project)
     } else {
       console.warn('Cannot find this project...')
     }
