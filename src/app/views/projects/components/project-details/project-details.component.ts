@@ -11,7 +11,7 @@ export class ProjectDetailsComponent implements OnInit {
   id = ''
   project: any = null
   errorImg = 'https://via.placeholder.com/300x200'
-  
+
   public viewerOptions: any = {
     navbar: false,
     toolbar: {
@@ -42,6 +42,15 @@ export class ProjectDetailsComponent implements OnInit {
       console.log(this.id, ' exits', this.project)
     } else {
       console.warn('Cannot find this project...')
+    }
+  }
+
+  ngAfterViewInit() {
+    if (window.innerWidth > 1024) {
+      const allImgs = document.getElementById('all-project-images')
+      if (allImgs) {
+        allImgs.style.height = this.project.imgs.length > 3 ? '500px' : '220px'
+      }
     }
   }
 }
