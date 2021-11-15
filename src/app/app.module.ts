@@ -12,7 +12,6 @@ import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component'
 import { BackgroundComponent } from './layout/background/background.component'
 import { ContactComponent } from './layout/footer/contact/contact.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-// import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 @NgModule({
   declarations: [
