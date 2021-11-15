@@ -12,7 +12,7 @@ import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component'
 import { BackgroundComponent } from './layout/background/background.component'
 import { ContactComponent } from './layout/footer/contact/contact.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common'
     ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
