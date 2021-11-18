@@ -46,7 +46,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.png", { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }],
+            "assets": [
+              "src/favicon.png",
+              ".htaccess",
+              ".well-known",
+              { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }
+            ],
             "styles": [
               "src/styles.scss",
               "node_modules/viewerjs/dist/viewer.css",
