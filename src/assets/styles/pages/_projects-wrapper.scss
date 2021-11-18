@@ -14,6 +14,7 @@
 
 .all-project-images {
   overflow: auto;
+  margin-bottom: 1rem;
 }
 
 .project-detail-img-div {
@@ -21,6 +22,13 @@
   height: 200px;
   position: relative;
   overflow: hidden;
+}
+
+.long-proj-desc {
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .project-detail-img-div:after {

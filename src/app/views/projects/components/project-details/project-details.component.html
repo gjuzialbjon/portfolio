@@ -21,5 +21,10 @@
         />
       </div>
     </div>
+    <p *ngIf="extra >= 1" (click)="moreImages()" class="text-center my-3 cp" style="text-decoration: underline">More images...</p>
+  </div>
+
+  <div class="techs d-flex flex-wrap align-items-center justify-content-center mx-auto" style="max-width: 700px;">
+    <div class="tech m-2 bg-dark p-2 font-weight-bold" *ngFor="let tech of project.techs">{{ tech }}</div>
   </div>
 </div>
