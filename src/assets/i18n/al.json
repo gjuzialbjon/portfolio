@@ -1,0 +1,102 @@
+{
+  "Menu": {
+    "Home": "Kreu",
+    "CV": "CV",
+    "Projects": "Projektet",
+    "Home-desc": "Faqja kryesore",
+    "CV-desc": "CV (Curriculum Vitae)",
+    "Projects-desc": "Shiko disa nga projektet e mia"
+  },
+  "Home": {
+    "sentence": "Ckemi, Une jam Albjoni, Front-endi i projektit tuaj te ardhshem :)",
+    "try": "Provo te ndryshosh ngjyrat e aneve te kutive"
+  },
+  "Projects": {
+    "more": "Me shume imazhe..."
+  },
+  "CV": {
+    "personal": "personale",
+    "email": "Adresa e-mailit",
+    "tel": "Numri telefonit",
+    "address": "Adresa",
+    "linkedin": "LinkedIn",
+    "web": "Websajti",
+    "skills": "aftesite",
+    "languages": "gjuhet",
+    "English": "Anglisht",
+    "Albanian": "Shqip",
+    "Italian": "Italisht",
+    "Spanish": "Spanjisht",
+    "Turkish": "Turqisht",
+    "working_knowledge": "Njohuri bazë",
+    "native": "Gjuha mëmë",
+    "highly_proficient": "Shumë i aftë në të folur dhe në të shkruar",
+    "frontend": "Zhvillues Frontendi",
+    "work_experience": "experienca pune",
+    "present": "Present",
+    "studies": "studime dhe certifikata",
+    "bachelor": "Bachelor ne Inxhinieri Kompjuterike",
+    "interests": "Hobit",
+    "memes": "Memet",
+    "sports": "Sportet",
+    "music": "Muzika",
+    "soft_skills": "Soft Skills",
+    "communication": "Komunikimi",
+    "patience": "Durimi",
+    "critical": "Të menduarit kritik",
+    "teamwork": "Puna ne ekip dhe bashkepunimi",
+    "download": "Shkarko CV",
+    "downloading": "Duke shkarkuar CV-në..."
+  },
+  "Work": {
+    "software": "Software Developer",
+    "bring": "Bring mock-ups to life using HTML, CSS, JavaScript",
+    "expand": "Expand features, refine code, and improve processes",
+    "freelance": "Freelance Software Developer",
+    "design": "Design frontend within object-oriented Javascript frameworks like Angular",
+    "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
+  },
+  "Months": {
+    "1": "Jan",
+    "2": "Feb",
+    "3": "Mar",
+    "4": "Apr",
+    "5": "May",
+    "6": "Jun",
+    "7": "Jul",
+    "8": "Aug",
+    "9": "Sep",
+    "10": "Oct",
+    "11": "Nov",
+    "12": "Dec"
+  },
+  "Contact": {
+    "Name": "Name",
+    "Email": "Email address",
+    "Message": "Message",
+    "Name_pl": "John Doe",
+    "Email_pl": "john.doe@gmail.com",
+    "Message_pl": "I have an amazing idea about a project regarding...",
+    "Name_err": "Please provide a name.",
+    "Email_err": "Please provide a valid email address.",
+    "Message_err": "Please provide a message.",
+    "Send_message": "Send message"
+  },
+  "Footer": {
+    "Message": "Have a project in mind? Let discuss it...",
+    "Mail": "Send me an email",
+    "Linkedin": "Add me on Linkedin",
+    "Github": "Find me on Github",
+    "Ig": "Follow me on Instagram",
+    "Fb": "Add me on Facebook"
+  },
+  "Utilities": {
+    "Scroll": "Scroll to top"
+  },
+  "Tipresento": "Tipresento",
+  "Tipresento-desc": "Invite friends, win leads, translate them to Amazon coupons",
+  "Swap": "Swap",
+  "Swap-desc": "Banking system for a client",
+  "Agency": "Numbers Agency",
+  "Agency-desc": "Apply as an agency to become partner with us"
+}

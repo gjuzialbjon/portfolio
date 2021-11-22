@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Themes } from '@enums/themes'
 import { ThemeService } from '@layout-services/theme.service'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,21 @@ export class HeaderComponent implements OnInit {
   navButton!: HTMLInputElement | null
   Themes = Themes
   theme!: Observable<Themes>
+  langCheckbox
+  lang: 'al' | 'en'
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private translate: TranslateService) {
+    const stLang = localStorage.getItem('lang') as 'al' | 'en'
+    if (stLang === 'al' || stLang === 'en') {
+      this.lang = stLang
+      this.langCheckbox = stLang === 'al'
+    } else {
+      this.lang = 'en'
+      this.langCheckbox = false
+    }
+
+    this.translate.use(this.lang)
+  }
 
   ngOnInit(): void {
     this.theme = this.themeService.getTheme()
@@ -27,7 +41,14 @@ export class HeaderComponent implements OnInit {
     this.navButton!.checked = false
   }
 
-  toggleTheme() {
-    this.themeService.toggleTheme()
+  // toggleTheme() {
+  //   this.themeService.toggleTheme()
+  // }
+
+  onLangChange() {
+    this.lang = this.langCheckbox ? 'al' : 'en'
+    localStorage.setItem('lang', this.lang)
+
+    this.translate.use(this.lang)
   }
 }

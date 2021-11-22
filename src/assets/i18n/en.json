@@ -1,0 +1,102 @@
+{
+  "Menu": {
+    "Home": "Home",
+    "CV": "CV",
+    "Projects": "Projects",
+    "Home-desc": "Homepage",
+    "CV-desc": "CV (Curriculum Vitae)",
+    "Projects-desc": "See some of my projects"
+  },
+  "Home": {
+    "sentence": "Hi, I'm Albjon, your next website Front-end developer :)",
+    "try": "Try editting the side colors of the boxes"
+  },
+  "Projects": {
+    "more": "More images..."
+  },
+  "CV": {
+    "personal": "personal",
+    "email": "E-mail address",
+    "tel": "Telephone number",
+    "address": "Address",
+    "linkedin": "LinkedIn",
+    "web": "Website",
+    "skills": "skills",
+    "languages": "languages",
+    "English": "English",
+    "Albanian": "Albanian",
+    "Italian": "Italian",
+    "Spanish": "Spanish",
+    "Turkish": "Turkish",
+    "working_knowledge": "Working knowledge",
+    "native": "Native",
+    "highly_proficient": "Highly proficient in speaking and in writing",
+    "frontend": "Frontend Developer",
+    "work_experience": "work experience",
+    "present": "Present",
+    "studies": "studies and certificates",
+    "bachelor": "Bachelor of Computer Engineering",
+    "interests": "Interests",
+    "memes": "Memes",
+    "sports": "Sports",
+    "music": "Music",
+    "soft_skills": "Soft Skills",
+    "communication": " Communication",
+    "patience": "Patience",
+    "critical": "Critical thinking",
+    "teamwork": "Teamwork and collaboration",
+    "download": "Download CV",
+    "downloading": "Downloading CV..."
+  },
+  "Work": {
+    "software": "Software Developer",
+    "bring": "Bring mock-ups to life using HTML, CSS, JavaScript",
+    "expand": "Expand features, refine code, and improve processes",
+    "freelance": "Freelance Software Developer",
+    "design": "Design frontend within object-oriented Javascript frameworks like Angular",
+    "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
+  },
+  "Months": {
+    "1": "Jan",
+    "2": "Feb",
+    "3": "Mar",
+    "4": "Apr",
+    "5": "May",
+    "6": "Jun",
+    "7": "Jul",
+    "8": "Aug",
+    "9": "Sep",
+    "10": "Oct",
+    "11": "Nov",
+    "12": "Dec"
+  },
+  "Contact": {
+    "Name": "Name",
+    "Email": "Email address",
+    "Message": "Message",
+    "Name_pl": "John Doe",
+    "Email_pl": "john.doe@gmail.com",
+    "Message_pl": "I have an amazing idea about a project regarding...",
+    "Name_err": "Please provide a name.",
+    "Email_err": "Please provide a valid email address.",
+    "Message_err": "Please provide a message.",
+    "Send_message": "Send message"
+  },
+  "Footer": {
+    "Message": "Have a project in mind? Let discuss it...",
+    "Mail": "Send me an email",
+    "Linkedin": "Add me on Linkedin",
+    "Github": "Find me on Github",
+    "Ig": "Follow me on Instagram",
+    "Fb": "Add me on Facebook"
+  },
+  "Utilities": {
+    "Scroll": "Scroll to top"
+  },
+  "Tipresento": "Tipresento",
+  "Tipresento-desc": "Invite friends, win leads, translate them to Amazon coupons",
+  "Swap": "Swap",
+  "Swap-desc": "Banking system for a client",
+  "Agency": "Numbers Agency",
+  "Agency-desc": "Apply as an agency to become partner with us"
+}

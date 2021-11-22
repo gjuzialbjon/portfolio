@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-home-wrapper',
@@ -6,16 +7,17 @@ import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from
 })
 export class HomeWrapperComponent implements OnInit {
   @ViewChild('firstQuestion') firstQuestion: any
-  intro = `Hi, I'm Albjon, your next website Front-end developer :)`
-  introArr = this.intro.split(' ')
-
+  intro = ''
+  introArr: string[] = []
   left = '#d53a33'
   front = '#e7ac20'
   top = '#1d9099'
 
   changes = 0
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
+  constructor(private el: ElementRef, private renderer: Renderer2, private translate: TranslateService) {
+    this.intro = this.translate.instant('Home.sentence')
+    this.introArr = this.intro.split(' ')
   }
 
   ngOnInit(): void {}

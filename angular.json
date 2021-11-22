@@ -47,9 +47,9 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.png",
-              ".htaccess",
-              ".well-known",
+              "src/albjon-memoji-favicon.png",
+              "src/.htaccess",
+              "src/.well-known",
               { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }
             ],
             "styles": [

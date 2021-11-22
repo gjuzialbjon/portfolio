@@ -1,42 +1,44 @@
 <form id="contact-form" class="contact-form p-3" [formGroup]="contactForm" (ngSubmit)="onSendMessage()">
   <div class="form-group">
-    <label for="name" class="text-muted">Name &ast;</label>
+    <label for="name" class="text-muted"> {{ 'Contact.Name' | translate }} &ast;</label>
     <input
       type="text"
       class="form-control"
       [class.is-invalid]="name.invalid && (name.dirty || name.touched)"
       formControlName="name"
       id="name"
-      placeholder="John Doe"
+      placeholder="{{ 'Contact.Name_pl' | translate }}"
     />
-    <div class="invalid-feedback">Please provide a name.</div>
+    <div class="invalid-feedback">{{ 'Contact.Name_err' | translate }}</div>
   </div>
   <div class="form-group">
-    <label for="email" class="text-muted">Email address &ast;</label>
+    <label for="email" class="text-muted">{{ 'Contact.Email' | translate }} &ast;</label>
     <input
       type="email"
       class="form-control"
       [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
       formControlName="email"
       id="email"
-      placeholder="john.doe@gmail.com"
+      placeholder="{{ 'Contact.Email_pl' | translate }}"
     />
-    <div class="invalid-feedback">Please provide a valid email address.</div>
+    <div class="invalid-feedback">{{ 'Contact.Email_err' | translate }}</div>
   </div>
   <div class="form-group is-invalid">
-    <label for="message" class="text-muted">Message &ast;</label>
+    <label for="message" class="text-muted">{{ 'Contact.Message' | translate }} &ast;</label>
     <textarea
       class="form-control"
       id="message"
       [class.is-invalid]="message.invalid && (message.dirty || message.touched)"
       formControlName="message"
       rows="4"
-      placeholder="I have an amazing idea about a project regarding..."
+      placeholder="{{ 'Contact.Message_pl' | translate }}"
     ></textarea>
-    <div class="invalid-feedback">Please provide a message.</div>
+    <div class="invalid-feedback">{{ 'Contact.Message_err' | translate }}</div>
   </div>
   <div class="text-center">
-    <button class="btn btn-info" [disabled]="sending">Send message <i class="dm fas fa-paper-plane"></i></button>
+    <button class="btn btn-info" [disabled]="sending">
+      {{ 'Contact.Send_message' | translate }} <i class="dm fas fa-paper-plane"></i>
+    </button>
   </div>
 </form>
 

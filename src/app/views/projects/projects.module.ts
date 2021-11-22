@@ -8,10 +8,11 @@ import { ProjectsContainerComponent } from './containers/projects-container/proj
 import { ProjectDetailsComponent } from './components/project-details/project-details.component'
 import { ProjectsService } from './services/projects.service'
 import { NgxViewerModule } from 'ngx-viewer'
+import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   declarations: [ProjectsWrapperComponent, ProjectsContainerComponent, ProjectDetailsComponent],
-  imports: [CommonModule, ProjectsRoutingModule, NgbCarouselModule, NgxViewerModule],
+  imports: [CommonModule, ProjectsRoutingModule, NgbCarouselModule, NgxViewerModule, TranslateModule.forChild()],
   providers: [ProjectsService],
 })
 export class ProjectsModule {}

@@ -1,14 +1,28 @@
-<div class="my-nav d-flex align-items-center justify-content-md-between" id="header">
+<div class="my-nav d-flex align-items-center justify-content-between" id="header">
   <input type="checkbox" id="my-nav-check" />
   <div class="my-nav-header" (click)="closeMenu()" routerLink="home">
-    <div class="my-nav-title">
-      <span>Albjon's Website</span>
+    <div class="mx-3">
+      <img src="assets/media/icons/albjon-memoji.png" width="45px" alt="Iphone memoji" />
     </div>
   </div>
   <!-- <div class="my-nav-theme-wrapper">
     <i *ngIf="(theme | async) === Themes.dark" title="Tooggle light theme" (click)="toggleTheme()" class="my-nav-theme fas fa-sun"></i>
     <i *ngIf="(theme | async) === Themes.light" title="Toggle dark theme" (click)="toggleTheme()" class="my-nav-theme fas fa-moon"></i>
   </div> -->
+  <div class="lang-toggler">
+    <div class="switch">
+      <input
+        id="language-toggle"
+        [(ngModel)]="langCheckbox"
+        (change)="onLangChange()"
+        class="check-toggle check-toggle-round-flat"
+        type="checkbox"
+      />
+      <label for="language-toggle"></label>
+      <span class="on"><img src="assets/media/flags/en.svg" alt="" width="20" /></span>
+      <span class="off"><img src="assets/media/flags/al.svg" alt="" width="20" /></span>
+    </div>
+  </div>
   <div class="my-nav-btn">
     <label for="my-nav-check">
       <span></span>
@@ -18,21 +32,23 @@
   </div>
 
   <div class="my-nav-links" id="my-nav-links">
-    <span class="menu-item" (click)="closeMenu()" routerLink="home" routerLinkActive="active" title="Homepage">
+    <span class="menu-item" (click)="closeMenu()" routerLink="home" routerLinkActive="active" title="{{ 'Menu.Home-desc' | translate }}">
       <i class="fas fa-home" style="width: 25px"></i>
-      Home
+      {{ 'Menu.Home' | translate }}
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active" title="CV (Curriculum Vitae)">
+    <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active" title="{{ 'Menu.CV-desc' | translate }}">
       <i class="fas fa-file-alt" style="width: 25px"></i>
-      CV
+      {{ 'Menu.CV' | translate }}
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="projects" routerLinkActive="active" title="See some of my projects">
+    <span
+      class="menu-item"
+      (click)="closeMenu()"
+      routerLink="projects"
+      routerLinkActive="active"
+      title="{{ 'Menu.Projects-desc' | translate }}"
+    >
       <i class="fas fa-tasks" style="width: 25px"></i>
-      Projects
+      {{ 'Menu.Projects' | translate }}
     </span>
-    <!-- <span class="menu-item" (click)="closeMenu()" routerLink="contact" routerLinkActive="active">
-      <i class="fas fa-paper-plane"></i>
-      Contact
-    </span> -->
   </div>
 </div>

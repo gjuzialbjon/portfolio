@@ -6,7 +6,6 @@ export class ProjectsService {
     { f: 'tip', t: 'login', title: 'Tipresento', desc: 'Invite friends, win leads, translate them to Amazon coupons' },
     { f: 'swp', t: 'login', title: 'Swap', desc: 'Banking system for a client' },
     { f: 'agency', t: 'home', title: 'Numbers Agency', desc: 'Apply as an agency to become partner with us' },
-    { f: 'agente', t: 'home', title: 'Numbers Agente', desc: 'Apply as an agent to become partner with us' },
   ]
 
   allProjects: any = {
@@ -14,7 +13,7 @@ export class ProjectsService {
       f: 'tip',
       t: 'login',
       title: 'Tipresento',
-      desc: 'Invite friends, win leads, translate them to Amazon coupons',
+      desc: 'Tipresento-desc',
       imgs: [
         'tipresento-design-implementation-1',
         'tipresento-design-implementation-2',
@@ -93,7 +92,7 @@ export class ProjectsService {
       f: 'swp',
       t: 'login',
       title: 'Swap',
-      desc: 'Banking system for a client',
+      desc: 'Swap-desc',
       imgs: ['act_as', 'btc_dashboard', 'btc', 'clients', 'forgot', 'login', 'new_store', 'new_user', 'settings'],
       extra_1: [
         'single_client',
@@ -138,17 +137,8 @@ export class ProjectsService {
       f: 'agency',
       t: 'home',
       ext: 'png',
-      title: 'Numbers Agency',
-      desc: 'Apply as an agency to become partner with us',
-      imgs: ['home', 'errors'],
-      techs: ['Angular', 'RxJs', 'Ngx-translate', 'Typescript', 'HTML', 'SCSS', 'Bootstrap'],
-    },
-    agente: {
-      f: 'agente',
-      t: 'home',
-      ext: 'png',
-      title: 'Numbers Agente',
-      desc: 'Apply as an agent to become partner with us',
+      title: 'Agency',
+      desc: 'Agency-desc',
       imgs: ['home', 'errors'],
       techs: ['Angular', 'RxJs', 'Ngx-translate', 'Typescript', 'HTML', 'SCSS', 'Bootstrap'],
     },
