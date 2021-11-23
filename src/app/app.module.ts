@@ -14,10 +14,11 @@ import { ContactComponent } from './layout/footer/contact/contact.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { environment } from '@env/environment'
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http)
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, environment.production ? './assets/i18n/' : './assets/i18n/', '.json')
 }
 
 @NgModule({
@@ -41,10 +42,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-      defaultLanguage: 'en'
+      defaultLanguage: 'en',
     }),
   ],
   providers: [],

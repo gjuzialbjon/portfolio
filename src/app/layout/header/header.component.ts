@@ -26,7 +26,9 @@ export class HeaderComponent implements OnInit {
       this.langCheckbox = false
     }
 
-    this.translate.use(this.lang)
+    this.translate.use(this.lang).subscribe(() => {
+      this.translate.onDefaultLangChange.next()
+    })
   }
 
   ngOnInit(): void {
@@ -49,6 +51,8 @@ export class HeaderComponent implements OnInit {
     this.lang = this.langCheckbox ? 'al' : 'en'
     localStorage.setItem('lang', this.lang)
 
-    this.translate.use(this.lang)
+    this.translate.use(this.lang).subscribe(() => {
+      this.translate.onDefaultLangChange.next()
+    })
   }
 }

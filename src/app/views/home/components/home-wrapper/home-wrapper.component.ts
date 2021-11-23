@@ -20,7 +20,12 @@ export class HomeWrapperComponent implements OnInit {
     this.introArr = this.intro.split(' ')
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.translate.onDefaultLangChange.subscribe((res) => {
+      this.intro = this.translate.instant('Home.sentence')
+      this.introArr = this.intro.split(' ')
+    })
+  }
 
   ngAfterViewInit() {
     this.resetCubeColors()
