@@ -8,9 +8,14 @@
     >
   </div>
 
-  <div class="all-project-images" id="all-project-images">
-    <div class="d-flex flex-wrap align-items-center justify-content-center" ngxViewer [viewerOptions]="viewerOptions">
-      <div class="project-detail-img-div m-2 cp" *ngFor="let img of project.imgs">
+  <div class="mb-4" id="all-project-images">
+    <div
+      *ngIf="imgs.length > 0"
+      class="d-flex flex-wrap align-items-center justify-content-center"
+      ngxViewer
+      [viewerOptions]="viewerOptions"
+    >
+      <div class="project-detail-img-div m-2 cp" *ngFor="let img of imgs">
         <img
           class="project-detail-img"
           loading="lazy"

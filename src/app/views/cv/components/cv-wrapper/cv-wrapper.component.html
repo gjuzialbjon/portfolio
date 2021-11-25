@@ -1,7 +1,7 @@
 <div class="cv">
   <div class="cv__left">
     <div class="cv__left__section personal">
-      <p class="cv__section__title"><i class="fas fa-address-card"></i> personal</p>
+      <p class="cv__section__title"><i class="fas fa-address-card"></i> {{ 'CV.personal' | translate }}</p>
       <ul>
         <li>{{ 'CV.email' | translate }}</li>
         <li><a href="mailto:albjon.gjuzi@gmail.com" target="_blank">gjuzialbjon@gmail.com</a></li>
@@ -16,7 +16,7 @@
       </ul>
     </div>
     <div class="cv__left__section skills">
-      <p class="cv__section__title"><i class="fas fa-laptop-code"></i> skills</p>
+      <p class="cv__section__title"><i class="fas fa-laptop-code"></i> {{ 'CV.skills' | translate }}</p>
       <div class="skill" *ngFor="let skill of skills" [title]="skill.name + ': ' + skill.rating + '%'">
         <a class="skill__name" [href]="skill.website" target="_blank">
           {{ skill.name }}

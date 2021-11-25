@@ -9,11 +9,12 @@ import { ProjectsService } from '../../services/projects.service'
 })
 export class ProjectDetailsComponent implements OnInit {
   id = ''
-  project: any = null
+  project: any = {}
   errorImg = 'https://via.placeholder.com/300x200'
   extra = 0
+  imgs = []
 
-  public viewerOptions: any = {
+  viewerOptions: any = {
     navbar: false,
     toolbar: {
       zoomIn: 4,
@@ -37,7 +38,8 @@ export class ProjectDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id
-    this.project = this.projectsService.allProjects[this.id]
+    Object.assign(this.project, this.projectsService.allProjects[this.id])
+    this.imgs = this.project.imgs
 
     if (this.project) {
       if (this.project[`extra_${this.extra + 1}`]) {
@@ -48,16 +50,8 @@ export class ProjectDetailsComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit() {
-    if (window.innerWidth > 1024) {
-      const allImgs = document.getElementById('all-project-images')
-      if (allImgs) {
-        allImgs.style.height = this.project.imgs.length > 3 ? '500px' : '220px'
-      }
-    }
-  }
-
   moreImages() {
+    this.imgs = []
     const extraImgs = this.project[`extra_${this.extra}`] as []
     this.project.imgs = [...this.project.imgs, ...extraImgs]
 
@@ -66,5 +60,9 @@ export class ProjectDetailsComponent implements OnInit {
     } else {
       this.extra = 0
     }
+
+    setTimeout(() => {
+      this.imgs = this.project.imgs
+    }, 10)
   }
 }

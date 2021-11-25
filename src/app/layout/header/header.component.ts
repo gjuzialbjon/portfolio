@@ -3,6 +3,7 @@ import { Observable } from 'rxjs'
 import { Themes } from '@enums/themes'
 import { ThemeService } from '@layout-services/theme.service'
 import { TranslateService } from '@ngx-translate/core'
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-header',
@@ -11,12 +12,12 @@ import { TranslateService } from '@ngx-translate/core'
 })
 export class HeaderComponent implements OnInit {
   navButton!: HTMLInputElement | null
-  Themes = Themes
-  theme!: Observable<Themes>
+  // Themes = Themes
+  // theme!: Observable<Themes>
   langCheckbox
   lang: 'al' | 'en'
 
-  constructor(private themeService: ThemeService, private translate: TranslateService) {
+  constructor(private themeService: ThemeService, private translate: TranslateService, private title: Title) {
     const stLang = localStorage.getItem('lang') as 'al' | 'en'
     if (stLang === 'al' || stLang === 'en') {
       this.lang = stLang
@@ -28,12 +29,12 @@ export class HeaderComponent implements OnInit {
 
     this.translate.use(this.lang).subscribe(() => {
       this.translate.onDefaultLangChange.next()
+      console.log('Langggg')
+      this.title.setTitle(this.translate.instant('title'))
     })
   }
 
-  ngOnInit(): void {
-    this.theme = this.themeService.getTheme()
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.navButton = document.getElementById('my-nav-check') as HTMLInputElement
@@ -43,16 +44,13 @@ export class HeaderComponent implements OnInit {
     this.navButton!.checked = false
   }
 
-  // toggleTheme() {
-  //   this.themeService.toggleTheme()
-  // }
-
   onLangChange() {
     this.lang = this.langCheckbox ? 'al' : 'en'
     localStorage.setItem('lang', this.lang)
 
     this.translate.use(this.lang).subscribe(() => {
       this.translate.onDefaultLangChange.next()
+      this.title.setTitle(this.translate.instant('title'))
     })
   }
 }

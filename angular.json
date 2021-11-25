@@ -57,14 +57,9 @@
               "node_modules/viewerjs/dist/viewer.css",
               {
                 "input": "src/assets/styles/themes/dark.scss",
-                "inject": false,
+                "inject": true,
                 "bundleName": "dark"
               },
-              {
-                "input": "src/assets/styles/themes/light.scss",
-                "inject": false,
-                "bundleName": "light"
-              }
             ],
             "scripts": [
               {

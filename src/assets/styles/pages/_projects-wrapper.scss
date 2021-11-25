@@ -10,11 +10,13 @@
 .project-details {
   min-width: 600px;
   margin: 1.5rem auto;
-}
 
-.all-project-images {
-  overflow: auto;
-  margin-bottom: 1rem;
+  .title-and-desc {
+    position: sticky;
+    top: 50px;
+    background: bs.$body-bg;
+    z-index: 2;
+  }
 }
 
 .project-detail-img-div {

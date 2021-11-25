@@ -42,4 +42,4 @@
   </div>
 </form>
 
-<div *ngIf="status" class="text-center text-{{ status.status }}" class="contact-form-status mt-2">{{ status.msg }}</div>
+<div *ngIf="status" class="text-center text-{{ status.status }}" class="contact-form-status mt-2">{{ status.status | translate }}</div>

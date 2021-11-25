@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core'
 @Injectable()
 export class ProjectsService {
   mainImages = [
-    { f: 'tip', t: 'login', title: 'Tipresento', desc: 'Invite friends, win leads, translate them to Amazon coupons' },
-    { f: 'swp', t: 'login', title: 'Swap', desc: 'Banking system for a client' },
-    { f: 'agency', t: 'home', title: 'Numbers Agency', desc: 'Apply as an agency to become partner with us' },
+    { f: 'tip', t: 'login', title: 'Tipresento', desc: 'Tipresento-desc' },
+    { f: 'swp', t: 'login', title: 'Swap', desc: 'Swap-desc' },
+    { f: 'agency', t: 'home', title: 'Numbers Agency', desc: 'Agency-desc' },
   ]
 
   allProjects: any = {

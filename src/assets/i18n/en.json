@@ -8,7 +8,7 @@
     "Projects-desc": "See some of my projects"
   },
   "Home": {
-    "sentence": "Hi, I'm Albjon, your next website Front-end developer :)",
+    "sentence": "Hi, Im Albjon, your next website Front-end developer :)",
     "try": "Try editting the side colors of the boxes"
   },
   "Projects": {
@@ -98,5 +98,10 @@
   "Swap": "Swap",
   "Swap-desc": "Banking system for a client",
   "Agency": "Numbers Agency",
-  "Agency-desc": "Apply as an agency to become partner with us"
+  "Agency-desc": "Apply as an agency to become partner with us",
+  "success": "Message sent successfully. Thank you :) ",
+  "error": "Something went wrong, please try again. :( ",
+  "info": "Sending message via Albjon Airlines... ",
+  "warning": "Please provide all fields as requested :/ ",
+  "title": "Albjon's portofolio"
 }
