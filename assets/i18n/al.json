@@ -20,7 +20,7 @@
     "tel": "Numri telefonit",
     "address": "Adresa",
     "linkedin": "LinkedIn",
-    "web": "Websajti",
+    "web": "Uebsajti",
     "skills": "aftesite",
     "languages": "gjuhet",
     "English": "Anglisht",
@@ -40,7 +40,7 @@
     "memes": "Memet",
     "sports": "Sportet",
     "music": "Muzika",
-    "soft_skills": "Soft Skills",
+    "soft_skills": "Aftesi te buta",
     "communication": "Komunikimi",
     "patience": "Durimi",
     "critical": "Të menduarit kritik",
@@ -49,54 +49,59 @@
     "downloading": "Duke shkarkuar CV-në..."
   },
   "Work": {
-    "software": "Software Developer",
-    "bring": "Bring mock-ups to life using HTML, CSS, JavaScript",
-    "expand": "Expand features, refine code, and improve processes",
-    "freelance": "Freelance Software Developer",
-    "design": "Design frontend within object-oriented Javascript frameworks like Angular",
-    "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
+    "software": "Zhvillues softueri",
+    "bring": "Implemetimi i modeleve duke perdorur HTML, CSS, JavaScript",
+    "expand": "Shtimi i featurave, persosja e kodit dhe permiresimi i proceseve",
+    "freelance": "Zhvillues softueri i pavarur",
+    "design": "Dizenjimi i frontendit duke perdorur frameworke te Javascriptit si Angular",
+    "work": "Pune me programuesit e tjere dhe me klientet per te permbushur kerkesat, synimet dhe funksionalitet e deshiruara"
   },
   "Months": {
     "1": "Jan",
-    "2": "Feb",
+    "2": "Shk",
     "3": "Mar",
-    "4": "Apr",
-    "5": "May",
-    "6": "Jun",
-    "7": "Jul",
-    "8": "Aug",
-    "9": "Sep",
-    "10": "Oct",
-    "11": "Nov",
-    "12": "Dec"
+    "4": "Pri",
+    "5": "Maj",
+    "6": "Qer",
+    "7": "Kor",
+    "8": "Gus",
+    "9": "Sht",
+    "10": "Tet",
+    "11": "Nen",
+    "12": "Dhj"
   },
   "Contact": {
-    "Name": "Name",
+    "Name": "Emri",
     "Email": "Email address",
-    "Message": "Message",
-    "Name_pl": "John Doe",
-    "Email_pl": "john.doe@gmail.com",
-    "Message_pl": "I have an amazing idea about a project regarding...",
-    "Name_err": "Please provide a name.",
-    "Email_err": "Please provide a valid email address.",
-    "Message_err": "Please provide a message.",
-    "Send_message": "Send message"
+    "Message": "Mesazhi",
+    "Name_pl": "Qazim Mulleti",
+    "Email_pl": "qazim.mulleti@gmail.com",
+    "Message_pl": "Kam nje ide interesante per nje projekt i cili konsiston ne...",
+    "Name_err": "Ju lutem vendosni nje emer.",
+    "Email_err": "Ju lutem vendosni nje adrese e-maili te sakte.",
+    "Message_err": "Ju lutem vendosni nje mesazh.",
+    "Send_message": "Dergo mesazhin"
   },
   "Footer": {
-    "Message": "Have a project in mind? Let discuss it...",
-    "Mail": "Send me an email",
-    "Linkedin": "Add me on Linkedin",
-    "Github": "Find me on Github",
-    "Ig": "Follow me on Instagram",
-    "Fb": "Add me on Facebook"
+    "Message": "Keni nje projekt ne mendje? Le ta diskutojme...",
+    "Mail": "Me dergo nje email",
+    "Linkedin": "Me shto ne Linkedin",
+    "Github": "Me gjej ne Github",
+    "Ig": "Me bej follow ne Instagram",
+    "Fb": "Me shto ne facebook"
   },
   "Utilities": {
-    "Scroll": "Scroll to top"
+    "Scroll": "Shko siper"
   },
   "Tipresento": "Tipresento",
-  "Tipresento-desc": "Invite friends, win leads, translate them to Amazon coupons",
+  "Tipresento-desc": "Fto shoke, fito monedha, konvertoji ne kupona Amazoni",
   "Swap": "Swap",
-  "Swap-desc": "Banking system for a client",
+  "Swap-desc": "Sistem bankar per nje klient",
   "Agency": "Numbers Agency",
-  "Agency-desc": "Apply as an agency to become partner with us"
+  "Agency-desc": "Apliko si agjensi per tu bashkangjitur me ne",
+  "success": "Mesazhi u dergua me sukses. Faleminderit :) ",
+  "error": "Dicka shkoi gabim, ju lutem provoni perseri. :( ",
+  "info": "Duke derguar mesazhin me Albjon Airlines... ",
+  "warning": "Ju lutem plotesoni te gjitha fushat :/ ",
+  "title": "Portofoli Albjonit"
 }
