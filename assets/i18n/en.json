@@ -50,10 +50,16 @@
   },
   "Work": {
     "software": "Software Developer",
+    "libraries": "Split the survey application into multiple Angular libraries",
+    "questions": "Add new types of questions to the survey",
     "bring": "Bring mock-ups to life using HTML, CSS, JavaScript",
     "expand": "Expand features, refine code, and improve processes",
     "freelance": "Freelance Software Developer",
-    "design": "Design frontend within object-oriented Javascript frameworks like Angular",
+    "restructure": "Restructure project according to new sitemap",
+    "filters": "Design and implement global filters for the backoffice project",
+    "graphql": "Use GraphQL Apollo to communicate with the server from a single endpoint",
+    "develop": "Develop highly interactive web applications utilizing HTML 5, SCSS, JavaScript, RxJs, NgRx, Angular and PrimeNG using Restful API’s",
+    "design": "Design and implement web applications using different component libraries like Angular Material, NgBootstrap and Nebular",
     "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
   },
   "Months": {
