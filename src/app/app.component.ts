@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import { Title } from '@angular/platform-browser'
-import { DesignService } from '@layout-services/design.service'
 import { TranslateService } from '@ngx-translate/core'
 
 @Component({

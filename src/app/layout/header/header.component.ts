@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
 
     this.translate.use(this.lang).subscribe(() => {
       this.translate.onDefaultLangChange.next()
-      console.log('Langggg')
       this.title.setTitle(this.translate.instant('title'))
     })
   }

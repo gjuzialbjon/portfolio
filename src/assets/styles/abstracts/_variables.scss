@@ -3,15 +3,9 @@
   --box__cube__left__clr: #d53a33;
   --box__cube__top__clr: #1d9099;
 
-  --lang__toggler: #3033d6;
+  // --lang__toggler: #3033d6;
   --lang__toggler__clr: rgb(90, 234, 245);
 }
 
 // Header
 $headerHt: 50px;
-
-$cvBoxShadow: 1px 1px 0px var(--cv__box__shadow__clr), 2px 2px 0px var(--cv__box__shadow__clr), 3px 3px 0px var(--cv__box__shadow__clr),
-  4px 4px 0px var(--cv__box__shadow__clr), 5px 5px 0px var(--cv__box__shadow__clr), 6px 6px 0px var(--cv__box__shadow__clr),
-  7px 7px 0px var(--cv__box__shadow__clr), 8px 8px 0px var(--cv__box__shadow__clr), 9px 9px 0px var(--cv__box__shadow__clr),
-  10px 10px 0px var(--cv__box__shadow__clr), 11px 11px 0px var(--cv__box__shadow__clr), 12px 12px 0px var(--cv__box__shadow__clr),
-  13px 13px 0px var(--cv__box__shadow__clr), 14px 14px 0px var(--cv__box__shadow__clr), 15px 15px 0px var(--cv__box__shadow__clr);
