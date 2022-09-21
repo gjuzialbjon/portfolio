@@ -35,7 +35,7 @@
     "work_experience": "work experience",
     "present": "Present",
     "studies": "studies and certificates",
-    "bachelor": "Bachelor of Computer Engineering",
+    "bachelor": "BSc of Computer Engineering",
     "interests": "Interests",
     "memes": "Memes",
     "sports": "Sports",
@@ -58,7 +58,7 @@
     "restructure": "Restructure project according to new sitemap",
     "filters": "Design and implement global filters for the backoffice project",
     "graphql": "Use GraphQL Apollo to communicate with the server from a single endpoint",
-    "develop": "Develop highly interactive web applications utilizing HTML 5, SCSS, JavaScript, RxJs, NgRx, Angular and PrimeNG using Restful API’s",
+    "develop": "Develop highly interactive web applications utilizing HTML 5, SCSS, JavaScript, RxJs, NgRx, Angular and PrimeNG",
     "design": "Design and implement web applications using different component libraries like Angular Material, NgBootstrap and Nebular",
     "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
   },
