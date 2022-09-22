@@ -38,7 +38,6 @@
     "@angular/compiler-cli": "~13.0.0",
     "@types/file-saver": "^2.0.3",
     "@types/jasmine": "~3.8.0",
-    "@types/jspdf": "^2.0.0",
     "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^1.0.0-rc.2",
     "jasmine-core": "~3.8.0",
