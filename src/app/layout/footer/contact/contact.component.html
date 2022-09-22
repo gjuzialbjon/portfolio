@@ -1,6 +1,6 @@
 <form id="contact-form" class="contact-form p-3" [formGroup]="contactForm" (ngSubmit)="onSendMessage()">
-  <div class="form-group">
-    <label for="name" class="text-muted"> {{ 'Contact.Name' | translate }} &ast;</label>
+  <div class="mb-3">
+    <label for="name" class="text-muted form-label"> {{ 'Contact.Name' | translate }} &ast;</label>
     <input
       type="text"
       class="form-control"
@@ -11,8 +11,8 @@
     />
     <div class="invalid-feedback">{{ 'Contact.Name_err' | translate }}</div>
   </div>
-  <div class="form-group">
-    <label for="email" class="text-muted">{{ 'Contact.Email' | translate }} &ast;</label>
+  <div class="mb-3">
+    <label for="email" class="text-muted form-label">{{ 'Contact.Email' | translate }} &ast;</label>
     <input
       type="email"
       class="form-control"
@@ -23,8 +23,8 @@
     />
     <div class="invalid-feedback">{{ 'Contact.Email_err' | translate }}</div>
   </div>
-  <div class="form-group is-invalid">
-    <label for="message" class="text-muted">{{ 'Contact.Message' | translate }} &ast;</label>
+  <div class="mb-3 is-invalid">
+    <label for="message" class="text-muted form-label">{{ 'Contact.Message' | translate }} &ast;</label>
     <textarea
       class="form-control"
       id="message"

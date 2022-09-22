@@ -28,8 +28,7 @@
             <div
               class="progress-bar"
               role="progressbar"
-              style="width: {{ skill.rating }}%"
-              aria-valuenow="25"
+              [style.width]="skill.rating + '%'"
               aria-valuemin="0"
               aria-valuemax="100"
             ></div>

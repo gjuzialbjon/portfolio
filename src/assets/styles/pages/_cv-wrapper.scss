@@ -195,13 +195,13 @@
   padding-left: 1.2rem;
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .cv {
     aspect-ratio: $cvRatio;
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .download-cv {
     display: none !important;
   }

@@ -5,7 +5,7 @@
   height: $headerHt;
   background-color: var(--header__bg);
   position: fixed;
-  top: 0;
+  top: -1px;
   left: 0;
   right: 0;
   z-index: 1099;

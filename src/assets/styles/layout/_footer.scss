@@ -44,7 +44,7 @@
 
 .contact-form {
   position: relative;
-  min-width: 400px;
+  width: 440px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0);
   transition: all 0.2s ease-in;
 
@@ -159,10 +159,9 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .contact-form {
-    min-width: calc(100vw - 2rem);
-    width: 100%;
+    width: calc(100vw - 2rem);
   }
 
   .footer {
