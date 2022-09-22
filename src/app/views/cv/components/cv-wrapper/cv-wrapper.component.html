@@ -23,7 +23,8 @@
           {{ skill.name }}
         </a>
         <div class="skill__rating">
-          <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress>
+          <progress-bar progress="{{ skill.rating }}"> </progress-bar>
+          <!-- <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress> -->
         </div>
       </div>
     </div>
@@ -143,7 +144,7 @@
 </div>
 
 <div class="text-center my-3">
-  <button class="btn btn-primary download-cv" [disabled]="downloading" (click)="downloadCV()">
-    {{ downloading ? 'CV.downloading' : ('CV.download' | translate) }} <i class="fas fa-download"></i>
+  <button class="btn btn-dark download-cv" [disabled]="downloading" (click)="downloadCV()">
+    {{ (downloading ? 'CV.downloading' : 'CV.download') | translate }} <i class="fas fa-download"></i>
   </button>
 </div>

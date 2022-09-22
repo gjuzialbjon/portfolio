@@ -25,17 +25,13 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'CSS3',
-      rating: 75,
+      rating: 85,
       website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
-    {
-      name: 'Debugging',
-      rating: 80,
-      website: 'https://www.techopedia.com/definition/16373/debugging',
-    },
+
     {
       name: 'Typescript',
-      rating: 85,
+      rating: 88,
       website: 'https://www.typescriptlang.org/',
     },
     {
@@ -45,7 +41,7 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'RxJs',
-      rating: 65,
+      rating: 70,
       website: 'https://rxjs.dev/',
     },
     {
@@ -64,14 +60,14 @@ export class CvWrapperComponent implements OnInit {
       website: 'https://www.npmjs.com/',
     },
     {
-      name: 'Googling',
-      rating: 90,
-      website: 'https://www.google.com/',
-    },
-    {
       name: 'Git',
       rating: 85,
       website: 'https://git-scm.com/',
+    },
+    {
+      name: 'Debugging',
+      rating: 90,
+      website: 'https://www.techopedia.com/definition/16373/debugging',
     },
     {
       name: 'Scrum',
@@ -95,7 +91,7 @@ export class CvWrapperComponent implements OnInit {
   ngOnInit(): void {}
 
   downloadCV() {
-    // this.downloading = true
+    this.downloading = true
 
     html2canvas(this.cv.nativeElement, { scale: 2 }).then((canvas) => {
       var imgWidth = 212
@@ -104,6 +100,7 @@ export class CvWrapperComponent implements OnInit {
       let pdf = new jsPDF('p', 'mm', 'a4')
       pdf.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight)
       pdf.save('newPDF.pdf')
+      this.downloading = false
     })
   }
 }

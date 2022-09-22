@@ -5,6 +5,10 @@
 .download-cv {
   min-width: 300px;
   margin-bottom: 1rem;
+
+  &:disabled {
+    cursor: progress;
+  }
 }
 
 .cv {
@@ -62,14 +66,14 @@
 }
 
 .skill {
-  height: 24px;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .skill__rating {
-  width: 80px;
+  width: 90px;
 }
 
 .cv__right {
@@ -204,9 +208,9 @@
   }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .download-cv {
-    min-width: 100%;
+    display: none !important;
   }
 
   .cv {

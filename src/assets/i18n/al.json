@@ -35,7 +35,7 @@
     "work_experience": "experienca pune",
     "present": "Present",
     "studies": "studime dhe certifikata",
-    "bachelor": "Bachelor ne Inxhinieri Kompjuterike",
+    "bachelor": "BSc ne Inxhinieri Kompjuterike",
     "interests": "Hobit",
     "memes": "Memet",
     "sports": "Sportet",
@@ -54,7 +54,13 @@
     "expand": "Shtimi i featurave, përsosja e kodit dhe përmirësimi i proceseve",
     "freelance": "Zhvillues softueri i pavarur",
     "design": "Dizenjimi i frontendit duke përdorur frameworke te Javascriptit si Angular",
-    "work": "Punë me programuesit e tjerë dhe me klientët për të përmbushur kërkesat, synimet dhe funksionalitet e dëshiruara"
+    "work": "Punë me programuesit e tjerë dhe me klientët për të përmbushur kërkesat, synimet dhe funksionalitet e dëshiruara",
+    "libraries": "Ndaj projektin e sondazhit ne disa librari Angulari",
+    "questions": "Shto pyetje te reja te projekti i sondazhit",
+    "restructure": "Ristrukturo projektin sipas sitemapti te ri",
+    "filters": "Dizenjo dhe implemento filtra globale per projektin e backoffice",
+    "graphql": "Perdor Apollo GraphQL per te komunikuar me serverin",
+    "develop": "Implemento aplikacione web-i interaktive duke perdorur HTML 5, SCSS, JavaScript, RxJs, NgRx, Angular and PrimeNG"
   },
   "Months": {
     "1": "Jan",
