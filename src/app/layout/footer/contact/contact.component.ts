@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from '@env/environment'
 import { NavigationEnd, Router } from '@angular/router'
@@ -10,14 +10,14 @@ import { NavigationEnd, Router } from '@angular/router'
   styles: [],
 })
 export class ContactComponent implements OnInit {
-  contactForm: FormGroup
+  contactForm: UntypedFormGroup
   sending = false
 
   statuses = [{ status: 'success' }, { status: 'error' }, { status: 'info' }, { status: 'warning' }]
 
   status: any = null
 
-  constructor(private _fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(private _fb: UntypedFormBuilder, private http: HttpClient, private router: Router) {
     this.contactForm = this._fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
