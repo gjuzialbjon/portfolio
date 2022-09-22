@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./views/cv/cv.module').then((m) => m.CvModule),
   },
   {
-    path: 'projects',
-    loadChildren: () => import('./views//projects/projects.module').then((m) => m.ProjectsModule),
-  },
-  {
     path: '**',
     redirectTo: 'home',
   }

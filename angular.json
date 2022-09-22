@@ -51,18 +51,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/albjon-memoji-favicon.png",
-              "src/.htaccess",
-              "src/.well-known",
               { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/viewerjs/dist/viewer.css",
               {
                 "input": "src/assets/styles/themes/dark.scss",
                 "inject": true,
                 "bundleName": "dark"
-              },
+              }
             ],
             "scripts": [
               {
@@ -77,7 +74,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "700kb",
                   "maximumError": "2mb"
                 },
                 {
