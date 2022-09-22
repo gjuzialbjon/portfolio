@@ -55,7 +55,6 @@
 
   a {
     color: #ffffff;
-    // text-decoration: underline;
   }
 }
 
@@ -66,7 +65,7 @@
 }
 
 .skill {
-  height: 2rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,7 +90,7 @@
     margin-top: 0.7rem;
   }
 
-  &:nth-child(5) {
+  &:last-child {
     display: flex;
     justify-content: space-between;
 
@@ -127,7 +126,6 @@
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 0.4rem;
-  // text-decoration: underline;
   color: #ffffff;
 
   img {
@@ -148,17 +146,12 @@
       font-weight: 600;
       color: #fff;
     }
-
-    .dep {
-      // text-decoration: underline;
-    }
   }
 
   .school {
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 0.4rem;
-    // text-decoration: underline;
     color: #fff;
 
     img {
