@@ -5,7 +5,8 @@
     "Projects": "Projects",
     "Home-desc": "Homepage",
     "CV-desc": "CV (Curriculum Vitae)",
-    "Projects-desc": "See some of my projects"
+    "Projects-desc": "See some of my projects",
+    "Skills": "Skills"
   },
   "Home": {
     "sentence": "Hi, Im Albjon, your next Front-end developer :)",
@@ -34,8 +35,10 @@
     "frontend": "Frontend Developer",
     "work_experience": "work experience",
     "present": "Present",
-    "studies": "studies and certificates",
+    "studies": "studies",
     "bachelor": "BSc of Computer Engineering",
+    "certificates": "Certificates",
+    "upwork_cert": "Upwork Skill Certification - Javascript Front-End Development",
     "interests": "Interests",
     "memes": "Memes",
     "sports": "Sports",

@@ -5,7 +5,8 @@
     "Projects": "Projektet",
     "Home-desc": "Faqja kryesore",
     "CV-desc": "CV (Curriculum Vitae)",
-    "Projects-desc": "Shiko disa nga projektet e mia"
+    "Projects-desc": "Shiko disa nga projektet e mia",
+    "Skills": "Aftesite"
   },
   "Home": {
     "sentence": "Çkemi, unë jam Albjoni, Front-endi juaj i ardhshëm :)",
@@ -34,8 +35,10 @@
     "frontend": "Zhvillues Frontendi",
     "work_experience": "experienca pune",
     "present": "Present",
-    "studies": "studime dhe certifikata",
+    "studies": "studime",
     "bachelor": "BSc ne Inxhinieri Kompjuterike",
+    "certificates": "Certifikata",
+    "upwork_cert": "Upwork Skill Certification - Javascript Front-End Development",
     "interests": "Hobit",
     "memes": "Memet",
     "sports": "Sportet",

@@ -75,6 +75,14 @@
   width: 90px;
 }
 
+.certificate {
+  color: #fff;
+}
+
+.cert-date {
+  font-weight: 600;
+}
+
 .cv__right {
   width: 100%;
   padding: $cvRightPadding;
@@ -156,6 +164,10 @@
 
     img {
       margin-right: 0.4rem;
+    }
+
+    &:hover {
+      color: var(--bs-link-hover-color);
     }
   }
 }

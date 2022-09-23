@@ -23,15 +23,8 @@
           {{ skill.name }}
         </a>
         <div class="skill__rating">
-          <!-- <progress max="100" [value]="skill.rating">{{ skill.rating }}</progress> -->
           <div class="progress" style="height: 8px">
-            <div
-              class="progress-bar"
-              role="progressbar"
-              [style.width]="skill.rating + '%'"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
+            <div class="progress-bar" role="progressbar" [style.width]="skill.rating + '%'" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
       </div>
@@ -85,18 +78,6 @@
           <li>{{ 'Work.filters' | translate }}</li>
         </ul>
       </div>
-      <!-- <div class="work">
-        <div class="role-date">
-          <div class="role">{{ 'Work.software' | translate }}</div>
-          <div class="date">{{ 'Months.9' | translate }} 2020 - {{ 'CV.present' | translate }}</div>
-        </div>
-        <a class="company" href="https://www.upwork.com/freelancers/~01721cb9ae7b162d19" target="_blank">
-          <img src="assets/media/companies/upwork.png" width="30px" alt="" />Upwork, Durres
-        </a>
-        <ul class="duties text-muted">
-          <li>{{ 'Work.freelance' | translate }}</li>
-        </ul>
-      </div> -->
       <div class="work">
         <div class="role-date">
           <div class="role">{{ 'CV.frontend' | translate }}</div>
@@ -122,11 +103,18 @@
         <a class="school" href="https://w3.bilkent.edu.tr/bilkent/" target="_blank">
           <img src="assets/media/companies/bilkent.png" width="25px" alt="" />Bilkent University, Ankara, Turkey
         </a>
-        <p class="courses mt-2 text-muted">
-          Algorithms and programming, Application Lifecycle Management, Artificial Intelligence, Automata Theory and Formal Languages,
-          Computer organization Database Systems, Digital design, Fundamental Structures of Computer Science, Operating Systems, Software
-          Engineering Project Management, Software Verification and Validation
-        </p>
+      </div>
+    </div>
+    <div class="cv__right__section studies">
+      <p class="cv__section__title"><i class="fas fa-graduation-cap"></i> {{ 'CV.certificates' | translate }}</p>
+      <div class="d-flex justify-content-between">
+        <a
+          class="certificate"
+          href="https://support.upwork.com/hc/en-us/articles/360052581373-Upwork-Skill-Certifications"
+          target="_blank"
+          >{{ 'CV.upwork_cert' | translate }}</a
+        >
+        <div class="cert-date">{{ 'Months.11' | translate }} 2021</div>
       </div>
     </div>
     <div class="cv__right__section">
