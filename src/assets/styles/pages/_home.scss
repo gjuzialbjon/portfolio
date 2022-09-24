@@ -11,6 +11,10 @@
     animation-duration: 0.85s;
     transition: color 0.2s ease-in-out;
     cursor: crosshair;
+
+    &:hover {
+      color: var(--intro__letter__hover__clr);
+    }
   }
 }
 

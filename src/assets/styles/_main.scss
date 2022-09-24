@@ -10,3 +10,9 @@
 
 // Now we can use bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Override body bg and color here
+body {
+  background-color: var(--body__bg);
+  color: var(--body__clr);
+}

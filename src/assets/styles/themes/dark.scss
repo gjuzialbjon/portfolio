@@ -1,6 +1,12 @@
 :root {
-  --progress__bar__bg: #323232;
-  --progress__bar__clr: #ffffff;
+  --body__bg: #0d1529;
+  --body__clr: #f9f7f4;
+  --box__cube__front__clr: #e7ac20;
+  --box__cube__left__clr: #d53a33;
+  --box__cube__top__clr: #1d9099;
+
+  --lang__toggler: rgb(35, 36, 42);
+  --lang__toggler__clr: rgb(255, 255, 255);
 
   --scroll__top__clr: #ffffff;
 
@@ -9,28 +15,24 @@
 
   --intro__letter__hover__clr: rgb(255, 0, 0);
 
-  --cv__box__shadow__clr: #999999;
-
   --cv_left__bg: rgb(0, 0, 0);
-  --cv_left__bg-a: rgba(0, 0, 0, 0.816);
+  --cv_left__bg-a: rgba(0, 0, 0, 0.824);
 
   --cv_right__bg: rgb(20, 22, 23);
   --cv_right__bg-a: rgba(20, 22, 23, 0.824);
 
   --cv_left__section__border__clr: rgb(255, 255, 255);
-  --cv_left__section__border__clr-a: rgba(255, 255, 255, 0.557);
-
   --cv_right__section__border__clr: rgb(255, 255, 255);
-  --cv_right__section__border__clr-a: rgba(255, 255, 255, 0.557);
 
   --header__bg: #151a30;
+  --header__shadow: 0px 1px 7px rgb(42, 41, 41);
   --header__title__clr: #ffffff;
   --header__theme__btn__clr: #ff9900;
   --header__theme__btn__bg: #ffffff;
   --header__menu__clr: #efefef;
   --header__menu__item__hover__clr: rgb(91, 179, 255);
   --header__menu__item__hover__bg: rgb(238, 234, 234);
-  --header__menu__item__hover__bg-a: rgba(238, 234, 234, 0.796);
+  --header__nav_links_bg: #222b45;
 
   --header__mobile__toggle__clr: #eeeeee;
 
@@ -39,4 +41,14 @@
   --footer__btn__shadow__clr: rgba(2, 115, 243, 0.651);
   --footer__btn__hover__shadow__clr: rgba(2, 115, 243, 0.651);
   --contact__form__bg: blue;
+
+  --text_muted: #abbee0;
+
+  --input_bg: #192038;
+  --input_focus_bg: #2b2f3d;
+  --input_clr: #fff;
+  --input_placeholder_clr: gray;
+  --input_plaintext_clr: green;
+
+  --copyright__clr: rgb(239, 229, 229);
 }

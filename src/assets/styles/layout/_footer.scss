@@ -13,8 +13,6 @@
     position: absolute;
     bottom: 1rem;
   }
-
-  border-bottom: 4px solid white;
 }
 
 .contact-form.message-not-sending {
@@ -30,14 +28,12 @@
     position: absolute;
     bottom: 1rem;
   }
-
-  // border-bottom: 4px solid white;
 }
 
 .contact-form {
   position: relative;
   width: 440px;
-  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.494);
   transition: all 0.2s ease-in;
 
   label {
@@ -144,6 +140,7 @@
 
   .copyright {
     margin-top: 1rem;
+    color: var(--copyright__clr);
 
     a {
       color: var(--copyright__clr);

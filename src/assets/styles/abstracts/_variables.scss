@@ -1,11 +1,13 @@
-:root {
-  --box__cube__front__clr: #e7ac20;
-  --box__cube__left__clr: #d53a33;
-  --box__cube__top__clr: #1d9099;
-
-  // --lang__toggler: #3033d6;
-  --lang__toggler__clr: rgb(90, 234, 245);
-}
-
-// Header
 $headerHt: 50px;
+
+// CV
+$cvWrapperMaxWd: 950px;
+$cvRatio: 10000/14142;
+$cvLeftWd: 360px;
+$cvRightMaxWd: $cvWrapperMaxWd - $cvLeftWd;
+$cvLeftPadding: 1rem 2rem;
+$cvRightPadding: 4rem 3rem;
+
+// CV - Mobile
+$cvLeftMobilePadding: 1rem;
+$cvRightMobilePadding: 2rem 1rem;

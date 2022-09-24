@@ -39,17 +39,11 @@ export class HomeWrapperComponent implements OnInit {
   animateLetter(index: number) {
     const el = document.getElementById(`letter-${index}`)
     el?.classList.add('rubberBand')
-    if (el) {
-      el.style.color = 'var(--box__cube__left__clr)'
-    }
   }
 
   removeAnimateLetter(index: number) {
     const el = document.getElementById(`letter-${index}`)
     el?.classList.remove('rubberBand')
-    if (el) {
-      el.style.color = '#fff'
-    }
   }
 
   resetCubeColors() {

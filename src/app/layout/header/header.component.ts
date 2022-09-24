@@ -12,12 +12,13 @@ import { Title } from '@angular/platform-browser'
 })
 export class HeaderComponent implements OnInit {
   navButton!: HTMLInputElement | null
-  // Themes = Themes
-  // theme!: Observable<Themes>
+  Themes = Themes
+  theme!: Observable<Themes>
   langCheckbox
   lang: 'al' | 'en'
 
   constructor(private themeService: ThemeService, private translate: TranslateService, private title: Title) {
+    this.theme = this.themeService.getTheme()
     const stLang = localStorage.getItem('lang') as 'al' | 'en'
     if (stLang === 'al' || stLang === 'en') {
       this.lang = stLang
@@ -51,5 +52,9 @@ export class HeaderComponent implements OnInit {
       this.translate.onDefaultLangChange.next()
       this.title.setTitle(this.translate.instant('title'))
     })
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme()
   }
 }

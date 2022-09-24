@@ -12,7 +12,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #222b45;
+  background: var(--scrollbar_border__clr);
 }
 
 *::-webkit-scrollbar-thumb {

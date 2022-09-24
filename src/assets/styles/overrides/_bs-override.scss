@@ -3,30 +3,20 @@ $body-bg: #0d1529;
 $body-color: #f9f7f4;
 
 $blue: #5bb3ff;
+$link-color: #{$body-color};
 $link-hover-color: #5bb3ff;
 $link-decoration: none;
 
-$text-muted: #abbee0;
-
-$modal-content-bg: #151a30;
-$modal-content-color: #ffffff;
-$modal-content-border-width: 0;
-
-$close-color: #ffffff;
-
-// Carousel
-$carousel-control-color: #007bff;
-$carousel-indicator-active-bg: #007bff;
-$carousel-caption-color: #00bfff;
+$text-muted: var(--text_muted);
 
 // Input
 $label-margin-bottom: 0.4rem;
 
-$input-bg: #192038;
-$input-border-color: #192038;
+$input-bg: var(--input_bg);
+$input-border-color: var(--input_bg);
 $input-border-width: 0;
-$input-focus-bg: #2b2f3d;
-$input-color: #fff;
+$input-focus-bg: var(--input_focus_bg);
+$input-color: var(--input_clr);
 
-$input-placeholder-color: gray;
-$input-plaintext-color: green;
+$input-placeholder-color: var(--input_placeholder_clr);
+$input-plaintext-color: var(--input_plaintext_clr);

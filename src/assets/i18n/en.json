@@ -6,7 +6,8 @@
     "Home-desc": "Homepage",
     "CV-desc": "CV (Curriculum Vitae)",
     "Projects-desc": "See some of my projects",
-    "Skills": "Skills"
+    "Skills": "Skills",
+    "About": "About"
   },
   "Home": {
     "sentence": "Hi, Im Albjon, your next Front-end developer :)",

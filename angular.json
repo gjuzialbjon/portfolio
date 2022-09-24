@@ -57,8 +57,13 @@
               "src/styles.scss",
               {
                 "input": "src/assets/styles/themes/dark.scss",
-                "inject": true,
+                "inject": false,
                 "bundleName": "dark"
+              },
+              {
+                "input": "src/assets/styles/themes/light.scss",
+                "inject": false,
+                "bundleName": "light"
               }
             ],
             "scripts": [

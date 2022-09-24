@@ -12,8 +12,6 @@
   8% {
     bottom: 0;
     left: 50%;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
     -webkit-transform: rotate3d(1, 3, 1, 182deg);
     transform: rotate3d(1, 3, 1, 182deg);
     -webkit-animation-timing-function: ease-in;
@@ -22,30 +20,22 @@
   20% {
     left: 0;
     bottom: 0;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
     -webkit-transform: rotate3d(1, 1, 1, 45deg);
     transform: rotate3d(1, 1, 1, 45deg);
   }
   35% {
     left: 42.5%;
     bottom: 0.5rem;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
   }
   40% {
     font-size: 2rem;
     left: 53%;
     bottom: 1rem;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
   }
   100% {
     font-size: 5rem;
     bottom: 100vh;
     left: 100%;
-    -webkit-filter: drop-shadow(30px 10px 4px #3c5868);
-    filter: drop-shadow(30px 10px 4px #3c5868);
   }
 }
 @keyframes fly {
@@ -62,8 +52,6 @@
   8% {
     bottom: 0;
     left: 50%;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
     -webkit-transform: rotate3d(1, 3, 1, 182deg);
     transform: rotate3d(1, 3, 1, 182deg);
     -webkit-animation-timing-function: ease-in;
@@ -72,23 +60,17 @@
   20% {
     left: 0;
     bottom: 0;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
     -webkit-transform: rotate3d(1, 1, 1, 45deg);
     transform: rotate3d(1, 1, 1, 45deg);
   }
   35% {
     left: 42.5%;
     bottom: 0.5rem;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
   }
   40% {
     font-size: 2rem;
     left: 53%;
     bottom: 1rem;
-    -webkit-filter: drop-shadow(5px 5px 4px #3c5868);
-    filter: drop-shadow(5px 5px 4px #3c5868);
   }
   100% {
     font-size: 5rem;
