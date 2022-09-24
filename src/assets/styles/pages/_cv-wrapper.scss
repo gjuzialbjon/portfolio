@@ -53,7 +53,7 @@
   }
 
   a {
-    color: #ffffff;
+    color: var(--anchor_clr);
   }
 }
 
@@ -74,8 +74,12 @@
   width: 90px;
 }
 
+.skill__name {
+  color: var(--skill_clr);
+}
+
 .certificate {
-  color: #fff;
+  color: var(--anchor_clr);
 }
 
 .cert-date {
@@ -133,7 +137,7 @@
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 0.4rem;
-  color: #ffffff;
+  color: var(--anchor_clr);
 
   img {
     margin-right: 0.5rem;
@@ -151,7 +155,7 @@
     .dep,
     .date {
       font-weight: 600;
-      color: #fff;
+      color: var(--anchor_clr);
     }
   }
 
@@ -159,7 +163,7 @@
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 0.4rem;
-    color: #fff;
+    color: var(--anchor_clr);
 
     img {
       margin-right: 0.4rem;
