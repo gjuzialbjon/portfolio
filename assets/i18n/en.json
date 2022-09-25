@@ -112,6 +112,6 @@
   "success": "Message sent successfully. Thank you :) ",
   "error": "Something went wrong, please try again. :( ",
   "info": "Sending message via Albjon Airlines... ",
-  "warning": "Please provide all fields as requested :/ ",
+  "msg": "Please provide all fields as requested :/ ",
   "title": "Albjon's portfolio"
 }
