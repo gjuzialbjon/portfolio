@@ -18,3 +18,7 @@
 .viewer-toolbar > ul > li::before {
   transform: scale(1.5);
 }
+
+.text-msg {
+  color: var(--message_clr);
+}

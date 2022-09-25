@@ -56,7 +56,7 @@
   display: none;
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .my-nav-btn {
     display: inline-block;
     height: $headerHt;
@@ -97,6 +97,10 @@
   .my-nav-links > span {
     display: block;
     width: 100%;
+
+    i {
+      width: 20px;
+    }
   }
 
   #my-nav-check:not(:checked) ~ .my-nav-links {

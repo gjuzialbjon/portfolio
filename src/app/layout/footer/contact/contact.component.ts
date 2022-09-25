@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   contactForm: UntypedFormGroup
   sending = false
 
-  statuses = [{ status: 'success' }, { status: 'error' }, { status: 'info' }, { status: 'warning' }]
+  statuses = [{ status: 'success' }, { status: 'error' }, { status: 'info' }, { status: 'msg' }]
 
   status: any = null
 

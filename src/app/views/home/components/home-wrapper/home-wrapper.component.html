@@ -1,6 +1,6 @@
 <div class="home-wrapper d-flex flex-column-reverse align-items-center justify-content-between">
   <div class="home-left mt-5">
-    <p id="intro" class="intro mb-4 mb-md-0 text-center text-lg-left">
+    <p id="intro" class="intro text-center text-lg-left">
       <span
         *ngFor="let letter of introArr; let i = index"
         [id]="'letter-' + i"
@@ -153,7 +153,7 @@
       </section>
     </div>
 
-    <p class="my-2 text-center text-warning">{{ 'Home.try' | translate }}</p>
+    <p class="my-2 text-center text-msg">{{ 'Home.try' | translate }}</p>
 
     <div class="d-flex align-items-center justify-content-center">
       <input type="color" class="mx-3" id="leftclr" [value]="left" (input)="clrUpdated('left', $event)" />

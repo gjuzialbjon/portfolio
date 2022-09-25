@@ -15,11 +15,9 @@
 
   --intro__letter__hover__clr: rgb(255, 0, 0);
 
-  --cv_left__bg: rgb(0, 0, 0);
-  --cv_left__bg-a: rgba(0, 0, 0, 0.824);
-
-  --cv_right__bg: rgb(20, 22, 23);
-  --cv_right__bg-a: rgba(20, 22, 23, 0.824);
+  --cv_box_shadow: 1px 1px 10px 5px rgb(36, 35, 35);
+  --cv_left__bg-a: rgb(0, 0, 0);
+  --cv_right__bg-a: rgb(20, 22, 23);
 
   --cv_left__section__border__clr: rgb(255, 255, 255);
   --cv_right__section__border__clr: rgb(255, 255, 255);
@@ -38,6 +36,7 @@
 
   --settings__btn__clr: #1b7591;
 
+  --footer_border: 2px solid rgb(225, 218, 218);
   --footer__btn__shadow__clr: rgba(2, 115, 243, 0.651);
   --footer__btn__hover__shadow__clr: rgba(2, 115, 243, 0.651);
   --contact__form__bg: transparent;
@@ -45,6 +44,7 @@
   --text_muted: #abbee0;
 
   --skill_clr: rgb(0, 123, 255);
+  --message_clr: rgb(228, 112, 29);
 
   --input_bg: #192038;
   --input_focus_bg: #2b2f3d;
