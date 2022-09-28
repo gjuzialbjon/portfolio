@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { jsPDF } from 'jspdf'
 import html2canvas from 'html2canvas'
+import domtoimage from 'dom-to-image'
 
 @Component({
   selector: 'app-cv-wrapper',
@@ -18,17 +19,6 @@ export class CvWrapperComponent implements OnInit {
       rating: 87,
       website: 'https://angular.io/',
     },
-    {
-      name: 'HTML5',
-      rating: 95,
-      website: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
-    },
-    {
-      name: 'CSS3',
-      rating: 85,
-      website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-    },
-
     {
       name: 'Typescript',
       rating: 88,
@@ -50,14 +40,30 @@ export class CvWrapperComponent implements OnInit {
       website: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     {
+      name: 'HTML5',
+      rating: 95,
+      website: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
+    },
+    {
+      name: 'CSS(Sass)',
+      rating: 85,
+      website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    },
+    {
+      name: 'Bootstrap',
+      rating: 95,
+      website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    },
+
+    {
+      name: 'REST',
+      rating: 90,
+      website: 'https://www.npmjs.com/',
+    },
+    {
       name: 'GraphQL',
       rating: 83,
       website: 'https://graphql.org/',
-    },
-    {
-      name: 'Npm',
-      rating: 90,
-      website: 'https://www.npmjs.com/',
     },
     {
       name: 'Git',
@@ -65,24 +71,14 @@ export class CvWrapperComponent implements OnInit {
       website: 'https://git-scm.com/',
     },
     {
-      name: 'Debugging',
-      rating: 90,
-      website: 'https://www.techopedia.com/definition/16373/debugging',
-    },
-    {
       name: 'Scrum',
       rating: 90,
       website: 'https://www.scrum.org/',
     },
     {
-      name: 'Linux',
-      rating: 70,
+      name: 'JIRA',
+      rating: 90,
       website: 'https://ubuntu.com/',
-    },
-    {
-      name: 'NodeJS',
-      rating: 60,
-      website: 'https://nodejs.org/en/',
     },
   ]
 
@@ -93,14 +89,24 @@ export class CvWrapperComponent implements OnInit {
   downloadCV() {
     this.downloading = true
 
-    html2canvas(this.cv.nativeElement, { scale: 2 }).then((canvas) => {
-      var imgWidth = 212
-      var imgHeight = (canvas.height * imgWidth) / canvas.width
-      const contentDataURL = canvas.toDataURL('image/png')
-      let pdf = new jsPDF('p', 'mm', 'a4')
-      pdf.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight)
-      pdf.save('newPDF.pdf')
+    var width = (this.cv.nativeElement as HTMLDivElement).clientWidth
+    var height = (this.cv.nativeElement as HTMLDivElement).clientHeight
+
+    html2canvas(this.cv.nativeElement).then((canvas) => {
+      var img = canvas.toDataURL('image/png')
+      var doc = new jsPDF('p', 'pt', [width, height])
+      doc.addImage(
+        img,
+        'PNG',
+        0,
+        0,
+        width,
+        height
+      )
+      doc.save('Albjon_Gjuzi_CV.pdf')
       this.downloading = false
+    }).catch(e => {
+      console.error(e)
     })
   }
 }

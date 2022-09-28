@@ -190,6 +190,7 @@ function initOsciliator(init) {
         tendril = tendrils[i]
         tendril.update()
         tendril.draw()
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
       }
 
       ctx.frame++

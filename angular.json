@@ -66,13 +66,7 @@
                 "bundleName": "light"
               }
             ],
-            "scripts": [
-              {
-                "input": "src/assets/js/oscillator.js",
-                "inject": true,
-                "bundleName": "oscillator"
-              }
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
