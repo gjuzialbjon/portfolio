@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { jsPDF } from 'jspdf'
 import html2canvas from 'html2canvas'
-import domtoimage from 'dom-to-image'
 
 @Component({
   selector: 'app-cv-wrapper',
