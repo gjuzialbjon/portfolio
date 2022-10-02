@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <ul class="playing-cards" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+    <li
+      class="playing-card {{ 'card-' + card.suit }}"
+      *ngFor="let card of cards; let i = index"
+      (click)="selectCard(i)"
+      [ngClass]="{ selected: card.selected, warn: card.warn }"
+      cdkDrag
+    >
+      <ng-container *ngIf="card.value !== 14">
+        <span *ngFor="let pos of positions" class="card-{{ pos }}">
+          <span class="card-nr">{{ card.value | valueToText }}</span>
+          <img class="card-suit" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
+        </span>
+      </ng-container>
+
+      <ng-container [ngSwitch]="card.value">
+        <ng-container *ngSwitchCase="[1, 11, 12, 13, 14].includes(card.value) ? card.value : !card.value">
+          <ng-container [ngTemplateOutlet]="specialCard" [ngTemplateOutletContext]="{ card: card }"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <ng-container [ngTemplateOutlet]="numberCard" [ngTemplateOutletContext]="{ card: card }"></ng-container>
+        </ng-container>
+      </ng-container>
+    </li>
+  </ul>
+</div>
+
+<div class="text-center mb-4">
+  <button class="btn btn-primary" (click)="playSelected()" [disabled]="!selectedCount">Play</button>
+</div>
+
+<ng-template #specialCard let-card="card">
+  <div *ngIf="card.value === 1" class="figures">
+    <img class="figure f-{{ getPosition(1, 0) }}" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
+  </div>
+  <div *ngIf="card.value !== 1 && card.value !== 14" class="figures">
+    <img class="figure f-8 f-special" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
+  </div>
+  <ng-container *ngIf="card.value === 14">
+    <span *ngFor="let pos of positions" class="card-{{ pos }}">
+      <span>J</span>
+      <span>O</span>
+      <span>K</span>
+      <span>E</span>
+      <span>R</span>
+    </span>
+    <div class="figures">
+      <img class="figure f-8 jk" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
+    </div>
+  </ng-container>
+</ng-template>
+<ng-template #numberCard let-card="card">
+  <div class="figures">
+    <img
+      class="figure f-{{ getPosition(card.value, i) }}"
+      src="assets/media/suits/{{ card.suit }}.svg"
+      alt=""
+      *ngFor="let v of [].constructor(card.value); let i = index"
+    />
+  </div>
+</ng-template>

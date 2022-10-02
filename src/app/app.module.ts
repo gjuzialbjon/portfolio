@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { environment } from '@env/environment'
+import { CardsComponent } from './views/cards/cards.component'
+import { ValueToTextPipe } from './core/pipes/value-to-text.pipe'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -27,6 +29,8 @@ export function createTranslateLoader(http: HttpClient) {
     ScrollTopComponent,
     BackgroundComponent,
     ContactComponent,
+    CardsComponent,
+    ValueToTextPipe,
   ],
   imports: [
     BrowserModule,
