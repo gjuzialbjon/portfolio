@@ -8,7 +8,9 @@
     "Projects-desc": "Shiko disa nga projektet e mia",
     "Skills": "Aftesite",
     "About": "Info",
-    "Cards": "Letrat"
+    "Cards": "Letrat",
+    "Toggle_light": "Aktivizo temen e lehte",
+    "Toggle_dark": "Aktivizo temen e erret"
   },
   "Home": {
     "sentence": "Çkemi, unë jam Albjoni, Front-endi juaj i ardhshëm :)",

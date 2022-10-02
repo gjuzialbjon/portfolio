@@ -8,7 +8,9 @@
     "Projects-desc": "See some of my projects",
     "Skills": "Skills",
     "About": "About",
-    "Cards":"Cards"
+    "Cards": "Cards",
+    "Toggle_light": "Activate light theme",
+    "Toggle_dark": "Activate dark theme"
   },
   "Home": {
     "sentence": "Hi, Im Albjon, your next Front-end developer :)",
