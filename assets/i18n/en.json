@@ -109,12 +109,7 @@
   "Utilities": {
     "Scroll": "Scroll to top"
   },
-  "Tipresento": "Tipresento",
-  "Tipresento-desc": "Invite friends, win leads, translate them to Amazon coupons",
-  "Swap": "Swap",
-  "Swap-desc": "Banking system for a client",
-  "Agency": "Numbers Agency",
-  "Agency-desc": "Apply as an agency to become partner with us",
+  "Rotate_msg": "Rotate your phone if you can't see all cards",
   "success": "Message sent successfully. Thank you :) ",
   "error": "Something went wrong, please try again. :( ",
   "info": "Sending message via Albjon Airlines... ",
