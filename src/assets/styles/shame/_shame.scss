@@ -26,3 +26,8 @@
 .name-space {
   color: var(--cv_right__bg-a);
 }
+
+// Wrong css when dragging playing card
+body {
+  list-style: none;
+}

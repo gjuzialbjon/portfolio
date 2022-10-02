@@ -21,14 +21,7 @@ export class CardsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.generateCards()
-
-    // Shuffle cards
-    this.cards.sort(() => 0.5 - Math.random())
-
-    // Get hand portion
-    this.cards = this.cards.slice(0, 14)
-
+    this.shuffle()
     // console.log(this.cards)
   }
 
@@ -48,10 +41,22 @@ export class CardsComponent implements OnInit {
   }
 
   drop(event: any) {
+		console.log('Dropped');
+		
     moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
   }
 
-  shuffleCards() {}
+  shuffle() {
+		this.cards = []
+		this.selectedCount = 0
+		this.generateCards()
+
+    // Shuffle cards
+    this.cards.sort(() => 0.5 - Math.random())
+
+    // Get hand portion
+    this.cards = this.cards.slice(0, 14)
+	}
 
   getPosition(value: number, i: number) {
     switch (value) {
@@ -118,12 +123,12 @@ export class CardsComponent implements OnInit {
       case 10: {
         if (i === 0) return 1
         if (i === 1) return 3
-        if (i === 2) return '4 move-down'
-        if (i === 3) return '5 move-up'
-        if (i === 4) return '6 move-down'
-        if (i === 5) return '10 flip move-up'
-        if (i === 6) return '11 flip move-down'
-        if (i === 7) return '12 flip move-up'
+        if (i === 2) return '4'
+        if (i === 3) return '6'
+        if (i === 4) return '7'
+        if (i === 5) return '9 flip'
+        if (i === 6) return '10 flip'
+        if (i === 7) return '12 flip'
         if (i === 8) return '13 flip'
         return '15 flip'
       }

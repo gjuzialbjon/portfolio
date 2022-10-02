@@ -29,10 +29,14 @@
   --header__menu__item__hover__clr: rgb(51, 22, 217);
   --header__menu__item__hover__bg: rgb(248, 0, 0);
   --header__nav_links_bg: #8a93bd;
-
   --header__mobile__toggle__clr: #221f1f;
 
-  --settings__btn__clr: #1b7591;
+  --playing_card_bg: rgb(252, 255, 250);
+  --playing_card_border: 1px solid gray;
+  --playing_card_box_shadow: 0px 5px 10px 6px rgba(0, 0, 0, 0.2);
+  --playing_card_selected_bg: rgb(222, 221, 240);
+  --playing_card_warn_bg: yellow;
+  --playing_card_hover_bg: rgb(222, 221, 240);
 
   --footer_border: 2px solid black;
   --footer__btn__shadow__clr: rgba(2, 115, 243, 0.651);
@@ -43,7 +47,7 @@
   --anchor_clr: #212121;
 
   --skill_clr: rgb(231, 101, 26);
-  --message_clr: #7A4B15;
+  --message_clr: #7a4b15;
 
   --input_bg: #bfc4d4;
   --input_focus_bg: #c2c6d4;

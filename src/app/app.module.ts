@@ -15,6 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { environment } from '@env/environment'
 import { CardsComponent } from './views/cards/cards.component'
 import { ValueToTextPipe } from './core/pipes/value-to-text.pipe'
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
       },
       defaultLanguage: 'en',
     }),
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

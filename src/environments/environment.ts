@@ -6,7 +6,7 @@ import { Themes } from "src/app/core/enums/themes";
 
 export const environment = {
   production: false,
-  defaultTheme: Themes.light,
+  defaultTheme: Themes.dark,
   formspree: 'https://formspree.io/f/xjvjngpr',
 }
 
