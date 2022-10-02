@@ -7,7 +7,10 @@
     "CV-desc": "CV (Curriculum Vitae)",
     "Projects-desc": "See some of my projects",
     "Skills": "Skills",
-    "About": "About"
+    "About": "About",
+    "Cards": "Cards",
+    "Toggle_light": "Activate light theme",
+    "Toggle_dark": "Activate dark theme"
   },
   "Home": {
     "sentence": "Hi, Im Albjon, your next Front-end developer :)",
@@ -15,6 +18,9 @@
   },
   "Projects": {
     "more": "More images..."
+  },
+  "Cards": {
+    "shuffle": "Shuffle cards"
   },
   "CV": {
     "personal": "personal",
