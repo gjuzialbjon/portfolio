@@ -15,7 +15,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { environment } from '@env/environment'
 import { CardsComponent } from './views/cards/cards.component'
 import { ValueToTextPipe } from './core/pipes/value-to-text.pipe'
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -49,6 +50,12 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     }),
     DragDropModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

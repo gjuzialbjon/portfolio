@@ -51,7 +51,15 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/albjon-memoji-favicon.png",
-              { "glob": "**/*", "input": "src/assets", "ignore": ["**/styles/**/*"], "output": "/assets" }
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "ignore": [
+                  "**/styles/**/*"
+                ],
+                "output": "/assets"
+              },
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss",
@@ -66,7 +74,9 @@
                 "bundleName": "light"
               }
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -127,7 +137,11 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest"
+            ],
             "styles": ["src/styles.scss"],
             "scripts": []
           }
