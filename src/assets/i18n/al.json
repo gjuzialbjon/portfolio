@@ -109,12 +109,7 @@
   "Utilities": {
     "Scroll": "Shko siper"
   },
-  "Tipresento": "Tipresento",
-  "Tipresento-desc": "Fto shoke, fito monedha, konvertoji ne kupona Amazoni",
-  "Swap": "Swap",
-  "Swap-desc": "Sistem bankar per nje klient",
-  "Agency": "Numbers Agency",
-  "Agency-desc": "Apliko si agjensi per tu bashkangjitur me ne",
+  "Rotate_msg": "Rrotulloni telefonin nese si shihni te gjitha letrat",
   "success": "Mesazhi u dergua me sukses. Faleminderit :) ",
   "error": "Dicka shkoi gabim, ju lutem provoni perseri. :( ",
   "info": "Duke derguar mesazhin me Albjon Airlines... ",

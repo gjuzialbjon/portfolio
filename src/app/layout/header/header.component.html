@@ -5,9 +5,13 @@
       <img src="assets/media/icons/albjon-memoji.png" width="45px" alt="Iphone memoji" />
     </div>
   </div>
-  <div class="my-nav-theme-wrapper">
-    <i *ngIf="(theme | async) === Themes.dark" title="{{ 'Menu.Toggle_light' | translate }}" (click)="toggleTheme()" class="my-nav-theme fas fa-sun"></i>
-    <i *ngIf="(theme | async) === Themes.light" title="{{ 'Menu.Toggle_dark' | translate }}" (click)="toggleTheme()" class="my-nav-theme fas fa-moon"></i>
+  <div
+    class="my-nav-theme-wrapper"
+    [title]="((theme | async) === Themes.dark ? 'Menu.Toggle_light' : 'Menu.Toggle_dark') | translate"
+    (click)="toggleTheme()"
+  >
+    <i *ngIf="(theme | async) === Themes.dark" class="my-nav-theme fas fa-sun"></i>
+    <i *ngIf="(theme | async) === Themes.light" class="my-nav-theme fas fa-moon"></i>
   </div>
   <div class="lang-toggler">
     <div class="switch">
@@ -40,13 +44,7 @@
       <i class="fas fa-file-alt"></i>
       {{ 'Menu.CV' | translate }}
     </span>
-    <span
-      class="menu-item"
-      (click)="closeMenu()"
-      routerLink="cards"
-      routerLinkActive="active"
-      title="{{ 'Menu.Cards' | translate }}"
-    >
+    <span class="menu-item" (click)="closeMenu()" routerLink="cards" routerLinkActive="active" title="{{ 'Menu.Cards' | translate }}">
       <i class="fas fa-heart"></i>
       {{ 'Menu.Cards' | translate }}
     </span>

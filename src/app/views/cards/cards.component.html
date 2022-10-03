@@ -1,4 +1,5 @@
-<div class="d-flex pt-3 justify-content-center">
+<div class="pt-3 playing-cards-wrapper">
+  <p class="hint-to-rotate text-msg text-center">{{ 'Rotate_msg' | translate }}</p>
   <ul class="playing-cards boundary" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
     <li
       class="playing-card {{ 'card-' + card.suit }}"

@@ -2,10 +2,15 @@
 @use '../abstracts' as *;
 @use '../vendors/bs' as *;
 
+.playing-cards-wrapper {
+  overflow: hidden;
+}
+
 .playing-cards {
   padding: 2rem 1rem 0;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
   list-style: none;
   overflow: hidden;
   gap: 10px;
@@ -133,6 +138,10 @@
   width: 340%;
 }
 
+.hint-to-rotate {
+  display: none;
+}
+
 @include media-breakpoint-up(md) {
   .playing-card:hover {
     background-color: var(--playing_card_hover_bg);
@@ -197,5 +206,11 @@
 
   .jk {
     width: 340%;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .hint-to-rotate {
+    display: block;
   }
 }
