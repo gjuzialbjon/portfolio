@@ -93,7 +93,7 @@ export class CvWrapperComponent implements OnInit {
 
     html2canvas(this.cv.nativeElement).then((canvas) => {
       var img = canvas.toDataURL('image/png')
-      var doc = new jsPDF('p', 'pt', [width, height])
+      var doc = new jsPDF('p', 'px', [width, height])
       doc.addImage(
         img,
         'PNG',

@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
-  "short_name": "portfolio",
-  "theme_color": "#1976d2",
+  "name": "Albjon's portfolio",
+  "short_name": "Albjon",
+  "theme_color": "#0d1529",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

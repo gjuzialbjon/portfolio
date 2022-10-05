@@ -15,6 +15,10 @@
   display: flex;
   margin: 0 auto;
   box-shadow: var(--cv_box_shadow);
+
+  * {
+    letter-spacing: 0.01px;
+  }
 }
 
 .cv__left {

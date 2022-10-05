@@ -15,7 +15,7 @@ export class HomeWrapperComponent implements OnInit {
 
   changes = 0
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private translate: TranslateService) {
+  constructor(private el: ElementRef, private translate: TranslateService) {
     this.intro = this.translate.instant('Home.sentence')
     this.introArr = this.intro.split(' ')
   }

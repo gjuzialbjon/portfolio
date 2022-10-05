@@ -1,4 +1,14 @@
 /* BOOTSTRAP VARIABLE OVERRIDES */
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 100%,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+// scss-docs-end container-max-widths
+
 $body-bg: #0d1529;
 $body-color: #f9f7f4;
 

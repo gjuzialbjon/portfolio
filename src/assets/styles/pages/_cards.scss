@@ -140,6 +140,7 @@
 
 .hint-to-rotate {
   display: none;
+  font-size: 0.8rem;
 }
 
 @include media-breakpoint-up(md) {
@@ -150,7 +151,7 @@
 
 @include media-breakpoint-down(xl) {
   .playing-card {
-    height: 7rem;
+    height: 6.5rem;
     padding: 1rem 1.2rem;
 
     &:not(:first-child) {
@@ -209,7 +210,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@media (max-width: 570px) {
   .hint-to-rotate {
     display: block;
   }
