@@ -16,7 +16,8 @@ import { environment } from '@env/environment'
 import { CardsComponent } from './views/cards/cards.component'
 import { ValueToTextPipe } from './core/pipes/value-to-text.pipe'
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ServiceWorkerModule } from '@angular/service-worker'
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { SuitPositionPipe } from './core/pipes/suit-position.pipe'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -33,6 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
     ContactComponent,
     CardsComponent,
     ValueToTextPipe,
+    SuitPositionPipe,
   ],
   imports: [
     BrowserModule,

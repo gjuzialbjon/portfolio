@@ -26,6 +26,7 @@ export class ThemeService {
 
   toggleTheme() {
     this.loadStyle(this.theme === Themes.dark ? Themes.light : Themes.dark)
+    console.log('Prefers dark ', this.prefersDark);
   }
 
   loadStyle(theme: Themes) {

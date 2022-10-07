@@ -35,7 +35,7 @@
 
 <ng-template #specialCard let-card="card">
   <div *ngIf="card.value === 1" class="figures">
-    <img class="figure f-{{ getPosition(1, 0) }}" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
+    <img class="figure f-{{ 1 | suitPosition: 0 }}" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
   </div>
   <div *ngIf="card.value !== 1 && card.value !== 14" class="figures border border-dark">
     <img class="figure f-8 f-special" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
@@ -56,7 +56,7 @@
 <ng-template #numberCard let-card="card">
   <div class="figures">
     <img
-      class="figure f-{{ getPosition(card.value, i) }}"
+      class="figure f-{{ card.value | suitPosition: i }}"
       src="assets/media/suits/{{ card.suit }}.svg"
       alt=""
       *ngFor="let v of [].constructor(card.value); let i = index"
