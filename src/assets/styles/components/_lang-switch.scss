@@ -20,24 +20,14 @@
     text-align: center;
   }
 
-  input.check-toggle-round-flat:checked ~ .off {
-    color: var(--lang__toggler);
-  }
-
-  input.check-toggle-round-flat:checked ~ .on {
-    color: var(--lang__toggler__clr);
-  }
-
   .switch > span.on {
     left: 3px;
     padding-left: 2px;
-    color: var(--lang__toggler);
   }
 
   .switch > span.off {
     right: 0;
     padding-right: 7px;
-    color: var(--lang__toggler__clr);
   }
 
   .check-toggle {
@@ -61,7 +51,6 @@
     padding: 2px;
     width: 97px;
     height: 35px;
-    background-color: var(--lang__toggler);
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
@@ -80,20 +69,20 @@
     left: 2px;
     bottom: 2px;
     right: 2px;
-    background-color: var(--lang__toggler);
-
+    background: var(--lang__toggler);
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
   }
+
   input.check-toggle-round-flat + label:after {
     top: 4px;
     left: 4px;
     bottom: 4px;
     width: 48px;
-    background-color: var(--lang__toggler__clr);
+    background: var(--lang__toggler__clr);
     -webkit-border-radius: 52px;
     -moz-border-radius: 52px;
     -ms-border-radius: 52px;
