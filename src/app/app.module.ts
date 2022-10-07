@@ -13,29 +13,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { environment } from '@env/environment'
-import { CardsComponent } from './views/cards/cards.component'
-import { ValueToTextPipe } from './core/pipes/value-to-text.pipe'
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { SuitPositionPipe } from './core/pipes/suit-position.pipe'
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, environment.production ? './assets/i18n/' : './assets/i18n/', '.json')
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ScrollTopComponent,
-    BackgroundComponent,
-    ContactComponent,
-    CardsComponent,
-    ValueToTextPipe,
-    SuitPositionPipe,
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, ScrollTopComponent, BackgroundComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,12 +37,11 @@ export function createTranslateLoader(http: HttpClient) {
       },
       defaultLanguage: 'en',
     }),
-    DragDropModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [],

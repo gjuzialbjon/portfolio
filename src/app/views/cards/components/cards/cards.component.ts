@@ -39,21 +39,21 @@ export class CardsComponent implements OnInit {
     this.cards.push(...[redJoker, blackJoker])
   }
 
-  drop(event: any) {		
+  drop(event: any) {
     moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
   }
 
   shuffle() {
-		this.cards = []
-		this.selectedCount = 0
-		this.generateCards()
+    this.cards = []
+    this.selectedCount = 0
+    this.generateCards()
 
     // Shuffle cards
     this.cards.sort(() => 0.5 - Math.random())
 
     // Get hand portion
     this.cards = this.cards.slice(0, 14)
-	}
+  }
 
   selectCard(i: number) {
     this.cards[i].selected = !this.cards[i].selected

@@ -2,5 +2,7 @@
   "files.autoSave": "afterDelay",
   "editor.formatOnPaste": true,
   "editor.minimap.maxColumn": 140,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.foldingImportsByDefault": true,
+  "editor.trimAutoWhitespace": true
 }

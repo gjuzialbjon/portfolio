@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { CardsComponent } from './views/cards/cards.component'
 
 const routes: Routes = [
   {
@@ -18,12 +17,12 @@ const routes: Routes = [
   },
   {
     path: 'cards',
-    component: CardsComponent
+    loadChildren: () => import('./views/cards/cards.module').then((m) => m.CardsModule),
   },
   {
     path: '**',
     redirectTo: 'home',
-  }
+  },
 ]
 
 @NgModule({
