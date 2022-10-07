@@ -22,7 +22,6 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.shuffle()
-    // console.log(this.cards)
   }
 
   generateCards() {
@@ -40,9 +39,7 @@ export class CardsComponent implements OnInit {
     this.cards.push(...[redJoker, blackJoker])
   }
 
-  drop(event: any) {
-		console.log('Dropped');
-		
+  drop(event: any) {		
     moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
   }
 
