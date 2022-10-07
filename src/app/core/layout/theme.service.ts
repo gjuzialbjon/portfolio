@@ -8,8 +8,15 @@ import { BehaviorSubject, Observable } from 'rxjs'
   providedIn: 'root',
 })
 export class ThemeService {
-  defaultLocalTheme: Themes = (localStorage.getItem('default-theme') as Themes) || Themes.light
-  theme: Themes = environment.production ? this.defaultLocalTheme : environment.defaultTheme || Themes.light
+  defaultLocalTheme: Themes = (localStorage.getItem('default-theme') as Themes)
+  prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  theme: Themes = environment.production
+    ? this.defaultLocalTheme
+      ? this.defaultLocalTheme
+      : this.prefersDark
+      ? Themes.dark
+      : environment.defaultTheme
+    : Themes.dark
 
   themeSubject = new BehaviorSubject(this.theme)
 
