@@ -17,14 +17,13 @@
 }
 
 .playing-card {
-  font-size: 100%;
   position: relative;
   background-color: var(--playing_card_bg);
   height: 10rem;
   aspect-ratio: math.div(3.3, 5);
   border: var(--playing_card_border);
   border-radius: 7px;
-  padding: 1.8rem 1.6rem;
+  padding: 1.8rem;
   cursor: pointer;
   box-shadow: var(--playing_card_box_shadow);
   transition: background-color 0.2s ease-in-out;
@@ -216,7 +215,7 @@
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 610px) {
   .hint-to-rotate {
     display: block;
   }

@@ -1,5 +1,5 @@
 import { moveItemInArray } from '@angular/cdk/drag-drop'
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
   selector: 'al-cards',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core'
   styles: [],
 })
 export class CardsComponent implements OnInit {
+  @Input() cards!: Card[]
+  @Input() selectedCount = 0
+  @Input() isTable = false
+  @Output() shuffle = new EventEmitter()
   positions = ['top', 'bottom flip']
-  cards: Card[] = []
-  suits = ['spade', 'diamond', 'heart', 'club']
-  values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  selectedCount = 0
+
   isPlayersTurn = true
   isPlayersHand = false
   onTableCards: Card[] = []
@@ -20,39 +21,16 @@ export class CardsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.shuffle()
-  }
-
-  generateCards() {
-    for (let s = 0; s < this.suits.length; s++) {
-      for (let v = 0; v < this.values.length; v++) {
-        const value = this.values[v]
-        const suit = this.suits[s]
-        this.cards.push({ value, suit })
-      }
-    }
-
-    const blackJoker = { value: 14, suit: 'club' }
-    const redJoker = { value: 14, suit: 'heart' }
-
-    this.cards.push(...[redJoker, blackJoker])
-  }
+  ngOnInit(): void {}
 
   drop(event: any) {
-    moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
+    if (!this.isTable) {
+      moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
+    }
   }
 
-  shuffle() {
-    this.cards = []
-    this.selectedCount = 0
-    this.generateCards()
-
-    // Shuffle cards
-    this.cards.sort(() => 0.5 - Math.random())
-
-    // Get hand portion
-    this.cards = this.cards.slice(0, 14)
+  shuffleCards() {
+    this.shuffle.emit(true)
   }
 
   selectCard(i: number) {

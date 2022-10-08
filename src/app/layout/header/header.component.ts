@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Themes } from '@enums/themes'
 import { ThemeService } from '@layout-services/theme.service'
@@ -16,6 +16,13 @@ export class HeaderComponent implements OnInit {
   theme!: Observable<Themes>
   langCheckbox
   lang: 'al' | 'en'
+
+  hideHeader = false;
+
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.isSticky = window.pageYOffset >= 250
+  // }
 
   constructor(private themeService: ThemeService, private translate: TranslateService, private title: Title) {
     this.theme = this.themeService.getTheme()

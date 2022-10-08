@@ -1,14 +1,21 @@
-<div class="pt-3 playing-cards-wrapper">
-  <p class="hint-to-rotate text-msg text-center">{{ 'Rotate_msg' | translate }}</p>
-  <ul class="playing-cards boundary" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+<div class="playing-cards-wrapper">
+  <ul
+    class="playing-cards boundary"
+    [ngClass]="{ 'p-0 m-0': isTable }"
+    cdkDropList
+    [cdkDropListDisabled]="isTable"
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)"
+  >
     <li
       class="playing-card {{ 'card-' + card.suit }}"
       *ngFor="let card of cards; let i = index"
       (click)="selectCard(i)"
-      [ngClass]="{ selected: card.selected, warn: card.warn }"
+      [ngClass]="{ selected: card.selected, warn: card.warn, disabled: isTable }"
       cdkDragBoundary=".boundary"
       cdkDragLockAxis="x"
       cdkDrag
+      [cdkDragDisabled]="isTable"
     >
       <ng-container *ngIf="card.value !== 14">
         <span *ngFor="let pos of positions" class="card-{{ pos }}">
@@ -29,8 +36,8 @@
   </ul>
 </div>
 
-<div class="text-center mb-4">
-  <button class="btn btn-primary" (click)="shuffle()">{{ 'Cards.shuffle' | translate }}</button>
+<div *ngIf="!isTable" class="text-center mb-4">
+  <button class="btn btn-primary" (click)="shuffleCards()">{{ 'Cards.shuffle' | translate }}</button>
 </div>
 
 <ng-template #specialCard let-card="card">
