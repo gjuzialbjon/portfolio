@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665215350373,
+  "timestamp": 1665263502095,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -23,7 +23,7 @@
         "./manifest.webmanifest",
         "./polyfills.d99fd2c2c5512fef.js",
         "./runtime.ebe1266cd4866dfd.js",
-        "./styles.3149d64e5795107e.css"
+        "./styles.ac6d3d5201c7aec4.css"
       ],
       "patterns": []
     },
@@ -169,12 +169,12 @@
     "./assets/media/suits/13-diamond.svg": "af2f013c21b290983e2668c8daa41ec72672ed2d",
     "./assets/media/suits/13-heart.svg": "af2f013c21b290983e2668c8daa41ec72672ed2d",
     "./assets/media/suits/13-spade.svg": "5b630eb9ad74bc8d9d9904ddf1a2cd18b162fdf5",
-    "./assets/media/suits/14-club.svg": "47618ab40558c8b5ae882b0233be51f1e411150f",
-    "./assets/media/suits/14-heart.svg": "822a842ebdd648a2658f777e94e7bea00ef44d42",
-    "./assets/media/suits/club.svg": "23809789e85b0de3485acd7eb4082d1e12b58fbb",
-    "./assets/media/suits/diamond.svg": "2fb4324349147bf1b28f9678d18d380506946dfa",
-    "./assets/media/suits/heart.svg": "7e35b35a2fbf99566293d9702189e341a318b3d6",
-    "./assets/media/suits/spade.svg": "15f2eb2be8e13488cc9f3e589679aaac009e9891",
+    "./assets/media/suits/14-club.svg": "6291169ff7aa9cb43478dfbc3e3b86e136c9a77e",
+    "./assets/media/suits/14-heart.svg": "bd9e32bd1ac76e5b933fb30191bff6afc4eecca2",
+    "./assets/media/suits/club.svg": "fd703b62d31085eda6768cfd22165a5a44e8ef90",
+    "./assets/media/suits/diamond.svg": "303c319309588afe503563da32cb89c9795fb82c",
+    "./assets/media/suits/heart.svg": "5216df7ad301074867f70cdf4bb10f09dfa1783c",
+    "./assets/media/suits/spade.svg": "9d5ecf2c2e2dc3c098c928adb506011bebdec767",
     "./assets/media/tip/agent-dashboard.png": "11a5785cdf9134866a54ec485d06e5577de6540d",
     "./assets/media/tip/agent-invite-friend.png": "ee5a43832c3fa3dd9e7c6c70c1487b10af3c3428",
     "./assets/media/tip/agent-leads.png": "366cbb7c2f3178cf92368a56d28ab7e26f91f8c4",
@@ -225,13 +225,13 @@
     "./assets/media/tip/tipresento-design-implementation-9.png": "14399a755ad37a911ac1236db7cdf50d22ffdbb6",
     "./assets/media/tip/wallet.png": "22909f286e3fe8ea54da853714764674dfb489cb",
     "./dark.css": "7ce7dbbb0f3acfabfda6da8d44e8741e22f2e5a7",
-    "./index.html": "0f3f1a0cab057fef37d9f7e68114cbecc5ec2441",
+    "./index.html": "8bb5ca2e37b91300585800b1c5a65866ec5695a0",
     "./light.css": "712a9e540116c1092a76e7bf71a232f8728513f0",
     "./main.e79ddc4de9839b7a.js": "2b692211ae04c2e0bc191c41064329eef41f9243",
     "./manifest.webmanifest": "445da3b5a7d4a8cef887fb8cc407118507df63ef",
     "./polyfills.d99fd2c2c5512fef.js": "a850054b083fc2e0158bf66e8d1cc1e119b377ed",
     "./runtime.ebe1266cd4866dfd.js": "675c30aa7e19a0fbeaabdfeae10e3e665906df30",
-    "./styles.3149d64e5795107e.css": "6220686bff102c41d3f26016d19e6fe5f0019c43"
+    "./styles.ac6d3d5201c7aec4.css": "56bb23af4b9cf197bf419b27bad5c66dd8956193"
   },
   "navigationUrls": [
     {
