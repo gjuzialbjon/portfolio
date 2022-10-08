@@ -13,39 +13,25 @@
 
   .playing-cards {
     .playing-card {
-      height: clamp(5.5rem, calc(5.5rem + 2vw), 7rem);
-      padding: 1rem 1.2rem;
+      transform: scale(0.8);
 
       &:not(:first-child) {
-        margin-left: -2.2rem;
+        margin-left: -3.3rem;
       }
+    }
+  }
+}
 
-      .card-top,
-        .card-bottom {
-          span:not(.card-nr) {
-            font-size: 0.55rem;
-          }
+@include media-breakpoint-down(xl) {
+  .cards-table {
+    .playing-cards {
+      .playing-card {
+        transform: scale(0.75);
 
-          .card-nr {
-            font-size: 1rem;
-            font-weight: 600;
-          }
-
-          .card-suit {
-            padding-top: 0.3rem;
-            width: 0.7rem;
-          }
+        &:not(:first-child) {
+          margin-left: -3.3rem;
         }
-
-        .card-top {
-          left: math.div($distance, 2);
-          top: $distance;
-        }
-
-        .card-bottom {
-          right: math.div($distance, 2);
-          bottom: $distance;
-        }
+      }
     }
   }
 }
@@ -54,26 +40,10 @@
   .cards-table {
     .playing-cards {
       .playing-card {
-      height: clamp(5.5rem, calc(4.5rem + 2vw), 6rem);
-      padding: 1rem 1rem;
+        transform: scale(0.55);
 
         &:not(:first-child) {
-          margin-left: -1.8rem;
-        }
-
-        .card-top,
-        .card-bottom {
-          span:not(.card-nr) {
-            font-size: 0.5rem;
-          }
-
-          .card-nr {
-            font-size: .8rem;
-          }
-
-          .card-suit {
-            width: 0.7rem;
-          }
+          margin-left: -4.3rem;
         }
       }
     }
@@ -84,39 +54,10 @@
   .cards-table {
     .playing-cards {
       .playing-card {
-        height: 6rem;
-        padding: 1.1rem 1.2rem;
+        transform: scale(0.45);
 
         &:not(:first-child) {
-          margin-left: -2rem;
-        }
-
-        .card-top,
-        .card-bottom {
-          span:not(.card-nr) {
-            font-size: 0.6rem;
-          }
-
-          .card-nr {
-            font-size: .8rem;
-            font-weight: 700;
-            line-height: 0.8;
-            letter-spacing: 0;
-          }
-
-          .card-suit {
-            width: 0.7rem;
-          }
-        }
-
-        .card-top {
-          left: math.div($distance, 2);
-          top: $distance;
-        }
-
-        .card-bottom {
-          right: math.div($distance, 2);
-          bottom: $distance;
+          margin-left: -4.8rem;
         }
       }
     }

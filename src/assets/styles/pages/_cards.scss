@@ -150,67 +150,34 @@
 
 @include media-breakpoint-down(xl) {
   .playing-card {
-    height: clamp(7rem, calc(7rem + 2vw), 9rem);
-    padding: 1rem 1.2rem;
+    transform: scale(.8);
 
     &:not(:first-child) {
-      margin-left: -2.75rem;
+      margin-left: -3rem;
     }
 
     &.selected {
       top: -1rem;
     }
   }
-
-  .card-top,
-  .card-bottom {
-    span:not(.card-nr) {
-      font-size: 0.6rem;
-    }
-
-    .card-nr {
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 0.8;
-      letter-spacing: 0;
-    }
-
-    .card-suit {
-      padding-top: 0.3rem;
-      width: 0.7rem;
-      aspect-ratio: 1;
-    }
-  }
-
-  .card-top {
-    left: math.div($distance, 2);
-    top: $distance;
-  }
-
-  .card-bottom {
-    right: math.div($distance, 2);
-    bottom: $distance;
-  }
-
-  .figure {
-    width: 100%;
-  }
-
-  .f-special {
-    width: 240%;
-  }
-
-  .jk {
-    width: 340%;
-  }
 }
 
 @include media-breakpoint-down(lg) {
   .playing-card {
-    height: clamp(6rem, calc(6rem + 2vw), 8rem);
+    transform: scale(.6);
 
     &:not(:first-child) {
-      margin-left: -2rem;
+      margin-left: -4rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .playing-card {
+    transform: scale(.5);
+
+    &:not(:first-child) {
+      margin-left: -4.5rem;
     }
   }
 }
