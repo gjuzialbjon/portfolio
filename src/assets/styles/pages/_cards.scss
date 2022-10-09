@@ -161,11 +161,12 @@
 
 @include media-breakpoint-down(lg) {
   .playing-card {
-    max-height: 130px;
-    padding: 1.1rem;
+    flex: 0 1 70px;
+
+    padding: 1.1rem 1.2rem;
 
     &:not(:first-child) {
-      margin-left: -2.7rem;
+      margin-left: -2.1rem;
     }
 
     .card-top,
@@ -199,10 +200,8 @@
 
 @include media-breakpoint-down(md) {
   .playing-card {
-    max-height: 120px;
-
     &:not(:first-child) {
-      margin-left: -2.5rem;
+      margin-left: -2rem;
     }
   }
 }
