@@ -18,7 +18,6 @@
   position: relative;
   background-color: var(--playing_card_bg);
   flex: 0 1 120px;
-  // height: 10rem;
   aspect-ratio: math.div(3.3, 5);
   border: var(--playing_card_border);
   border-radius: 7px;
@@ -149,35 +148,61 @@
 }
 
 @include media-breakpoint-down(xl) {
-  .playing-cards {
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -3rem;
-      }
+  .playing-card {
+    &:not(:first-child) {
+      margin-left: -3rem;
+    }
 
-      &.selected {
-        top: -1rem;
-      }
+    &.selected {
+      top: -1rem;
     }
   }
 }
 
 @include media-breakpoint-down(lg) {
-  .playing-cards {
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -2.7rem;
+  .playing-card {
+    max-height: 130px;
+    padding: 1.1rem;
+
+    &:not(:first-child) {
+      margin-left: -2.7rem;
+    }
+
+    .card-top,
+    .card-bottom {
+      span:not(.card-nr) {
+        font-weight: 600;
+        font-size: 0.5rem;
       }
+
+      .card-nr {
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .card-suit {
+        width: 0.8rem;
+      }
+    }
+
+    .card-top {
+      left: math.div($distance, 2);
+      top: $distance;
+    }
+
+    .card-bottom {
+      right: math.div($distance, 2);
+      bottom: $distance;
     }
   }
 }
 
 @include media-breakpoint-down(md) {
-  .playing-cards {
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -2.5rem;
-      }
+  .playing-card {
+    max-height: 120px;
+
+    &:not(:first-child) {
+      margin-left: -2.5rem;
     }
   }
 }

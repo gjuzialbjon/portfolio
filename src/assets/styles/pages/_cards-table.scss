@@ -34,13 +34,9 @@
   .cards-table {
     padding: 1rem;
 
-    .playing-cards-wrapper {
-      .playing-cards {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -3.3rem;
-          }
-        }
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3.3rem;
       }
     }
   }
@@ -48,27 +44,9 @@
 
 @include media-breakpoint-down(lg) {
   .cards-table {
-    .playing-cards-wrapper {
-      .playing-cards {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -3.5rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .cards-table {
-    .playing-cards-wrapper {
-      .playing-cards {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -3.6rem;
-          }
-        }
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3.5rem;
       }
     }
   }
