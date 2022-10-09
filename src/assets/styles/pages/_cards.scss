@@ -17,7 +17,8 @@
 .playing-card {
   position: relative;
   background-color: var(--playing_card_bg);
-  height: 10rem;
+  flex: 0 1 120px;
+  // height: 10rem;
   aspect-ratio: math.div(3.3, 5);
   border: var(--playing_card_border);
   border-radius: 7px;
@@ -147,45 +148,39 @@
   }
 }
 
-@include media-breakpoint-down(xl) {
-  .playing-cards {
-    transform: scale(0.85);
+// @include media-breakpoint-down(xl) {
+//   .playing-cards {
+//     .playing-card {
+//       &:not(:first-child) {
+//         margin-left: -3rem;
+//       }
 
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -3rem;
-      }
+//       &.selected {
+//         top: -1rem;
+//       }
+//     }
+//   }
+// }
 
-      &.selected {
-        top: -1rem;
-      }
-    }
-  }
-}
+// @include media-breakpoint-down(lg) {
+//   .playing-cards {
+//     .playing-card {
+//       &:not(:first-child) {
+//         margin-left: -3rem;
+//       }
+//     }
+//   }
+// }
 
-@include media-breakpoint-down(lg) {
-  .playing-cards {
-    transform: scale(0.7);
-
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -3rem;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .playing-cards {
-    transform: scale(0.6);
-
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -3.3rem;
-      }
-    }
-  }
-}
+// @include media-breakpoint-down(md) {
+//   .playing-cards {
+//     .playing-card {
+//       &:not(:first-child) {
+//         margin-left: -3.3rem;
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 610px) {
   .hint-to-rotate {

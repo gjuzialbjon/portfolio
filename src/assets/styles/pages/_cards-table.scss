@@ -8,16 +8,23 @@
   background: var(--cards_table_bg);
   background: brown;
   overflow: hidden;
-
   border-radius: 10rem;
   padding: 2rem;
 
-  .playing-cards {
-    transform: scale(0.8);
+  al-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .playing-card {
-      &:not(:first-child) {
-        margin-left: -3.3rem;
+  .playing-cards-wrapper {
+    width: 75%;
+
+    .playing-cards {
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -3.3rem;
+        }
       }
     }
   }
@@ -25,17 +32,10 @@
 
 @include media-breakpoint-down(xl) {
   .cards-table {
-    height: 200px;
     padding: 1rem;
 
     .playing-cards-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
       .playing-cards {
-        transform: scale(0.75);
-
         .playing-card {
           &:not(:first-child) {
             margin-left: -3.3rem;
@@ -48,15 +48,8 @@
 
 @include media-breakpoint-down(lg) {
   .cards-table {
-    height: 150px;
-    padding: 0;
-
     .playing-cards-wrapper {
-      height: 150px;
-
       .playing-cards {
-        transform: scale(0.55);
-
         .playing-card {
           &:not(:first-child) {
             margin-left: -3.5rem;
@@ -69,17 +62,11 @@
 
 @include media-breakpoint-down(md) {
   .cards-table {
-    height: 120px;
-
     .playing-cards-wrapper {
-      height: 120px;
-
       .playing-cards {
-        transform: scale(0.45);
-
         .playing-card {
           &:not(:first-child) {
-            margin-left: -3.8rem;
+            margin-left: -3.6rem;
           }
         }
       }
