@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665346863506,
+  "timestamp": 1665347801685,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -19,11 +19,11 @@
         "./dark.css",
         "./index.html",
         "./light.css",
-        "./main.b1a6a49ee0f971dd.js",
+        "./main.ed36e2ec5f3d0699.js",
         "./manifest.webmanifest",
         "./polyfills.d99fd2c2c5512fef.js",
         "./runtime.7d5961bcfc38dc60.js",
-        "./styles.9686c90305595da7.css"
+        "./styles.d1a0a2a6231aba78.css"
       ],
       "patterns": []
     },
@@ -225,13 +225,13 @@
     "./assets/media/tip/tipresento-design-implementation-9.png": "14399a755ad37a911ac1236db7cdf50d22ffdbb6",
     "./assets/media/tip/wallet.png": "22909f286e3fe8ea54da853714764674dfb489cb",
     "./dark.css": "7ce7dbbb0f3acfabfda6da8d44e8741e22f2e5a7",
-    "./index.html": "6c0a5b0b8f599297540458a7a767a3bcc7030fbf",
+    "./index.html": "db07533b5f422986d9884a466355b8256fabd5a3",
     "./light.css": "712a9e540116c1092a76e7bf71a232f8728513f0",
-    "./main.b1a6a49ee0f971dd.js": "b236f9303bc8daeb583c37585f25aa7abf43891d",
+    "./main.ed36e2ec5f3d0699.js": "3381c74872b875b665ea0f5f4233b77c0f27081a",
     "./manifest.webmanifest": "445da3b5a7d4a8cef887fb8cc407118507df63ef",
     "./polyfills.d99fd2c2c5512fef.js": "a850054b083fc2e0158bf66e8d1cc1e119b377ed",
     "./runtime.7d5961bcfc38dc60.js": "b1646d0546f2df64b615183327e695b09bf29e67",
-    "./styles.9686c90305595da7.css": "384fb40dca6199a7b52f4f1eabd05ec705b9d842"
+    "./styles.d1a0a2a6231aba78.css": "43dfbe61b101ca1b63aba2dd2ae29b1f42f8bd8d"
   },
   "navigationUrls": [
     {
