@@ -12,8 +12,6 @@
   flex-wrap: nowrap;
   justify-content: center;
   list-style: none;
-  overflow: hidden;
-  gap: 0;
 }
 
 .playing-card {
@@ -150,35 +148,41 @@
 }
 
 @include media-breakpoint-down(xl) {
-  .playing-card {
-    transform: scale(.8);
+  .playing-cards {
+    transform: scale(0.85);
 
-    &:not(:first-child) {
-      margin-left: -3rem;
-    }
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3rem;
+      }
 
-    &.selected {
-      top: -1rem;
+      &.selected {
+        top: -1rem;
+      }
     }
   }
 }
 
 @include media-breakpoint-down(lg) {
-  .playing-card {
-    transform: scale(.6);
+  .playing-cards {
+    transform: scale(0.7);
 
-    &:not(:first-child) {
-      margin-left: -4rem;
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3rem;
+      }
     }
   }
 }
 
 @include media-breakpoint-down(md) {
-  .playing-card {
-    transform: scale(.5);
+  .playing-cards {
+    transform: scale(0.6);
 
-    &:not(:first-child) {
-      margin-left: -4.5rem;
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3.3rem;
+      }
     }
   }
 }
