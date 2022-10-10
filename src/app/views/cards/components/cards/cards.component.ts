@@ -2,7 +2,7 @@ import { moveItemInArray } from '@angular/cdk/drag-drop'
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
-  selector: 'al-cards',
+  selector: 'app-cards',
   templateUrl: './cards.component.html',
   styles: [],
 })
@@ -10,7 +10,6 @@ export class CardsComponent implements OnInit {
   @Input() cards!: Card[]
   @Input() selectedCount = 0
   @Input() isTable = false
-  @Output() shuffle = new EventEmitter()
   positions = ['top', 'bottom flip']
 
   isPlayersTurn = true
@@ -27,10 +26,6 @@ export class CardsComponent implements OnInit {
     if (!this.isTable) {
       moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
     }
-  }
-
-  shuffleCards() {
-    this.shuffle.emit(true)
   }
 
   selectCard(i: number) {

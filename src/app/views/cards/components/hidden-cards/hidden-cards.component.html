@@ -1,0 +1,11 @@
+<div class="other-user-wrapper" [ngClass]="{ vertical: vertical }">
+  <div class="playing-user-icon">
+    <img src="assets/media/icons/albjon-memoji.png" alt="" srcset="" width="100%" height="100%" />
+  </div>
+
+  <ul class="hidden-cards" [ngClass]="{ vertical: vertical }">
+    <li *ngFor="let card of [].constructor(count)" class="hidden-card">
+      <img src="assets/media/suits/back.svg" class="hidden-card-img" alt="" />
+    </li>
+  </ul>
+</div>

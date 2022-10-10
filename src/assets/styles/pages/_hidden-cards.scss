@@ -1,0 +1,77 @@
+.hidden-user {
+  .other-user-wrapper {
+    display: flex;
+
+    &:not(.vertical) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .playing-user-icon {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &.vertical {
+      align-items: center;
+    }
+  }
+
+  .playing-user-icon {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: var(--playing-user-icon-border);
+  }
+
+  .hidden-cards {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    &.vertical {
+      height: 100%;
+      margin-top: 2.7rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .hidden-card {
+        transform: rotate(90deg);
+        margin-top: -2.2rem;
+      }
+    }
+
+    &:not(.vertical) {
+      .hidden-card {
+        margin-left: -1.3rem;
+      }
+    }
+
+    .hidden-card {
+      box-shadow: var(--hidden_card_box_shadow);
+
+      .hidden-card-img {
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.hidden-user.user1 {
+  .other-user-wrapper {
+    .playing-user-icon {
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+
+.hidden-user.user3 {
+  .other-user-wrapper {
+    .playing-user-icon {
+      margin-left: 1.5rem;
+      order: 2;
+    }
+  }
+}

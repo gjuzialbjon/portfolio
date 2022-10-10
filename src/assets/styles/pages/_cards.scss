@@ -17,7 +17,7 @@
 .playing-card {
   position: relative;
   background-color: var(--playing_card_bg);
-  flex: 0 1 120px;
+  flex: 0 1 110px;
   aspect-ratio: math.div(3.3, 5);
   border: var(--playing_card_border);
   border-radius: 7px;
@@ -209,5 +209,25 @@
 @media (max-width: 610px) {
   .hint-to-rotate {
     display: block;
+  }
+
+  .playing-card {
+    flex: 0 1 60px;
+    max-height: 85px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hint-to-rotate {
+    display: block;
+  }
+
+  .playing-card {
+    flex: 0 1 45px;
+    max-height: 65px;
+
+    &:not(:first-child) {
+      margin-left: -1.2rem;
+    }
   }
 }

@@ -36,10 +36,6 @@
   </ul>
 </div>
 
-<div *ngIf="!isTable" class="text-center mb-4">
-  <button class="btn btn-primary" (click)="shuffleCards()">{{ 'Cards.shuffle' | translate }}</button>
-</div>
-
 <ng-template #specialCard let-card="card">
   <div *ngIf="card.value === 1" class="figures">
     <img class="figure f-{{ 1 | suitPosition: 0 }}" src="assets/media/suits/{{ card.suit }}.svg" alt="" />

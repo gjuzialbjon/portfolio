@@ -1,0 +1,128 @@
+@use '../abstracts' as *;
+@use '../vendors/bs' as *;
+@use 'sass:math';
+
+.playing-table {
+  position: relative;
+  margin: 0rem auto 0rem;
+  max-width: 1000px;
+  background: var(--cards_table_bg);
+  background: brown;
+  border-radius: 10rem;
+  padding: 4rem 2rem;
+
+  app-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hidden-user {
+    position: absolute;
+
+    &.user1 {
+      top: 50%;
+      left: -10px;
+      transform: translate(0, -50%);
+    }
+
+    &.user2 {
+      top: -2.5rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &.user3 {
+      top: 50%;
+      right: -10px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  .user-cards {
+    width: 100%;
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+  }
+
+  .cards-table {
+    .playing-cards-wrapper {
+      width: 70%;
+
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -3.3rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .playing-table {
+    .user-cards {
+      bottom: -70%;
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .playing-table {
+    // padding: 3rem 2rem;
+
+    .cards-table {
+      .playing-cards-wrapper {
+        .playing-card {
+          // flex: 0 1 60px;
+
+          &:not(:first-child) {
+            margin-left: -2.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .playing-table {
+    .cards-table {
+      .playing-cards-wrapper {
+        .playing-card {
+          &:not(:first-child) {
+            margin-left: -2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .playing-table {
+    .cards-table {
+      .playing-cards-wrapper {
+        .playing-card {
+          &:not(:first-child) {
+            margin-left: -2.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .playing-table {
+    .cards-table {
+      .playing-cards-wrapper {
+        .playing-card {
+          &:not(:first-child) {
+            margin-left: -1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

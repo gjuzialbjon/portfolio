@@ -7,10 +7,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
 import { SuitPositionPipe } from '@app/core/pipes/suit-position.pipe'
 import { ValueToTextPipe } from '@app/core/pipes/value-to-text.pipe'
 import { TranslateModule } from '@ngx-translate/core';
-import { TableComponent } from './components/table/table.component'
+import { TableComponent } from './components/table/table.component';
+import { HiddenCardsComponent } from './components/hidden-cards/hidden-cards.component'
 
 @NgModule({
-  declarations: [CardsComponent, ValueToTextPipe, SuitPositionPipe, TableComponent],
+  declarations: [CardsComponent, ValueToTextPipe, SuitPositionPipe, TableComponent, HiddenCardsComponent],
   imports: [CommonModule, CardsRoutingModule, DragDropModule, TranslateModule.forChild()],
 })
 export class CardsModule {}
