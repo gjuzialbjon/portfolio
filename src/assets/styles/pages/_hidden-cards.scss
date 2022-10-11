@@ -1,3 +1,7 @@
+@use '../abstracts' as *;
+@use '../vendors/bs' as *;
+@use 'sass:math';
+
 .hidden-user {
   .other-user-wrapper {
     display: flex;
@@ -6,10 +10,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
-      .playing-user-icon {
-        margin-bottom: 1rem;
-      }
     }
 
     &.vertical {
@@ -66,12 +66,48 @@
   }
 }
 
+.hidden-user.user2 {
+  .other-user-wrapper {
+    .playing-user-icon {
+      margin-bottom: 1rem;
+    }
+    .hidden-cards {
+      margin-left: 1.25rem;
+    }
+  }
+}
 
 .hidden-user.user3 {
   .other-user-wrapper {
     .playing-user-icon {
       margin-left: 1.5rem;
       order: 2;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .hidden-user.user1 {
+    .other-user-wrapper {
+      .playing-user-icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .hidden-user.user2 {
+    .other-user-wrapper {
+      .playing-user-icon {
+        margin-bottom: .7rem;
+      }
+    }
+  }
+
+  .hidden-user.user3 {
+    .other-user-wrapper {
+      .playing-user-icon {
+        margin-left: 1rem;
+      }
     }
   }
 }

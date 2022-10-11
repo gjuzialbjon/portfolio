@@ -1,6 +1,4 @@
-<p class="hint-to-rotate text-msg text-center pt-3">{{ 'Rotate_msg' | translate }}</p>
-<div class="mt-5"></div>
-<div class="playing-table">
+<div class="playing-table my-5">
   <app-hidden-cards class="hidden-user user1"></app-hidden-cards>
   <app-hidden-cards [vertical]="false" class="hidden-user user2"></app-hidden-cards>
   <app-hidden-cards class="hidden-user user3"></app-hidden-cards>
@@ -9,6 +7,8 @@
 
   <app-cards class="user-cards" [cards]="cards" [selectedCount]="selectedCount"></app-cards>
 </div>
+
+<p class="hint-to-rotate text-msg text-center pt-5">{{ 'Rotate_msg' | translate }}</p>
 
 <!-- <div class="text-center mt-5">
   <button class="btn btn-primary mt-5" (click)="shuffle()">{{ 'Cards.shuffle' | translate }}</button>

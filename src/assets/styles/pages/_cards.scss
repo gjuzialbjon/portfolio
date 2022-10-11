@@ -200,6 +200,9 @@
 
 @include media-breakpoint-down(md) {
   .playing-card {
+    flex: 0 1 60px;
+    max-height: 90px;
+
     &:not(:first-child) {
       margin-left: -2rem;
     }
@@ -209,11 +212,6 @@
 @media (max-width: 610px) {
   .hint-to-rotate {
     display: block;
-  }
-
-  .playing-card {
-    flex: 0 1 60px;
-    max-height: 85px;
   }
 }
 

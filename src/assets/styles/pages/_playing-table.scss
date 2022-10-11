@@ -42,7 +42,6 @@
   .user-cards {
     width: 100%;
     position: absolute;
-    bottom: -50%;
     left: 0;
   }
 
@@ -62,20 +61,16 @@
 @include media-breakpoint-up(lg) {
   .playing-table {
     .user-cards {
-      bottom: -70%;
+      bottom: -65%;
     }
   }
 }
 
 @include media-breakpoint-down(xl) {
   .playing-table {
-    // padding: 3rem 2rem;
-
     .cards-table {
       .playing-cards-wrapper {
         .playing-card {
-          // flex: 0 1 60px;
-
           &:not(:first-child) {
             margin-left: -2.7rem;
           }
@@ -124,5 +119,23 @@
         }
       }
     }
+  }
+
+  .playing-table {
+    .user-cards {
+      bottom: -40%;
+
+      .playing-cards-wrapper {
+        .playing-card {
+          &:not(:first-child) {
+            margin-left: -1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .figures {
+    display: none !important;
   }
 }
