@@ -20,7 +20,8 @@
     "more": "More images..."
   },
   "Cards": {
-    "shuffle": "Shuffle cards"
+    "shuffle": "Shuffle",
+    "throw": "Throw"
   },
   "CV": {
     "personal": "personal",
