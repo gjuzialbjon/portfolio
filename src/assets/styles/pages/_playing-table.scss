@@ -11,34 +11,6 @@
   border-radius: 10rem;
   padding: 4rem 2rem;
 
-  app-cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hidden-user {
-    position: absolute;
-
-    &.user1 {
-      top: 50%;
-      left: -10px;
-      transform: translate(0, -50%);
-    }
-
-    &.user2 {
-      top: -2.5rem;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    &.user3 {
-      top: 50%;
-      right: -10px;
-      transform: translate(0, -50%);
-    }
-  }
-
   .user-cards {
     width: 100%;
     position: absolute;

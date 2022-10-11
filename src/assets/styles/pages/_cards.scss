@@ -2,6 +2,12 @@
 @use '../abstracts' as *;
 @use '../vendors/bs' as *;
 
+app-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .playing-cards-wrapper {
   overflow: hidden;
 }

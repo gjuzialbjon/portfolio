@@ -3,6 +3,28 @@
 @use 'sass:math';
 
 .hidden-user {
+  position: absolute;
+
+  &.user1 {
+    top: 50%;
+    left: -10px;
+    transform: translate(0, -50%);
+  }
+
+  &.user2 {
+    top: -2.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &.user3 {
+    top: 50%;
+    right: -10px;
+    transform: translate(0, -50%);
+  }
+}
+
+.hidden-user {
   .other-user-wrapper {
     display: flex;
 
@@ -98,7 +120,7 @@
   .hidden-user.user2 {
     .other-user-wrapper {
       .playing-user-icon {
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
       }
     }
   }
