@@ -24,112 +24,94 @@
   }
 }
 
-.hidden-user {
-  .other-user-wrapper {
-    display: flex;
+.other-user-wrapper {
+  display: flex;
 
-    &:not(.vertical) {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &.vertical {
-      align-items: center;
-    }
+  &:not(.vertical) {
+    @include flex-center(false);
   }
 
-  .playing-user-icon {
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    border: var(--playing-user-icon-border);
+  &.vertical {
+    align-items: center;
   }
+}
 
-  .hidden-cards {
-    display: flex;
-    list-style: none;
-    padding: 0;
+.playing-user-icon {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: var(--playing-user-icon-border);
+}
 
-    &.vertical {
-      height: 100%;
-      margin-top: 2.7rem;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+.hidden-cards {
+  display: flex;
+  list-style: none;
+  padding: 0;
 
-      .hidden-card {
-        transform: rotate(90deg);
-        margin-top: -2.2rem;
-      }
-    }
-
-    &:not(.vertical) {
-      .hidden-card {
-        margin-left: -1.3rem;
-      }
-    }
+  &.vertical {
+    height: 100%;
+    margin-top: 2.7rem;
+    @include flex-center(false);
 
     .hidden-card {
-      box-shadow: var(--hidden_card_box_shadow);
+      transform: rotate(90deg);
+      margin-top: -2.2rem;
+    }
+  }
 
-      .hidden-card-img {
-        width: 2rem;
-      }
+  &:not(.vertical) {
+    .hidden-card {
+      margin-left: -1.3rem;
+    }
+  }
+
+  .hidden-card {
+    box-shadow: var(--hidden_card_box_shadow);
+
+    .hidden-card-img {
+      width: 2rem;
     }
   }
 }
 
 .hidden-user.user1 {
-  .other-user-wrapper {
-    .playing-user-icon {
-      margin-right: 1.5rem;
-    }
+  .playing-user-icon {
+    margin-right: 1.5rem;
   }
 }
 
 .hidden-user.user2 {
-  .other-user-wrapper {
-    .playing-user-icon {
-      margin-bottom: 1rem;
-    }
-    .hidden-cards {
-      margin-left: 1.25rem;
-    }
+  .playing-user-icon {
+    margin-bottom: 1rem;
+  }
+  .hidden-cards {
+    margin-left: 1.25rem;
   }
 }
 
 .hidden-user.user3 {
-  .other-user-wrapper {
-    .playing-user-icon {
-      margin-left: 1.5rem;
-      order: 2;
-    }
+  .playing-user-icon {
+    margin-left: 1.5rem;
+    order: 2;
   }
 }
 
 @include media-breakpoint-down(md) {
   .hidden-user.user1 {
-    .other-user-wrapper {
-      .playing-user-icon {
-        margin-right: 1rem;
-      }
+    .playing-user-icon {
+      margin-right: 1rem;
     }
   }
 
   .hidden-user.user2 {
-    .other-user-wrapper {
-      .playing-user-icon {
-        margin-bottom: 0.7rem;
-      }
+    .playing-user-icon {
+      margin-bottom: 0.7rem;
     }
   }
 
   .hidden-user.user3 {
-    .other-user-wrapper {
-      .playing-user-icon {
-        margin-left: 1rem;
-      }
+    .playing-user-icon {
+      margin-left: 1rem;
     }
   }
 }
