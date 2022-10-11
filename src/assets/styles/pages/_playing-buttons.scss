@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+@use '../vendors/bs' as *;
+@use 'sass:math';
+
+.playing-buttons {
+  margin: 0 auto;
+  max-width: 1100px;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+
+@media (max-width: 650px) {
+  .playing-buttons {
+    margin-top: 5rem;
+  }
+}

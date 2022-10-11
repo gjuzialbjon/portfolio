@@ -4,15 +4,16 @@
 
 .playing-table {
   position: relative;
-  margin: 0rem auto 0rem;
+  margin: 3rem auto 0.5rem;
   max-width: 1000px;
+  background: var(--cards_table_fallback_bg);
   background: var(--cards_table_bg);
-  background: brown;
+
   border-radius: 10rem;
   padding: 4rem 2rem;
 
   .cards-table {
-    > div{
+    > div {
       width: 70%;
     }
 
@@ -27,7 +28,7 @@
 @include media-breakpoint-up(lg) {
   .playing-table {
     .user-cards {
-      bottom: -65%;
+      bottom: -57%;
     }
   }
 }
@@ -68,7 +69,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   .playing-table {
     .cards-table {
       .playing-card {

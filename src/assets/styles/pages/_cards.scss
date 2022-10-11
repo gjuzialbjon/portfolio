@@ -13,6 +13,7 @@ app-cards {
 }
 
 .playing-cards {
+  margin: 0 0 1rem;
   padding: 2rem 1rem 0;
   list-style: none;
 
@@ -22,8 +23,8 @@ app-cards {
 .playing-card {
   position: relative;
   background-color: var(--playing_card_bg);
-  flex: 0 1 110px;
-  aspect-ratio: math.div(3.3, 5);
+  flex: 0 1 90px;
+  aspect-ratio: math.div(3.3, 5) !important;
   border: var(--playing_card_border);
   border-radius: 7px;
   padding: 1.8rem;
@@ -32,7 +33,7 @@ app-cards {
   transition: background-color 0.2s ease-in-out;
 
   &:not(:first-child) {
-    margin-left: -2.75rem;
+    margin-left: -2.5rem;
   }
 
   &.selected {
@@ -148,7 +149,7 @@ app-cards {
 @include media-breakpoint-down(xl) {
   .playing-card {
     &:not(:first-child) {
-      margin-left: -3rem;
+      margin-left: -2.65rem;
     }
 
     &.selected {
@@ -159,12 +160,13 @@ app-cards {
 
 @include media-breakpoint-down(lg) {
   .playing-card {
-    flex: 0 1 70px;
-    max-height: 110px;
+    flex: 0 1 60px;
+    max-height: 90px;
+    height: 90px;
     padding: 1.1rem 1.2rem;
 
     &:not(:first-child) {
-      margin-left: -2.1rem;
+      margin-left: -1.7rem;
     }
 
     .card-top,
@@ -198,11 +200,10 @@ app-cards {
 
 @include media-breakpoint-down(md) {
   .playing-card {
-    flex: 0 1 60px;
-    max-height: 90px;
+    height: auto;
 
     &:not(:first-child) {
-      margin-left: -2rem;
+      margin-left: -1.9rem;
     }
   }
 }
@@ -213,7 +214,7 @@ app-cards {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   .hint-to-rotate {
     display: block;
   }
