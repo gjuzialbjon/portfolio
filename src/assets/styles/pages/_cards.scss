@@ -3,9 +3,7 @@
 @use '../vendors/bs' as *;
 
 app-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center(true);
 }
 
 .user-cards {
@@ -14,13 +12,11 @@ app-cards {
   left: 0;
 }
 
-
 .playing-cards {
   padding: 2rem 1rem 0;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
   list-style: none;
+
+  @include flex-center(true, false);
 }
 
 .playing-card {
@@ -48,13 +44,7 @@ app-cards {
     background-color: var(--playing_card_warn_bg);
   }
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  @include user-select-none;
 }
 
 .card-diamond,
@@ -70,9 +60,7 @@ app-cards {
 .card-top,
 .card-bottom {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center(false);
 
   span:not(.card-nr) {
     font-weight: 800;
@@ -122,6 +110,7 @@ app-cards {
   transform: rotate(180deg);
 }
 
+// Grid for suits in the center
 @for $i from 1 through 15 {
   .f-#{$i} {
     grid-row-start: math.ceil(math.div($i, 3));
