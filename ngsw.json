@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1665475129846,
+  "timestamp": 1665475309122,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -130,7 +130,7 @@
     "./assets/media/suits/spade.svg": "9d5ecf2c2e2dc3c098c928adb506011bebdec767",
     "./dark.css": "c9281b29d1c387f60c1c7600fc5b443e8399fca1",
     "./index.html": "f99a702184b8bd87ffcfad58f79e9381c0393d58",
-    "./light.css": "2419c998cb23a854ba41bd41460e0e6b797575d4",
+    "./light.css": "2f378e4cfc9aed4cd4f42e6e888a6bb9638fcb38",
     "./main.84a9c5f691b65bb2.js": "efe3044b6dbcc6fb4e3e20cadc05949457ee363c",
     "./manifest.webmanifest": "445da3b5a7d4a8cef887fb8cc407118507df63ef",
     "./polyfills.d99fd2c2c5512fef.js": "a850054b083fc2e0158bf66e8d1cc1e119b377ed",
