@@ -1,6 +1,6 @@
 <div class="playing-table my-5">
   <app-hidden-cards class="hidden-user user1"></app-hidden-cards>
-  <app-hidden-cards [vertical]="false" class="hidden-user user2"></app-hidden-cards>
+  <app-hidden-cards class="hidden-user user2" [vertical]="false"> </app-hidden-cards>
   <app-hidden-cards class="hidden-user user3"></app-hidden-cards>
 
   <app-cards class="cards-table" [cards]="cards" [isTable]="true" [selectedCount]="selectedCount" (shuffle)="shuffle()"></app-cards>

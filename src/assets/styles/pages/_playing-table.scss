@@ -11,20 +11,14 @@
   border-radius: 10rem;
   padding: 4rem 2rem;
 
-  .user-cards {
-    width: 100%;
-    position: absolute;
-    left: 0;
-  }
-
   .cards-table {
-    .playing-cards-wrapper {
+    > div{
       width: 70%;
+    }
 
-      .playing-card {
-        &:not(:first-child) {
-          margin-left: -3.3rem;
-        }
+    .playing-card {
+      &:not(:first-child) {
+        margin-left: -3.3rem;
       }
     }
   }
@@ -41,11 +35,9 @@
 @include media-breakpoint-down(xl) {
   .playing-table {
     .cards-table {
-      .playing-cards-wrapper {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -2.7rem;
-          }
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -2.7rem;
         }
       }
     }
@@ -55,11 +47,9 @@
 @include media-breakpoint-down(lg) {
   .playing-table {
     .cards-table {
-      .playing-cards-wrapper {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -2.5rem;
-          }
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -2.5rem;
         }
       }
     }
@@ -69,11 +59,9 @@
 @include media-breakpoint-down(md) {
   .playing-table {
     .cards-table {
-      .playing-cards-wrapper {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -2.3rem;
-          }
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -2.3rem;
         }
       }
     }
@@ -83,11 +71,9 @@
 @media (max-width: 500px) {
   .playing-table {
     .cards-table {
-      .playing-cards-wrapper {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -1.8rem;
-          }
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -1.8rem;
         }
       }
     }
@@ -97,11 +83,9 @@
     .user-cards {
       bottom: -40%;
 
-      .playing-cards-wrapper {
-        .playing-card {
-          &:not(:first-child) {
-            margin-left: -1rem;
-          }
+      .playing-card {
+        &:not(:first-child) {
+          margin-left: -1rem;
         }
       }
     }

@@ -8,9 +8,12 @@ app-cards {
   justify-content: center;
 }
 
-.playing-cards-wrapper {
-  overflow: hidden;
+.user-cards {
+  width: 100%;
+  position: absolute;
+  left: 0;
 }
+
 
 .playing-cards {
   padding: 2rem 1rem 0;
