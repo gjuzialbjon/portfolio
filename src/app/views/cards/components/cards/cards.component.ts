@@ -10,6 +10,7 @@ export class CardsComponent implements OnInit {
   @Input() cards!: Card[]
   @Input() selectedCount = 0
   @Input() isTable = false
+  @Output() changedSelected = new EventEmitter()
   positions = ['top', 'bottom flip']
 
   isPlayersTurn = true
@@ -31,6 +32,7 @@ export class CardsComponent implements OnInit {
   selectCard(i: number) {
     this.cards[i].selected = !this.cards[i].selected
     this.cards[i].selected ? this.selectedCount++ : this.selectedCount--
+    this.changedSelected.emit(this.cards.filter((c) => c.selected).slice())
   }
 
   playSelected() {

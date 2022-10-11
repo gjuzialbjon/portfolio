@@ -1,0 +1,29 @@
+.playing-card.throwing {
+  background: red;
+  position: absolute;
+  z-index: 10;
+
+  -webkit-animation: throw 2s cubic-bezier(0.75, 0, 0.2, 1) 1;
+  animation: throw 2s cubic-bezier(0.75, 0, 0.2, 1) 1;
+}
+
+@keyframes throw {
+  0% {
+    top: -1rem;
+    left: 50%
+  }
+  100% {
+    top: -6rem;
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes throw {
+  0% {
+    top: -1rem;
+  }
+  100% {
+    top: -6rem;
+    left: 50%;
+  }
+}

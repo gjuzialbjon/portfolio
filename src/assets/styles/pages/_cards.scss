@@ -7,9 +7,10 @@ app-cards {
 }
 
 .user-cards {
-  width: 100%;
+  width: 80%;
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .playing-cards {
@@ -24,6 +25,7 @@ app-cards {
   position: relative;
   background-color: var(--playing_card_bg);
   flex: 0 1 90px;
+  max-height: 136.5px;
   aspect-ratio: math.div(3.3, 5) !important;
   border: var(--playing_card_border);
   border-radius: 7px;

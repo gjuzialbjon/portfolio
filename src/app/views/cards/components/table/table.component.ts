@@ -11,7 +11,15 @@ export class TableComponent implements OnInit {
   values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
   cards: Card[] = []
   selectedCount = 0
-  cards2 = []
+  selectedCards: Card[] = []
+  selectedCardsLI: HTMLLIElement[] = []
+  cards2: Card[] = [
+    {
+      value: 11,
+      suit: 'diamond',
+      selected: false,
+    },
+  ]
 
   constructor() {}
 
@@ -20,6 +28,13 @@ export class TableComponent implements OnInit {
   }
 
   shuffle() {
+    this.cards2 = [
+      {
+        value: 11,
+        suit: 'diamond',
+        selected: false,
+      },
+    ]
     this.cards = []
     this.selectedCount = 0
     this.generateCards()
@@ -44,5 +59,38 @@ export class TableComponent implements OnInit {
     const redJoker = { value: 14, suit: 'heart' }
 
     this.cards.push(...[redJoker, blackJoker])
+  }
+
+  throw() {
+    this.selectedCardsLI.forEach((c, i) => {
+      c.classList.add('throwing')
+
+      setTimeout(() => {
+        c.classList.remove('throwing')
+
+        if (i === this.selectedCardsLI.length - 1) {
+          this.moveToTable()
+        }
+      }, 2000)
+    })
+  }
+
+  moveToTable() {
+    this.cards = this.cards.filter((c) => !c.selected)
+    this.cards2 = this.selectedCards
+  }
+
+  changedSelected(cards: Card[]) {
+    console.log('Selected cards ', cards)
+    const selectedCardsLI: HTMLLIElement[] = []
+
+    for (const card of cards) {
+      selectedCardsLI.push(document.getElementById(card.value + card.suit) as HTMLLIElement)
+    }
+
+    this.selectedCards = cards
+    this.selectedCardsLI = selectedCardsLI
+
+    console.log('Selected LI', selectedCardsLI)
   }
 }
