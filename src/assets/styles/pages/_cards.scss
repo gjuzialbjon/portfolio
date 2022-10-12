@@ -7,15 +7,14 @@ app-cards {
 }
 
 .user-cards {
-  width: 80%;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
 .playing-cards {
-  margin: 0 0 1rem;
-  padding: 2rem 1rem 0;
+  margin: 0;
+  padding: 2rem 0.5rem 0;
   list-style: none;
 
   @include flex-center(true, false);
@@ -25,6 +24,7 @@ app-cards {
   position: relative;
   background-color: var(--playing_card_bg);
   flex: 0 1 90px;
+  min-width: 90px;
   max-height: 136.5px;
   aspect-ratio: math.div(3.3, 5) !important;
   border: var(--playing_card_border);
@@ -39,7 +39,7 @@ app-cards {
   }
 
   &.selected {
-    top: -2rem;
+    top: -1rem;
     background-color: var(--playing_card_selected_bg);
   }
 
@@ -153,10 +153,6 @@ app-cards {
     &:not(:first-child) {
       margin-left: -2.65rem;
     }
-
-    &.selected {
-      top: -1rem;
-    }
   }
 }
 
@@ -164,6 +160,7 @@ app-cards {
   .playing-card {
     flex: 0 1 60px;
     max-height: 90px;
+    min-width: 60px;
     height: 90px;
     padding: 1.1rem 1.2rem;
 
@@ -224,6 +221,7 @@ app-cards {
   .playing-card {
     flex: 0 1 45px;
     max-height: 65px;
+    min-width: 40px;
 
     &:not(:first-child) {
       margin-left: -1.2rem;

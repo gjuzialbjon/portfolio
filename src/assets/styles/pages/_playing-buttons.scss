@@ -3,19 +3,24 @@
 @use 'sass:math';
 
 .playing-buttons {
-  margin: 0 auto;
-  max-width: 1100px;
+  position: absolute;
+  max-width: 1000px;
   height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // background: rgb(0, 239, 120);
+  z-index: 10;
+  bottom: -50%;
 
-  z-index: 100;
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
 }
-
 
 @media (max-width: 650px) {
   .playing-buttons {
-    margin-top: 5rem;
+    bottom: -85%;
   }
 }

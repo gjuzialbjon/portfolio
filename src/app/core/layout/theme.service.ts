@@ -8,9 +8,9 @@ import { BehaviorSubject, Observable } from 'rxjs'
   providedIn: 'root',
 })
 export class ThemeService {
-  defaultLocalTheme: Themes = (localStorage.getItem('default-theme') as Themes)
+  defaultLocalTheme: Themes = localStorage.getItem('default-theme') as Themes
   prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-  theme: Themes = environment.production
+  theme: Themes = false /* environment.production */
     ? this.defaultLocalTheme
       ? this.defaultLocalTheme
       : this.prefersDark
@@ -26,7 +26,6 @@ export class ThemeService {
 
   toggleTheme() {
     this.loadStyle(this.theme === Themes.dark ? Themes.light : Themes.dark)
-    console.log('Prefers dark ', this.prefersDark);
   }
 
   loadStyle(theme: Themes) {

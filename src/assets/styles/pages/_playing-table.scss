@@ -6,6 +6,7 @@
   position: relative;
   margin: 3rem auto 0.5rem;
   max-width: 1000px;
+  min-height: 284.36px;
   border-radius: 10rem;
   background: var(--cards_table_fallback_bg);
   background: var(--cards_table_bg);
@@ -14,7 +15,7 @@
 
   .cards-table {
     > div {
-      width: 70%;
+      width: 65%;
     }
 
     .selected {
@@ -33,7 +34,7 @@
 @include media-breakpoint-up(lg) {
   .playing-table {
     .user-cards {
-      bottom: -57%;
+      bottom: -100px;
     }
   }
 }
@@ -52,10 +53,17 @@
 
 @include media-breakpoint-down(lg) {
   .playing-table {
+    min-height: 223px;
+
     .cards-table {
       .playing-card {
+        flex: 0 1 50px;
+        max-height: 75px;
+        height: 75px;
+        min-width: 50px;
+
         &:not(:first-child) {
-          margin-left: -2.5rem;
+          margin-left: -1.7rem;
         }
       }
     }
@@ -67,7 +75,7 @@
     .cards-table {
       .playing-card {
         &:not(:first-child) {
-          margin-left: -2.3rem;
+          margin-left: -1.7rem;
         }
       }
     }
@@ -78,20 +86,22 @@
   .playing-table {
     .cards-table {
       .playing-card {
+        flex: 0 1 45px;
+        max-height: 65px;
+        min-width: 40px;
+
         &:not(:first-child) {
-          margin-left: -1.8rem;
+          margin-left: -1.3rem;
         }
       }
     }
-  }
 
-  .playing-table {
     .user-cards {
-      bottom: -40%;
+      bottom: -60px;
 
       .playing-card {
         &:not(:first-child) {
-          margin-left: -1rem;
+          margin-left: -1.3rem;
         }
       }
     }

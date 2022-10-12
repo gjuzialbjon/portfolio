@@ -14,11 +14,7 @@ export class TableComponent implements OnInit {
   selectedCards: Card[] = []
   selectedCardsLI: HTMLLIElement[] = []
   cards2: Card[] = [
-    {
-      value: 11,
-      suit: 'diamond',
-      selected: false,
-    },
+    
   ]
 
   constructor() {}
@@ -30,7 +26,17 @@ export class TableComponent implements OnInit {
   shuffle() {
     this.cards2 = [
       {
-        value: 11,
+        value: 10,
+        suit: 'diamond',
+        selected: false,
+      },
+      {
+        value: 10,
+        suit: 'diamond',
+        selected: false,
+      },
+      {
+        value: 10,
         suit: 'diamond',
         selected: false,
       },
@@ -71,7 +77,7 @@ export class TableComponent implements OnInit {
         if (i === this.selectedCardsLI.length - 1) {
           this.moveToTable()
         }
-      }, 2000)
+      }, 1000)
     })
   }
 

@@ -3,14 +3,14 @@
   position: absolute;
   z-index: 10;
 
-  -webkit-animation: throw 2s cubic-bezier(0.75, 0, 0.2, 1) 1;
-  animation: throw 2s cubic-bezier(0.75, 0, 0.2, 1) 1;
+  -webkit-animation: throw 1s cubic-bezier(0.75, 0, 0.2, 1) 1;
+  animation: throw 1s cubic-bezier(0.75, 0, 0.2, 1) 1;
 }
 
 @keyframes throw {
   0% {
     top: -1rem;
-    left: 50%
+    left: 50%;
   }
   100% {
     top: -6rem;
@@ -21,6 +21,7 @@
 @-webkit-keyframes throw {
   0% {
     top: -1rem;
+    left: 50%;
   }
   100% {
     top: -6rem;
