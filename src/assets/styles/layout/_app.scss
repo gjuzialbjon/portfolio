@@ -1,10 +1,15 @@
 @use '../abstracts' as *;
 
-html, body {
-    scroll-behavior: smooth;
-    max-height: max-content;
+html,
+body {
+  scroll-behavior: smooth;
+  max-height: max-content;
 }
 
 .main-content {
-    padding-top: calc(#{$headerHt} + 1rem);
+  padding-top: calc(#{$headerHt} + 1rem);
+}
+
+body {
+  overflow-x: hidden;
 }
