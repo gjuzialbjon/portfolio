@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core'
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Themes } from '@enums/themes'
 import { ThemeService } from '@layout-services/theme.service'
@@ -11,18 +11,36 @@ import { Title } from '@angular/platform-browser'
   styles: [],
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('header') headerEl!: ElementRef
+  appWrapperEl!: HTMLDivElement
+
   navButton!: HTMLInputElement | null
   Themes = Themes
   theme!: Observable<Themes>
   langCheckbox
   lang: 'al' | 'en'
 
-  hideHeader = false;
+  prevY = 0
+  currentY = 0
+  hideHeader = false
 
-  // @HostListener('window:scroll', ['$event'])
-  // checkScroll() {
-  //   this.isSticky = window.pageYOffset >= 250
-  // }
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    this.currentY = window.scrollY
+
+    if (this.prevY > this.currentY) {
+      this.headerEl.nativeElement.style.top = '0'
+      if (this.appWrapperEl) {
+        this.appWrapperEl.style.paddingTop = 'calc(50px + 1rem)'
+      }
+    } else {
+      this.headerEl.nativeElement.style.top = '-50px'
+      if (this.appWrapperEl) {
+        this.appWrapperEl.style.paddingTop = '20px'
+      }
+    }
+    this.prevY = this.currentY
+  }
 
   constructor(private themeService: ThemeService, private translate: TranslateService, private title: Title) {
     this.theme = this.themeService.getTheme()
@@ -45,6 +63,7 @@ export class HeaderComponent implements OnInit {
 
   ngAfterViewInit() {
     this.navButton = document.getElementById('my-nav-check') as HTMLInputElement
+    this.appWrapperEl = document.getElementById('app-wrapper') as HTMLDivElement
   }
 
   closeMenu() {

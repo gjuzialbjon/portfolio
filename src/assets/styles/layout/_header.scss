@@ -5,11 +5,12 @@
   height: $headerHt;
   background-color: var(--header__bg);
   position: fixed;
-  top: -1px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1099;
   box-shadow: var(--header__shadow);
+  transition: top .15s ease-in-out;
 }
 
 .my-nav-header,
