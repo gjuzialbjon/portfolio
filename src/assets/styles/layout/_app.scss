@@ -7,7 +7,7 @@ body {
 }
 
 .main-content {
-  padding-top: calc(#{$headerHt} + 1rem);
+  padding-top: 1rem;
   transition: padding-top .15s ease-in-out;
 }
 

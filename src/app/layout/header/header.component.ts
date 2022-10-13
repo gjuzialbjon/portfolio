@@ -20,27 +20,28 @@ export class HeaderComponent implements OnInit {
   langCheckbox
   lang: 'al' | 'en'
 
-  prevY = 0
-  currentY = 0
-  hideHeader = false
+  // prevY = 0
+  // currentY = 0
+  // hideHeader = false
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.currentY = window.scrollY
+  // @HostListener('window:scroll', ['$event'])
+  // checkScroll() {
+  //   this.currentY = window.scrollY
+  //   console.log('current ', this.currentY, ' prev', this.prevY)
 
-    if (this.prevY > this.currentY) {
-      this.headerEl.nativeElement.style.top = '0'
-      if (this.appWrapperEl) {
-        this.appWrapperEl.style.paddingTop = 'calc(50px + 1rem)'
-      }
-    } else {
-      this.headerEl.nativeElement.style.top = '-50px'
-      if (this.appWrapperEl) {
-        this.appWrapperEl.style.paddingTop = '20px'
-      }
-    }
-    this.prevY = this.currentY
-  }
+  //   if (this.prevY > this.currentY || this.currentY < 40) {
+  //     this.headerEl.nativeElement.style.top = '0'
+  //     if (this.appWrapperEl) {
+  //       this.appWrapperEl.style.paddingTop = 'calc(50px + 1rem)'
+  //     }
+  //   } else {
+  //     this.headerEl.nativeElement.style.top = '-50px'
+  //     if (this.appWrapperEl) {
+  //       this.appWrapperEl.style.paddingTop = '20px'
+  //     }
+  //   }
+  //   this.prevY = this.currentY
+  // }
 
   constructor(private themeService: ThemeService, private translate: TranslateService, private title: Title) {
     this.theme = this.themeService.getTheme()
@@ -63,7 +64,7 @@ export class HeaderComponent implements OnInit {
 
   ngAfterViewInit() {
     this.navButton = document.getElementById('my-nav-check') as HTMLInputElement
-    this.appWrapperEl = document.getElementById('app-wrapper') as HTMLDivElement
+    // this.appWrapperEl = document.getElementById('app-wrapper') as HTMLDivElement
   }
 
   closeMenu() {

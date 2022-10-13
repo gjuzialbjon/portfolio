@@ -35,22 +35,21 @@
     </label>
   </div>
 
-  <div class="my-nav-links" id="my-nav-links">
-    <span class="menu-item" (click)="closeMenu()" routerLink="home" routerLinkActive="active" title="{{ 'Menu.Home-desc' | translate }}">
+  <div class="my-nav-links" id="my-nav-links" (click)="closeMenu()">
+    <span class="menu-item" routerLink="home" routerLinkActive="active" title="{{ 'Menu.Home-desc' | translate }}">
       <i class="fas fa-home"></i>
       {{ 'Menu.Home' | translate }}
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="cv" routerLinkActive="active" title="{{ 'Menu.CV-desc' | translate }}">
+    <span class="menu-item" routerLink="cv" routerLinkActive="active" title="{{ 'Menu.CV-desc' | translate }}">
       <i class="fas fa-file-alt"></i>
       {{ 'Menu.CV' | translate }}
     </span>
-    <span class="menu-item" (click)="closeMenu()" routerLink="cards" routerLinkActive="active" title="{{ 'Menu.Cards' | translate }}">
+    <span class="menu-item" routerLink="cards" routerLinkActive="active" title="{{ 'Menu.Cards' | translate }}">
       <i class="fas fa-heart"></i>
       {{ 'Menu.Cards' | translate }}
     </span>
     <!-- <span
       class="menu-item"
-      (click)="closeMenu()"
       routerLink="about"
       routerLinkActive="active"
       title="{{ 'Menu.About_desc' | translate }}"

@@ -41,14 +41,12 @@
 @keyframes throw {
   0% {
     top: 0rem;
-    left: 50%;
     height: var(--slide-up-card-start-h);
     width: var(--slide-up-card-start-w);
   }
   100% {
     background: var(--playing_card_bg);
     top: var(--slide-up-card-y);
-    left: 50%;
     height: var(--slide-up-card-end-h);
     width: var(--slide-up-card-end-w);
   }
@@ -57,14 +55,12 @@
 @-webkit-keyframes throw {
   0% {
     top: 0rem;
-    left: 50%;
     height: var(--slide-up-card-start-h);
     width: var(--slide-up-card-start-w);
   }
   100% {
     background: var(--playing_card_bg);
     top: var(--slide-up-card-y);
-    left: 50%;
     height: var(--slide-up-card-end-h);
     width: var(--slide-up-card-end-w);
   }

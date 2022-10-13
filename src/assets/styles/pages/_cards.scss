@@ -7,6 +7,8 @@ app-cards {
 }
 
 .user-cards {
+  min-height: 168px;
+  max-width: 100vw;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -157,6 +159,10 @@ app-cards {
 }
 
 @include media-breakpoint-down(lg) {
+  .user-cards {
+    min-height: 122px;
+  }
+
   .playing-card {
     flex: 0 1 60px;
     max-height: 90px;
@@ -216,6 +222,10 @@ app-cards {
 @media (max-width: 540px) {
   .hint-to-rotate {
     display: block;
+  }
+
+  .user-cards {
+    min-height: 94px;
   }
 
   .playing-card {

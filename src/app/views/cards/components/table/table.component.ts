@@ -13,9 +13,7 @@ export class TableComponent implements OnInit {
   selectedCount = 0
   selectedCards: Card[] = []
   selectedCardsLI: HTMLLIElement[] = []
-  cards2: Card[] = [
-    
-  ]
+  cards2: Card[] = []
 
   constructor() {}
 
@@ -25,21 +23,21 @@ export class TableComponent implements OnInit {
 
   shuffle() {
     this.cards2 = [
-      {
-        value: 10,
-        suit: 'diamond',
-        selected: false,
-      },
-      {
-        value: 10,
-        suit: 'diamond',
-        selected: false,
-      },
-      {
-        value: 10,
-        suit: 'diamond',
-        selected: false,
-      },
+      // {
+      //   value: 10,
+      //   suit: 'diamond',
+      //   selected: false,
+      // },
+      // {
+      //   value: 10,
+      //   suit: 'diamond',
+      //   selected: false,
+      // },
+      // {
+      //   value: 10,
+      //   suit: 'diamond',
+      //   selected: false,
+      // },
     ]
     this.cards = []
     this.selectedCount = 0
@@ -49,7 +47,7 @@ export class TableComponent implements OnInit {
     this.cards.sort(() => 0.5 - Math.random())
 
     // Get hand portion
-    this.cards = this.cards.slice(0, 14)
+    this.cards = this.cards.slice(0, 3)
   }
 
   generateCards() {
@@ -68,8 +66,10 @@ export class TableComponent implements OnInit {
   }
 
   throw() {
+    let count = -(this.selectedCardsLI.length - 1) / 2
     this.selectedCardsLI.forEach((c, i) => {
       c.classList.add('throwing')
+      c.style.marginLeft = count++ * 50 + 'px'
 
       setTimeout(() => {
         c.classList.remove('throwing')

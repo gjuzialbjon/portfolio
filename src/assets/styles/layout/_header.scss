@@ -4,7 +4,7 @@
 .my-nav {
   height: $headerHt;
   background-color: var(--header__bg);
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -41,7 +41,7 @@
 
 .my-nav-links > span {
   display: inline-block;
-  padding: 11.8px 20px;
+  padding: 10.5px 20px;
   text-decoration: none;
   cursor: pointer;
   font-weight: 500;
@@ -84,6 +84,7 @@
   }
 
   .my-nav-links {
+    z-index: 100;
     position: absolute;
     display: block;
     width: 100%;
