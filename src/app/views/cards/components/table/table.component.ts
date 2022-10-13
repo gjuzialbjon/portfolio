@@ -47,7 +47,7 @@ export class TableComponent implements OnInit {
     this.cards.sort(() => 0.5 - Math.random())
 
     // Get hand portion
-    this.cards = this.cards.slice(0, 3)
+    this.cards = this.cards.slice(0, 14)
   }
 
   generateCards() {
