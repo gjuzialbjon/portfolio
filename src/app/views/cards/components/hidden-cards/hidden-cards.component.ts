@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Subject } from 'rxjs'
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators'
+import { MurlanService } from '../../murlan.service'
 
 @Component({
   selector: 'app-hidden-cards',
@@ -6,11 +9,45 @@ import { Component, Input, OnInit } from '@angular/core'
   styles: [],
 })
 export class HiddenCardsComponent implements OnInit {
+  @Input() playerNumber = 0
   @Input() vertical = true
+  @Input() startCount = 14
+  throwing = false
+  hiddenCards: any[] = [...Array(this.startCount).keys()]
 
-  count = 14
+  destroyed$ = new Subject()
 
-  constructor() {}
+  constructor(private murlan: MurlanService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.murlan.Game.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((res) => {
+      if (res.player === this.playerNumber) {
+        console.log(res)
+        const cardsToThrow = this.hiddenCards.slice(0, res.cards.length)
+        console.log('cards to throw ', cardsToThrow)
+
+        const hiddenCardsLI: (HTMLElement | null)[] = []
+
+        cardsToThrow.forEach((c, i) => {
+          const id = 'hidden' + this.playerNumber + i
+          hiddenCardsLI.push(document.getElementById(id))
+        })
+
+        hiddenCardsLI.forEach((c) => {
+          c?.classList.add('thrown')
+        })
+
+        setTimeout(() => {
+          this.hiddenCards.splice(0, res.cards.length)
+        }, 1000)
+
+        console.log('Throwing ', cardsToThrow, hiddenCardsLI)
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.next()
+    this.destroyed$.complete()
+  }
 }

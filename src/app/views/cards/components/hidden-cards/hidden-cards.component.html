@@ -4,7 +4,7 @@
   </div>
 
   <ul class="hidden-cards" [ngClass]="{ vertical: vertical }">
-    <li *ngFor="let card of [].constructor(count)" class="hidden-card">
+    <li *ngFor="let card of hiddenCards; let i = index" [id]="'hidden' + playerNumber + i" class="hidden-card">
       <img src="assets/media/suits/back.svg" class="hidden-card-img" alt="" />
     </li>
   </ul>

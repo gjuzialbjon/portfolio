@@ -1,0 +1,77 @@
+.hidden-card.thrown {
+  position: absolute;
+  z-index: 15;
+}
+
+.user1 .hidden-card.thrown {
+  -webkit-animation: throw-hidden-from-left 1s ease-out 1;
+  animation: throw-hidden-from-left 1s ease-out 1;
+}
+
+.user2 .hidden-card.thrown {
+  -webkit-animation: throw-hidden-from-top 1s ease-out 1;
+  animation: throw-hidden-from-top 1s ease-out 1;
+}
+
+.user3 .hidden-card.thrown {
+  -webkit-animation: throw-hidden-from-right 1s ease-out 1;
+  animation: throw-hidden-from-right 1s ease-out 1;
+}
+
+@keyframes throw-hidden-from-left {
+  0% {
+    left: 1.5rem;
+  }
+  100% {
+    left: 25rem;
+  }
+}
+
+@-webkit-keyframes throw-hidden-from-left {
+  0% {
+    left: 1.5rem;
+  }
+  100% {
+    left: 25rem;
+  }
+}
+
+@keyframes throw-hidden-from-top {
+  0% {
+    left: 50%;
+    top: 1.5rem;
+  }
+  100% {
+    left: 50%;
+    top: 10rem;
+  }
+}
+
+@-webkit-keyframes throw-hidden-from-top {
+  0% {
+    left: 50%;
+    top: 1.5rem;
+  }
+  100% {
+    left: 50%;
+    top: 10rem;
+  }
+}
+
+@keyframes throw-hidden-from-right {
+  0% {
+    right: 1.5rem;
+  }
+  100% {
+    right: 25rem;
+  }
+}
+
+@-webkit-keyframes throw-hidden-from-right {
+  0% {
+    right: 1.5rem;
+  }
+  100% {
+    right: 25rem;
+  }
+}

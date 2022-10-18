@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { MurlanService } from '../../murlan.service'
 import { Card } from '../cards/cards.component'
 
 @Component({
@@ -15,10 +16,13 @@ export class TableComponent implements OnInit {
   selectedCardsLI: HTMLLIElement[] = []
   cards2: Card[] = []
 
-  constructor() {}
+  constructor(private murlan: MurlanService) {}
 
   ngOnInit(): void {
     this.shuffle()
+    this.murlan.Game.subscribe((res) => {
+      // console.log(res)
+    })
   }
 
   shuffle() {
@@ -79,6 +83,8 @@ export class TableComponent implements OnInit {
         }
       }, 1000)
     })
+
+    this.murlan.throw(Math.floor(Math.random() * 3) + 1, this.selectedCards)
   }
 
   moveToTable() {
