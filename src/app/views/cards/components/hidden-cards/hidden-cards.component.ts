@@ -29,17 +29,19 @@ export class HiddenCardsComponent implements OnInit {
         const hiddenCardsLI: (HTMLElement | null)[] = []
 
         cardsToThrow.forEach((c, i) => {
-          const id = 'hidden' + this.playerNumber + i
-          hiddenCardsLI.push(document.getElementById(id))
+          hiddenCardsLI.push(document.getElementById('hidden' + this.playerNumber + i))
         })
 
         hiddenCardsLI.forEach((c) => {
           c?.classList.add('thrown')
         })
 
-        setTimeout(() => {
-          this.hiddenCards.splice(0, res.cards.length)
-        }, 1000)
+        setTimeout(
+          () => {
+            this.hiddenCards.splice(0, res.cards.length)
+          },
+          this.playerNumber === 2 ? 500 : 1000
+        )
 
         console.log('Throwing ', cardsToThrow, hiddenCardsLI)
       }

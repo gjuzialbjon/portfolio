@@ -84,7 +84,9 @@ export class TableComponent implements OnInit {
       }, 1000)
     })
 
-    this.murlan.throw(Math.floor(Math.random() * 3) + 1, this.selectedCards)
+    setTimeout(() => {
+      this.murlan.throw(Math.floor(Math.random() * 3) + 1, this.selectedCards)
+    }, 1000)
   }
 
   moveToTable() {

@@ -1,20 +1,20 @@
 <div class="playing-table">
+  <app-cards class="cards-table" [cards]="cards2" [isTable]="true" [selectedCount]="selectedCount" (shuffle)="shuffle()"></app-cards>
+
   <app-hidden-cards [playerNumber]="1" class="hidden-user user1"></app-hidden-cards>
   <app-hidden-cards [playerNumber]="2" class="hidden-user user2" [vertical]="false"> </app-hidden-cards>
   <app-hidden-cards [playerNumber]="3" class="hidden-user user3"></app-hidden-cards>
 
-  <app-cards class="cards-table" [cards]="cards2" [isTable]="true" [selectedCount]="selectedCount" (shuffle)="shuffle()"></app-cards>
-
   <app-cards class="user-cards" [cards]="cards" [selectedCount]="selectedCount" (changedSelected)="changedSelected($event)"></app-cards>
 
-    <div class="playing-buttons left d-flex flex-column gap-2">
-      <button class="btn btn-primary" (click)="shuffle()">{{ 'Cards.shuffle' | translate }}</button>
-      <button class="btn btn-info">button2</button>
-    </div>
-    <div class="playing-buttons right d-flex flex-column gap-2">
-      <button class="btn btn-warning" (click)="throw()">{{ 'Cards.throw' | translate }}</button>
-      <button class="btn btn-danger">button4</button>
-    </div>
+  <div class="playing-buttons left d-flex flex-column gap-2">
+    <button class="btn btn-primary" (click)="shuffle()">{{ 'Cards.shuffle' | translate }}</button>
+    <button class="btn btn-info">button2</button>
+  </div>
+  <div class="playing-buttons right d-flex flex-column gap-2">
+    <button class="btn btn-warning" (click)="throw()">{{ 'Cards.throw' | translate }}</button>
+    <button class="btn btn-danger">button4</button>
+  </div>
 </div>
 
 <!-- <p class="hint-to-rotate text-msg text-center pt-2">{{ 'Rotate_msg' | translate }}</p> -->

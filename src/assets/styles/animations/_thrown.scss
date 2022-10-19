@@ -1,6 +1,8 @@
+@use '../vendors/bs' as *;
+
 .hidden-card.thrown {
   position: absolute;
-  z-index: 15;
+  z-index: 150;
 }
 
 .user1 .hidden-card.thrown {
@@ -9,8 +11,8 @@
 }
 
 .user2 .hidden-card.thrown {
-  -webkit-animation: throw-hidden-from-top 1s ease-out 1;
-  animation: throw-hidden-from-top 1s ease-out 1;
+  -webkit-animation: throw-hidden-from-top .5s ease-out 1;
+  animation: throw-hidden-from-top .5s ease-out 1;
 }
 
 .user3 .hidden-card.thrown {
@@ -20,58 +22,91 @@
 
 @keyframes throw-hidden-from-left {
   0% {
-    left: 1.5rem;
+    left: var(--slide-left-from);
   }
   100% {
-    left: 25rem;
+    left: var(--slide-left-to);
   }
 }
 
 @-webkit-keyframes throw-hidden-from-left {
   0% {
-    left: 1.5rem;
+    left: var(--slide-left-from);
   }
   100% {
-    left: 25rem;
+    left: var(--slide-left-to);
   }
 }
 
 @keyframes throw-hidden-from-top {
   0% {
     left: 50%;
-    top: 1.5rem;
+    top: var(--slide-top-from);
   }
   100% {
     left: 50%;
-    top: 10rem;
+    top: var(--slide-top-to);
   }
 }
 
 @-webkit-keyframes throw-hidden-from-top {
   0% {
     left: 50%;
-    top: 1.5rem;
+    top: var(--slide-top-from);
   }
   100% {
     left: 50%;
-    top: 10rem;
+    top: var(--slide-top-to);
   }
 }
 
 @keyframes throw-hidden-from-right {
   0% {
-    right: 1.5rem;
+    right: var(--slide-right-from);
   }
   100% {
-    right: 25rem;
+    right: var(--slide-right-to);
   }
 }
 
 @-webkit-keyframes throw-hidden-from-right {
-  0% {
-    right: 1.5rem;
+ 0% {
+    right: var(--slide-right-from);
   }
   100% {
-    right: 25rem;
+    right: var(--slide-right-to);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  :root {
+    --slide-left-from: 3rem;
+    --slide-left-to: 28rem;
+    --slide-right-from: 3rem;
+    --slide-right-to: 28rem;
+    --slide-top-from: 3rem;
+    --slide-top-to: 9rem;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  :root {
+    --slide-left-from: 3rem;
+    --slide-left-to: 19rem;
+    --slide-right-from: 3rem;
+    --slide-right-to: 19rem;
+    --slide-top-from: 3rem;
+    --slide-top-to: 7.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  :root {
+    --slide-left-from: 3rem;
+    --slide-left-to: 13rem;
+    --slide-right-from: 3rem;
+    --slide-right-to: 13rem;
+    --slide-top-from: 3rem;
+    --slide-top-to: 7.5rem;
   }
 }
