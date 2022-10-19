@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1666146193740,
+  "timestamp": 1666146776105,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "./259.6bcf5ae7e0f00807.js",
         "./399.c22923657d12d5f3.js",
-        "./405.e6e197fd51c37c6c.js",
+        "./405.abb5b46119b93d08.js",
         "./466.a72ea6f4e03aa9e8.js",
         "./735.1e30938b983544aa.js",
         "./dark.css",
@@ -22,8 +22,8 @@
         "./main.a4db375c3e06b85f.js",
         "./manifest.webmanifest",
         "./polyfills.d99fd2c2c5512fef.js",
-        "./runtime.f766504236626b67.js",
-        "./styles.e9ad16716315df43.css"
+        "./runtime.faf0e6d3bd15b401.js",
+        "./styles.5a2f23a02d796483.css"
       ],
       "patterns": []
     },
@@ -84,7 +84,7 @@
   "hashTable": {
     "./259.6bcf5ae7e0f00807.js": "b42560b147eafb62fd7e986d254730882f9f6c32",
     "./399.c22923657d12d5f3.js": "0b2bf7a674b0e2ad246d2f03322c09f2f4557939",
-    "./405.e6e197fd51c37c6c.js": "93a54f39d99dc01644b7428ac9697b76def7903b",
+    "./405.abb5b46119b93d08.js": "276e310e4992df80d9a325d877db325583e93127",
     "./466.a72ea6f4e03aa9e8.js": "3d5da3913ad56c31fd05bc9df7ae2e4d53732816",
     "./735.1e30938b983544aa.js": "dd475672b1f7676cebd42ce9c990e4d5959f486d",
     "./albjon-memoji-favicon.png": "b742943fe172bb1320835e5ebc25600320454c0c",
@@ -129,13 +129,13 @@
     "./assets/media/suits/heart.svg": "5216df7ad301074867f70cdf4bb10f09dfa1783c",
     "./assets/media/suits/spade.svg": "9d5ecf2c2e2dc3c098c928adb506011bebdec767",
     "./dark.css": "875ee53bb0e5edd1765dda9280ca130e41f1ccf4",
-    "./index.html": "c487d77e085e1fd285419631bbf1e5a6e3b2da5f",
+    "./index.html": "b52ebb6ab0e44bb4d4715e1f95bdcc97e74548d1",
     "./light.css": "2c84a269ef974bf874b427d5a4f570bc5440ce85",
     "./main.a4db375c3e06b85f.js": "59707dd9187be9d41e7ceca8554e528aa339eb66",
     "./manifest.webmanifest": "445da3b5a7d4a8cef887fb8cc407118507df63ef",
     "./polyfills.d99fd2c2c5512fef.js": "a850054b083fc2e0158bf66e8d1cc1e119b377ed",
-    "./runtime.f766504236626b67.js": "035a22732e32907abdcf401666bfdc4c4ce8299d",
-    "./styles.e9ad16716315df43.css": "bd1967e01841820ec584cf3c8d6d6687a4b33ca8"
+    "./runtime.faf0e6d3bd15b401.js": "5e92e5de57626e20b7a4af8d765b507d0701a60e",
+    "./styles.5a2f23a02d796483.css": "36b717ec5d303172ed6510ab229223e5865edc12"
   },
   "navigationUrls": [
     {
