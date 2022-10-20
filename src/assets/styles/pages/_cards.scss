@@ -82,9 +82,9 @@ app-cards {
   }
 
   .card-suit {
-    padding-top: 0.3rem;
-    width: 1.2rem;
-    aspect-ratio: 1;
+    margin-top: 0.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
   }
 }
 
@@ -99,8 +99,6 @@ app-cards {
 }
 
 .suits {
-  // height: 100%;
-  // height: -webkit-fill-available;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -134,7 +132,7 @@ app-cards {
 }
 
 .f-special {
-  padding: .1rem;
+  padding: 0.1rem;
   grid-row-start: 1;
   grid-row-end: 6;
   grid-column-start: 1;
@@ -190,6 +188,7 @@ app-cards {
 
       .card-suit {
         width: 0.7rem;
+        height: 0.7rem;
       }
     }
 
@@ -227,16 +226,37 @@ app-cards {
   }
 
   .user-cards {
-    max-height: 94px;
+    min-height: 94px;
+  }
+
+  .suits {
+    display: none;
   }
 
   .playing-card {
     flex: 0 1 45px;
     max-height: 65px;
-    min-width: 40px;
+    min-width: 45px;
 
     &:not(:first-child) {
       margin-left: -1.2rem;
+    }
+
+    .card-top,
+    .card-bottom {
+      span:not(.card-nr) {
+        font-weight: 600;
+        font-size: 0.5rem;
+      }
+
+      .card-nr {
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .card-suit {
+        width: 0.7rem;
+      }
     }
   }
 }
