@@ -27,21 +27,21 @@ export class TableComponent implements OnInit {
 
   shuffle() {
     this.cards2 = [
-      // {
-      //   value: 10,
-      //   suit: 'diamond',
-      //   selected: false,
-      // },
-      // {
-      //   value: 10,
-      //   suit: 'diamond',
-      //   selected: false,
-      // },
-      // {
-      //   value: 10,
-      //   suit: 'diamond',
-      //   selected: false,
-      // },
+      {
+        value: 10,
+        suit: 'diamond',
+        selected: false,
+      },
+      {
+        value: 10,
+        suit: 'diamond',
+        selected: false,
+      },
+      {
+        value: 10,
+        suit: 'diamond',
+        selected: false,
+      },
     ]
     this.cards = []
     this.selectedCount = 0

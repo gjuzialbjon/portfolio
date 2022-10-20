@@ -25,6 +25,7 @@ app-cards {
 .playing-card {
   position: relative;
   background-color: var(--playing_card_bg);
+  display: flex;
   flex: 0 1 90px;
   min-width: 90px;
   max-height: 136.5px;
@@ -97,8 +98,9 @@ app-cards {
   bottom: $distance * 2;
 }
 
-.figures {
-  height: 100%;
+.suits {
+  // height: 100%;
+  // height: -webkit-fill-available;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -106,7 +108,7 @@ app-cards {
   place-items: center;
 }
 
-.figure {
+.suit {
   position: relative;
   width: 100%;
 }
@@ -132,11 +134,11 @@ app-cards {
 }
 
 .f-special {
-  width: 240%;
-}
-
-.jk {
-  width: 340%;
+  padding: .1rem;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .hint-to-rotate {
@@ -168,7 +170,7 @@ app-cards {
     max-height: 90px;
     min-width: 60px;
     height: 90px;
-    padding: 1.1rem 1.2rem;
+    padding: 1.1rem;
 
     &:not(:first-child) {
       margin-left: -1.7rem;
@@ -187,7 +189,7 @@ app-cards {
       }
 
       .card-suit {
-        width: 0.8rem;
+        width: 0.7rem;
       }
     }
 
@@ -225,7 +227,7 @@ app-cards {
   }
 
   .user-cards {
-    min-height: 94px;
+    max-height: 94px;
   }
 
   .playing-card {

@@ -37,12 +37,13 @@
   </ul>
 </div>
 
+<!-- Special cards 1,11,12,13,14 -->
 <ng-template #specialCard let-card="card">
-  <div *ngIf="card.value === 1" class="figures">
-    <img class="figure f-{{ 1 | suitPosition: 0 }}" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
+  <div *ngIf="card.value === 1" class="suits">
+    <img class="suit f-special" src="assets/media/suits/{{ card.suit }}.svg" alt="" />
   </div>
-  <div *ngIf="card.value !== 1 && card.value !== 14" class="figures border border-dark">
-    <img class="figure f-8 f-special" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
+  <div *ngIf="card.value !== 1 && card.value !== 14" class="suits border border-dark">
+    <img class="suit f-special" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
   </div>
   <ng-container *ngIf="card.value === 14">
     <span *ngFor="let pos of positions" class="card-{{ pos }}">
@@ -52,15 +53,17 @@
       <span>E</span>
       <span>R</span>
     </span>
-    <div class="figures">
-      <img class="figure f-8 jk" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
+    <div class="suits">
+      <img class="suit f-special" src="assets/media/suits/{{ card.value }}-{{ card.suit }}.svg" alt="" />
     </div>
   </ng-container>
 </ng-template>
+
+<!-- Cards from 2-10 -->
 <ng-template #numberCard let-card="card">
-  <div class="figures">
+  <div class="suits">
     <img
-      class="figure f-{{ card.value | suitPosition: i }}"
+      class="suit f-{{ card.value | suitPosition: i }}"
       src="assets/media/suits/{{ card.suit }}.svg"
       alt=""
       *ngFor="let v of [].constructor(card.value); let i = index"
