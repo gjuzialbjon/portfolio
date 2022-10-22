@@ -25,7 +25,8 @@
 }
 
 .hidden-card {
-border-radius: 1rem;}
+  border-radius: 5px;
+}
 
 .other-user-wrapper {
   display: flex;
@@ -64,7 +65,7 @@ border-radius: 1rem;}
 
   &:not(.vertical) {
     justify-content: center;
-    
+
     .hidden-card {
       margin-left: -1.3rem;
     }

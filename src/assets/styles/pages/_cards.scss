@@ -75,7 +75,7 @@ app-cards {
   }
 
   .card-nr {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 0.8;
     letter-spacing: 0;
@@ -83,8 +83,8 @@ app-cards {
 
   .card-suit {
     margin-top: 0.2rem;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -102,7 +102,6 @@ app-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 0.1rem;
   place-items: center;
 }
 
@@ -168,7 +167,7 @@ app-cards {
     max-height: 90px;
     min-width: 60px;
     height: 90px;
-    padding: 1.1rem;
+    padding: 1rem;
 
     &:not(:first-child) {
       margin-left: -1.7rem;
