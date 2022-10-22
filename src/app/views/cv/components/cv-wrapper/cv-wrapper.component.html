@@ -1,22 +1,20 @@
 <div class="mt-4"></div>
 <div #cv class="cv">
   <div class="cv__left">
-    <div class="cv__left__section personal">
+    <section class="cv__left__section personal">
       <p class="cv__section__title"><i class="fas fa-address-card"></i> {{ 'CV.personal' | translate }}</p>
       <ul>
         <li>{{ 'CV.email' | translate }}</li>
         <li><a href="mailto:albjon.gjuzi@gmail.com" target="_blank">gjuzialbjon@gmail.com</a></li>
         <li>{{ 'CV.tel' | translate }}</li>
         <li><a href="tel:+355699688599">+355 69 968 8599</a></li>
-        <li>{{ 'CV.address' | translate }}</li>
-        <li><a href="https://www.google.com/maps/place/Durres" target="_blank">Albania / Durres</a></li>
         <li>{{ 'CV.linkedin' | translate }}</li>
         <li><a href="https://www.linkedin.com/in/albjon-gjuzi/" target="_blank">linkedin.com/in/albjon-gjuzi</a></li>
         <li>{{ 'CV.web' | translate }}</li>
         <li><a href="https://github.com/gjuzialbjon" target="_blank">github.com/gjuzialbjon</a></li>
       </ul>
-    </div>
-    <div class="cv__left__section skills">
+    </section>
+    <section class="cv__left__section skills">
       <p class="cv__section__title"><i class="fas fa-laptop-code"></i> {{ 'CV.skills' | translate }}</p>
       <div class="skill" *ngFor="let skill of skills" [title]="skill.name + ': ' + skill.rating + '%'">
         <a class="skill__name" [href]="skill.website" target="_blank">
@@ -28,8 +26,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="cv__left__section languages">
+    </section>
+    <section class="cv__left__section languages">
       <p class="cv__section__title"><i class="fas fa-language"></i> {{ 'CV.languages' | translate }}</p>
       <ul>
         <li>{{ 'CV.Albanian' | translate }}</li>
@@ -43,12 +41,12 @@
         <li>{{ 'CV.Turkish' | translate }}</li>
         <li>{{ 'CV.working_knowledge' | translate }}</li>
       </ul>
-    </div>
+    </section>
   </div>
   <div class="cv__right">
     <p class="usr-name">Albjon Gjuzi</p>
     <p class="usr-role"><i class="fab fa-angular mr-2"></i> {{ 'CV.frontend' | translate }}</p>
-    <div class="cv__right__section experience">
+    <section class="cv__right__section experience">
       <p class="cv__section__title"><i class="fas fa-business-time"></i> {{ 'CV.work_experience' | translate }}</p>
       <div class="work">
         <div class="role-date">
@@ -92,8 +90,8 @@
           <li>{{ 'Work.work' | translate }}</li>
         </ul>
       </div>
-    </div>
-    <div class="cv__right__section studies">
+    </section>
+    <section class="cv__right__section studies">
       <p class="cv__section__title"><i class="fas fa-graduation-cap"></i> {{ 'CV.studies' | translate }}</p>
       <div class="study">
         <div class="dep-date">
@@ -104,8 +102,8 @@
           <img src="assets/media/companies/bilkent.png" width="25px" alt="" />Bilkent University, Ankara, Turkey
         </a>
       </div>
-    </div>
-    <div class="cv__right__section studies">
+    </section>
+    <section class="cv__right__section studies">
       <p class="cv__section__title"><i class="fas fa-certificate"></i> {{ 'CV.certificates' | translate }}</p>
       <div class="d-flex justify-content-between">
         <a
@@ -116,17 +114,17 @@
         >
         <div class="cert-date">{{ 'Months.11' | translate }} 2021</div>
       </div>
-    </div>
-    <div class="cv__right__section">
-      <div class="interests">
+    </section>
+    <section class="cv__right__section">
+      <section class="interests">
         <p class="cv__section__title"><i class="fas fa-info-circle"></i> {{ 'CV.interests' | translate }}</p>
         <ul class="interests-list">
           <li>{{ 'CV.sports' | translate }}</li>
           <li>{{ 'CV.music' | translate }}</li>
           <li>{{ 'CV.memes' | translate }}</li>
         </ul>
-      </div>
-      <div class="soft">
+      </section>
+      <section class="soft">
         <p class="cv__section__title"><i class="fas fa-user"></i> {{ 'CV.soft_skills' | translate }}</p>
         <ul class="soft-skills-list">
           <li>{{ 'CV.communication' | translate }}</li>
@@ -134,8 +132,8 @@
           <li>{{ 'CV.critical' | translate }}</li>
           <li>{{ 'CV.teamwork' | translate }}</li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </section>
   </div>
 </div>
 

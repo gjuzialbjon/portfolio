@@ -25,12 +25,12 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'NgRx',
-      rating: 70,
+      rating: 80,
       website: 'https://ngrx.io/',
     },
     {
       name: 'RxJs',
-      rating: 70,
+      rating: 80,
       website: 'https://rxjs.dev/',
     },
     {
@@ -44,7 +44,7 @@ export class CvWrapperComponent implements OnInit {
       website: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
     },
     {
-      name: 'CSS(Sass)',
+      name: 'CSS(SASS)',
       rating: 85,
       website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
@@ -53,11 +53,15 @@ export class CvWrapperComponent implements OnInit {
       rating: 95,
       website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
-
+    {
+      name: 'NPM',
+      rating: 90,
+      website: 'https://www.npmjs.com/',
+    },
     {
       name: 'REST',
       rating: 90,
-      website: 'https://www.npmjs.com/',
+      website: 'https://restfulapi.net/',
     },
     {
       name: 'GraphQL',
@@ -77,7 +81,7 @@ export class CvWrapperComponent implements OnInit {
     {
       name: 'JIRA',
       rating: 90,
-      website: 'https://ubuntu.com/',
+      website: 'https://www.atlassian.com/software/jira',
     },
   ]
 
@@ -91,21 +95,16 @@ export class CvWrapperComponent implements OnInit {
     var width = (this.cv.nativeElement as HTMLDivElement).clientWidth
     var height = (this.cv.nativeElement as HTMLDivElement).clientHeight
 
-    html2canvas(this.cv.nativeElement).then((canvas) => {
-      var img = canvas.toDataURL('image/png')
-      var doc = new jsPDF('p', 'px', [width, height])
-      doc.addImage(
-        img,
-        'PNG',
-        0,
-        0,
-        width,
-        height
-      )
-      doc.save('Albjon_Gjuzi_CV.pdf')
-      this.downloading = false
-    }).catch(e => {
-      console.error(e)
-    })
+    html2canvas(this.cv.nativeElement)
+      .then((canvas) => {
+        var img = canvas.toDataURL('image/png')
+        var doc = new jsPDF('p', 'px', [width, height])
+        doc.addImage(img, 'PNG', 0, 0, width, height)
+        doc.save('Albjon_Gjuzi_CV.pdf')
+        this.downloading = false
+      })
+      .catch((e) => {
+        console.error(e)
+      })
   }
 }
