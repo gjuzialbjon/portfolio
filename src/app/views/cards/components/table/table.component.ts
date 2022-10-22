@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core'
+import { Themes } from '@app/core/enums/themes'
+import { ThemeService } from '@app/core/layout/theme.service'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { MurlanService } from '../../murlan.service'
 import { Card } from '../cards/cards.component'
+import { RulesComponent } from '../rules/rules.component'
 
 @Component({
   selector: 'app-table',
@@ -16,13 +20,22 @@ export class TableComponent implements OnInit {
   selectedCardsLI: HTMLLIElement[] = []
   cards2: Card[] = []
 
-  constructor(private murlan: MurlanService) {}
+  constructor(private murlan: MurlanService, private modalService: NgbModal, private themeService: ThemeService) {}
 
   ngOnInit(): void {
     this.shuffle()
+    this.openRules()
     this.murlan.Game.subscribe((res) => {
       // console.log(res)
     })
+  }
+
+  openRules() {
+    const modalRef = this.modalService.open(RulesComponent, {
+      scrollable: true,
+      centered: true,
+    })
+    modalRef.componentInstance.name = 'World'
   }
 
   shuffle() {

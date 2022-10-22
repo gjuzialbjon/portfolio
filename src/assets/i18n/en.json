@@ -21,7 +21,14 @@
   },
   "Cards": {
     "shuffle": "Shuffle",
-    "throw": "Throw"
+    "throw": "Throw",
+    "rules": "Rules"
+  },
+  "Rules": {
+    "select": "Select rules",
+    "two_jokers": "Allow two Jokers in one throw?",
+    "straight_with_two": "Allow straight that ends with the card number 2?",
+    "straight_one_three_one": "Allow straight mode one-three-one (5-6-6-6-7)?"
   },
   "CV": {
     "personal": "personal",

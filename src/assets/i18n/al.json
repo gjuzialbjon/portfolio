@@ -21,7 +21,14 @@
   },
   "Cards": {
     "shuffle": "Perziej",
-    "throw": "Hidhi"
+    "throw": "Hidhi",
+    "rules": "Rregullat"
+  },
+  "Rules": {
+    "select": "Zgjidh rregullat",
+    "two_jokers": "Lejo dy xholat ne nje hedhje?",
+    "straight_with_two": "Lejo kolor me letren 2 ne fund (J-Q-K-A-2)?",
+    "straight_one_three_one": "Lejo kolor nje-tre-nje (5-6-6-6-7)?"
   },
   "CV": {
     "personal": "personale",

@@ -1,0 +1,24 @@
+<div class="modal-header" [ngClass]="{ 'text-light bg-dark': darkMode, 'text-dark bg-light': !darkMode }">
+  <h4 class="modal-title">{{ 'Rules.select' | translate }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    [ngClass]="{ 'text-light': darkMode }"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+
+<div class="modal-body" [ngClass]="{ 'text-light bg-dark': darkMode, 'text-dark bg-light': !darkMode }">
+  <div class="rule d-flex flex-nowrap align-items-center justify-content-between mb-1" *ngFor="let rule of rules">
+    <span class="pe-3">{{ 'Rules.' + rule.name | translate }}</span>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" [id]="rule.name" name="darkmode" value="yes" [checked]="rule.checked" />
+      <!-- <label class="form-check-label" [for]="rule.name">Dark Mode</label> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer" [ngClass]="{ 'text-light bg-dark': darkMode, 'text-dark bg-light': !darkMode }">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
