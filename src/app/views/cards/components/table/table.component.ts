@@ -39,7 +39,6 @@ export class TableComponent implements OnInit {
       backdrop: 'static',
       keyboard: false,
     })
-    modalRef.componentInstance.name = 'World'
 
     modalRef.result
       .then((rules) => {
@@ -56,21 +55,7 @@ export class TableComponent implements OnInit {
 
   throw() {
     console.log('Pressed throw btn ')
-    // this.murlan.
-  }
-
-  changedSelected(cards: Card[]) {
-    console.log('Selected cards ', cards)
-    const selectedCardsLI: HTMLLIElement[] = []
-
-    for (const card of cards) {
-      selectedCardsLI.push(document.getElementById(card.value + card.suit) as HTMLLIElement)
-    }
-
-    this.selectedCards = cards
-    this.selectedCardsLI = selectedCardsLI
-
-    console.log('Selected LI', selectedCardsLI)
+    this.murlan.throwCards()
   }
 
   ngOnDestroy() {

@@ -42,39 +42,33 @@ export class MurlanService {
     // this.game.next({ player, cards })
   }
 
-  playSelected() {}
+  throwCards() {
+    let selected = this.playerCards.filter((c) => c.selected)
 
-  throwCards(cards: Card[]) {
-    this.cardsOnTable = [...cards]
-    this.handOnTable = this.selectedHand
-    this.selectedHand = Hands.empty
+    let count = -(selected.length - 1) / 2
+    selected.forEach((c) => {
+      const el = document.getElementById('player' + c.value + c.suit) as HTMLLIElement
+      el.style.marginLeft = count++ * 50 + 'px'
+      c.throwing = true
+    })
+
+    setTimeout(() => {
+      selected.forEach((c) => {
+        c.throwing = false
+      })
+
+      if (selected.length >= 5) {
+        selected = this.isStraight(selected) as Card[]
+      }
+
+      this.cardsOnTable = [...selected]
+      this.handOnTable = this.selectedHand
+      this.selectedHand = Hands.empty
+      this.cardsOnTable$.next(this.cardsOnTable.slice())
+      this.playerCards = this.playerCards.filter((c) => !c.selected)
+      this.playerCards$.next(this.playerCards.slice())
+    }, 1000)
   }
-
-  // throw() {
-  //   let count = -(this.selectedCardsLI.length - 1) / 2
-  //   this.selectedCardsLI.forEach((c, i) => {
-  //     c.classList.add('throwing')
-  //     c.style.marginLeft = count++ * 50 + 'px'
-
-  //     setTimeout(() => {
-  //       c.classList.remove('throwing')
-
-  //       if (i === this.selectedCardsLI.length - 1) {
-  //         // this.moveToTable()
-  //       }
-  //     }, 1000)
-  //   })
-
-  //   setTimeout(() => {
-  //     // this.murlan.throw(Math.floor(Math.random() * 3) + 1, this.selectedCards)
-  //     // this.murlan.throw(2, this.selectedCards)
-  //   }, 1000)
-  // }
-
-  // moveToTable() {
-  //   this.cards = this.cards.filter((c) => !c.selected)
-  //   this.cardsOnTable = this.selectedCards
-  // }
 
   //* Game start procedure
   startGame() {
