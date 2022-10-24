@@ -25,10 +25,10 @@ export class RulesComponent implements OnInit {
       name: 'straight_one_three_one',
       checked: true,
     },
-    // {
-    //   name: 'rulename1',
-    //   checked: false,
-    // },
+    {
+      name: 'straight_plus_one',
+      checked: true,
+    },
     // {
     //   name: 'rulename1',
     //   checked: false,

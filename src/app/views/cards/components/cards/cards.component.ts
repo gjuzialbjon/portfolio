@@ -1,5 +1,8 @@
 import { moveItemInArray } from '@angular/cdk/drag-drop'
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { Card } from '@app/core/models/card'
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators'
+import { MurlanService } from '../../murlan.service'
 
 @Component({
   selector: 'app-cards',
@@ -7,21 +10,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
   styles: [],
 })
 export class CardsComponent implements OnInit {
-  @Input() cards!: Card[]
-  @Input() selectedCount = 0
+  cards!: Card[]
   @Input() isTable = false
   @Output() changedSelected = new EventEmitter()
-  positions = ['top', 'bottom flip']
 
-  isPlayersTurn = true
-  isPlayersHand = false
-  onTableCards: Card[] = []
-  handOnTable = Hands.single
-  currentHand!: Hands
+  destroyed$ = new Subject()
 
-  constructor() {}
+  constructor(private murlan: MurlanService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (!this.isTable) {
+      this.murlan.userCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$))
+    }
+  }
 
   drop(event: any) {
     if (!this.isTable) {
@@ -31,124 +32,14 @@ export class CardsComponent implements OnInit {
 
   selectCard(i: number) {
     this.cards[i].selected = !this.cards[i].selected
-    this.cards[i].selected ? this.selectedCount++ : this.selectedCount--
     this.changedSelected.emit(this.cards.filter((c) => c.selected).slice())
   }
 
-  playSelected() {
-    let selected = this.cards.filter((card) => card.selected)
-
-    if (selected.length >= 5) {
-      const hand = this.isStraight(selected)
-      if (hand && this.areCardsSameSuit(hand)) {
-        this.currentHand = Hands.flush
-        console.log('FLUSH ', hand)
-      } else if (hand && !this.areCardsSameSuit(hand)) {
-        console.log('STRAIGHT ', hand)
-        this.currentHand = Hands.straight
-      } else {
-        console.log('NOT FLUSH OR STRAIGHT')
-        this.currentHand = Hands.empty
-      }
-    } else if (selected.length == 4) {
-      const hand = this.areCardsSameValue(selected)
-      if (hand) {
-        console.log(selected, 'BOMB')
-        this.currentHand = Hands.bomb
-      } else {
-        console.log('NOT BOMB')
-        this.currentHand = Hands.empty
-      }
-    } else if (selected.length == 3) {
-      const hand = this.areCardsSameValue(selected)
-      if (hand) {
-        console.log(selected, 'TRIPLE')
-        this.currentHand = Hands.triple
-      } else {
-        console.log('NOT TRIPLE')
-        this.currentHand = Hands.empty
-      }
-    } else if (selected.length == 2) {
-      const hand = this.areCardsSameValue(selected)
-      if (hand) {
-        console.log(selected, 'PAIR')
-        this.currentHand = Hands.pair
-      } else {
-        console.log('NOT PAIR')
-        this.currentHand = Hands.empty
-      }
-    } else if (selected.length == 1) {
-      this.currentHand = Hands.single
-    } else {
-      console.log('NO CARD SELECTED')
-      this.currentHand = Hands.empty
-    }
-
-    console.log('CURRENT HAND ', this.currentHand)
-  }
-
-  isStraight(cards: Card[]) {
-    cards = cards.sort((x, y) => x.value - y.value)
-
-    if (cards[cards.length - 1].value == 14) {
-      this.setWarnTimeout(cards, [cards.length - 1])
-      return false
-    }
-
-    let hasAce = cards[0].value == 1 && cards[cards.length - 1].value == 13
-
-    for (let i = hasAce ? 2 : 1; i < cards.length; i++) {
-      if (cards[i].value - cards[i - 1].value > 1 || cards[i].value == cards[i - 1].value) {
-        this.setWarnTimeout(cards, [i, i - 1])
-        return false
-      }
-    }
-
-    if (hasAce) {
-      cards.push(cards.shift() as Card)
-    }
-
-    return cards
-  }
-
-  areCardsSameValue(cards: Card[]) {
-    return cards.every((c) => c.value === cards[0].value)
-  }
-
-  areCardsSameSuit(cards: Card[]) {
-    return cards.every((c) => c.suit === cards[0].suit)
-  }
-
-  throw(cards: Card[]) {
-    this.onTableCards = [...cards]
-    this.handOnTable = this.currentHand
-    this.currentHand = Hands.empty
-  }
-
-  setWarnTimeout(cards: Card[], indeces: number[]) {
-    for (const index of indeces) {
-      cards[index].warn = true
-    }
-
-    setTimeout(() => {
-      this.cards.forEach((c) => (c.warn = false))
-    }, 1400)
+  ngOnDestroy() {
+    this.destroyed$.next()
+    this.destroyed$.complete()
   }
 }
 
-export interface Card {
-  value: number
-  suit: string
-  selected?: boolean
-  warn?: boolean
-}
 
-export enum Hands {
-  empty = 0,
-  single = 1,
-  pair = 2,
-  triple = 3,
-  bomb = 4,
-  straight = 5,
-  flush = 6,
-}
+

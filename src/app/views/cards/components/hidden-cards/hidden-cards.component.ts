@@ -20,31 +20,34 @@ export class HiddenCardsComponent implements OnInit {
   constructor(private murlan: MurlanService) {}
 
   ngOnInit(): void {
+    if (this.playerNumber === 1) {
+      this.murlan.userOneCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+    } else if (this.playerNumber === 2) {
+      this.murlan.userTwoCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+    } else if (this.playerNumber === 3) {
+      this.murlan.userThreeCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+    }
+
     this.murlan.Game.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((res) => {
-      if (res.player === this.playerNumber) {
-        console.log(res)
-        const cardsToThrow = this.hiddenCards.slice(0, res.cards.length)
-        console.log('cards to throw ', cardsToThrow)
-
-        const hiddenCardsLI: (HTMLElement | null)[] = []
-
-        cardsToThrow.forEach((c, i) => {
-          hiddenCardsLI.push(document.getElementById('hidden' + this.playerNumber + i))
-        })
-
-        hiddenCardsLI.forEach((c) => {
-          c?.classList.add('thrown')
-        })
-
-        setTimeout(
-          () => {
-            this.hiddenCards.splice(0, res.cards.length)
-          },
-          this.playerNumber === 2 ? 500 : 1000
-        )
-
-        console.log('Throwing ', cardsToThrow, hiddenCardsLI)
-      }
+      // if (res && res.player === this.playerNumber) {
+      //   console.log(res)
+      //   const cardsToThrow = this.hiddenCards.slice(0, res?.cards.length)
+      //   console.log('cards to throw ', cardsToThrow)
+      //   const hiddenCardsLI: (HTMLElement | null)[] = []
+      //   cardsToThrow.forEach((c, i) => {
+      //     hiddenCardsLI.push(document.getElementById('hidden' + this.playerNumber + i))
+      //   })
+      //   hiddenCardsLI.forEach((c) => {
+      //     c?.classList.add('thrown')
+      //   })
+      //   setTimeout(
+      //     () => {
+      //       this.hiddenCards.splice(0, res?.cards.length)
+      //     },
+      //     this.playerNumber === 2 ? 500 : 1000
+      //   )
+      //   console.log('Throwing ', cardsToThrow, hiddenCardsLI)
+      // }
     })
   }
 

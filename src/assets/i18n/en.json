@@ -22,13 +22,15 @@
   "Cards": {
     "shuffle": "Shuffle",
     "throw": "Throw",
-    "rules": "Rules"
+    "rules": "Rules",
+    "start": "Start game"
   },
   "Rules": {
     "select": "Select rules",
     "two_jokers": "Allow two Jokers in one throw?",
     "straight_with_two": "Allow straight that ends with the card number 2?",
-    "straight_one_three_one": "Allow straight mode one-three-one (5-6-6-6-7)?"
+    "straight_one_three_one": "Allow straight mode one-three-one (5-6-6-6-7)?",
+    "straight_plus_one": "Straights should be same size and cards only one card higher? (3-4-5-6-7 and 4-5-6-7-8 but not 7-8-9-10-J)"
   },
   "CV": {
     "personal": "personal",

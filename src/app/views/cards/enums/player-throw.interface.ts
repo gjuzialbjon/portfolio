@@ -1,6 +1,10 @@
-import { Card } from "../components/cards/cards.component";
+import { Players } from "@app/core/enums/players";
+import { Card } from "@app/core/models/card";
 
 export interface PlayerThrow {
   player: number,
-  cards: Card[]
+  cards: Card[],
+  turn: Players,
+  lastPlayed: Players,
+  cardsOnTable: Card[]
 }
