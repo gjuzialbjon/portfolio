@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1666643133034,
+  "timestamp": 1666737050512,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -11,19 +11,19 @@
         "ignoreVary": true
       },
       "urls": [
+        "./174.c4c906bf581a7a9c.js",
         "./259.6bcf5ae7e0f00807.js",
         "./399.c22923657d12d5f3.js",
-        "./466.a72275ccc606d90d.js",
-        "./580.272f72ea42ec04aa.js",
+        "./466.255d1cb5b2b33b51.js",
         "./735.1e30938b983544aa.js",
         "./dark.css",
         "./index.html",
         "./light.css",
-        "./main.abdd833466eeeb05.js",
+        "./main.65f233f1c8d90e40.js",
         "./manifest.webmanifest",
         "./polyfills.7807d7d84fee6d32.js",
-        "./runtime.730c84b5a49f3ab7.js",
-        "./styles.2b1531865f0a59d8.css"
+        "./runtime.5e9357502165ba09.js",
+        "./styles.96df8ddb518697bd.css"
       ],
       "patterns": []
     },
@@ -57,6 +57,7 @@
         "./assets/media/icons/albjon-memoji.jpg",
         "./assets/media/icons/albjon-memoji.png",
         "./assets/media/icons/favicon.png",
+        "./assets/media/me/albjon.png",
         "./assets/media/suits/11-club.svg",
         "./assets/media/suits/11-diamond.svg",
         "./assets/media/suits/11-heart.svg",
@@ -82,14 +83,14 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "./174.c4c906bf581a7a9c.js": "e2a81ce092a09dbc118c3b958e05beba31124205",
     "./259.6bcf5ae7e0f00807.js": "b42560b147eafb62fd7e986d254730882f9f6c32",
     "./399.c22923657d12d5f3.js": "0b2bf7a674b0e2ad246d2f03322c09f2f4557939",
-    "./466.a72275ccc606d90d.js": "dcee49671fb285cf35da7a6b35a973f8a59458ca",
-    "./580.272f72ea42ec04aa.js": "59cadfc9e414c6c6ad3eb257bb5bc87093e0e4f9",
+    "./466.255d1cb5b2b33b51.js": "9c0ef8be092408818d2d149b85e6d1a1cca5699b",
     "./735.1e30938b983544aa.js": "dd475672b1f7676cebd42ce9c990e4d5959f486d",
     "./albjon-memoji-favicon.png": "b742943fe172bb1320835e5ebc25600320454c0c",
-    "./assets/i18n/al.json": "96a748140e22c5f433ee5ea7ce4868c65b3a83da",
-    "./assets/i18n/en.json": "45f69d0604554c3ed7f5c2d7711bf17e8ca7b613",
+    "./assets/i18n/al.json": "dc7197f5e6e693901379df825a9213e708f1d883",
+    "./assets/i18n/en.json": "eec33b7ae6acdd591076f3d191e40bb9d4e9922c",
     "./assets/icons/128.png": "465c642090e4a5557c6bc6be7611f6a0ea864500",
     "./assets/icons/144.png": "a5a96a573951160199a593522a680e7b5bf99249",
     "./assets/icons/152.png": "be56e5a03645c6f36f93c957a4e3a8552f1cca61",
@@ -109,6 +110,7 @@
     "./assets/media/icons/albjon-memoji.jpg": "0b17a04c3420bda1e5e18ff5e844609d98427a75",
     "./assets/media/icons/albjon-memoji.png": "84ab9082f5f7d8ccce599808dbbc646f82b5c43d",
     "./assets/media/icons/favicon.png": "fc82d2c6468bc8407ec35a408504032d747cb3fe",
+    "./assets/media/me/albjon.png": "823dc0c158d62fb83477b184c23dd7c5a00ef213",
     "./assets/media/suits/11-club.svg": "89314e2305501ff53743e226a285a63fbb1d9885",
     "./assets/media/suits/11-diamond.svg": "aa66f77ef58ad876982c3ba947b58ff0d18055e6",
     "./assets/media/suits/11-heart.svg": "aa66f77ef58ad876982c3ba947b58ff0d18055e6",
@@ -129,13 +131,13 @@
     "./assets/media/suits/heart.svg": "5216df7ad301074867f70cdf4bb10f09dfa1783c",
     "./assets/media/suits/spade.svg": "9d5ecf2c2e2dc3c098c928adb506011bebdec767",
     "./dark.css": "875ee53bb0e5edd1765dda9280ca130e41f1ccf4",
-    "./index.html": "3dcaebcbc8ad0246f54dbfd3b5bef1712b2849d4",
+    "./index.html": "13eabd3c00498907b24a240c208167f70323e954",
     "./light.css": "2c84a269ef974bf874b427d5a4f570bc5440ce85",
-    "./main.abdd833466eeeb05.js": "4ffcb36b73e97c04a89a06c051fb10e2186626a8",
+    "./main.65f233f1c8d90e40.js": "d40c919005aab7a254cf30ad4af485dfa4fda498",
     "./manifest.webmanifest": "445da3b5a7d4a8cef887fb8cc407118507df63ef",
     "./polyfills.7807d7d84fee6d32.js": "8c87bcb5a135788ed946b4d869dabe6f91b9edec",
-    "./runtime.730c84b5a49f3ab7.js": "33f2b8fd200d11144c1839baecc3921d4c1cc178",
-    "./styles.2b1531865f0a59d8.css": "79e67f5c2008bee5f59144ff5aa47eba818b80d4"
+    "./runtime.5e9357502165ba09.js": "ed815b39618864159619cc96f14d9c23d27ce958",
+    "./styles.96df8ddb518697bd.css": "90ce460d23dd494d3afc6c419f8bfcfcbff8627a"
   },
   "navigationUrls": [
     {

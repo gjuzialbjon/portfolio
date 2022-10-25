@@ -23,7 +23,8 @@
     "shuffle": "Shuffle",
     "throw": "Throw",
     "rules": "Rules",
-    "start": "Start game"
+    "start": "Start game",
+    "sort":"Sort"
   },
   "Rules": {
     "select": "Select rules",
@@ -33,6 +34,7 @@
     "straight_plus_one": "Straights should be same size and cards only one card higher? (3-4-5-6-7 and 4-5-6-7-8 but not 7-8-9-10-J)"
   },
   "CV": {
+    "showPic": "Add image to CV",
     "personal": "personal",
     "email": "E-mail address",
     "tel": "Telephone number",
@@ -70,17 +72,15 @@
   },
   "Work": {
     "software": "Software Developer",
-    "libraries": "Split the survey application into multiple Angular libraries",
-    "questions": "Add new types of questions to the survey",
-    "bring": "Bring mock-ups to life using HTML, CSS, JavaScript",
+    "libraries": "Arrange the survey application into multiple Angular libraries",
     "expand": "Expand features, refine code, and improve processes",
     "freelance": "Freelance Software Developer",
     "restructure": "Restructure project according to new sitemap",
     "filters": "Design and implement global filters for the backoffice project",
-    "graphql": "Use GraphQL Apollo to communicate with the server from a single endpoint",
-    "develop": "Develop highly interactive web applications utilizing HTML 5, SCSS, JavaScript, RxJs, NgRx, Angular and PrimeNG",
+    "graphql": "Use GraphQL Apollo to communicate with the server",
+    "develop": "Develop highly interactive web applications utilizing Angular, PrimeNG, HTML 5, SCSS, JavaScript, RxJs and NgRx",
     "design": "Design and implement web applications using different component libraries like Angular Material, NgBootstrap and Nebular",
-    "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionality"
+    "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionalities"
   },
   "Months": {
     "1": "Jan",
