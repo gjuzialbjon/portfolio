@@ -5,14 +5,14 @@
   <app-hidden-cards [playerNumber]="2" class="hidden-user user2" [vertical]="false"> </app-hidden-cards>
   <app-hidden-cards [playerNumber]="3" class="hidden-user user3"></app-hidden-cards>
 
-  <app-cards class="user-cards" (changedSelected)="changedSelected($event)"></app-cards>
+  <app-cards class="user-cards"></app-cards>
 
   <!-- <div class="playing-buttons left d-flex flex-column gap-2">
     <button class="btn py-2 px-3 btn-primary" (click)="shuffle()">{{ 'Cards.shuffle' | translate }}</button>
     <button class="btn btn-info" (click)="openRules()">{{ 'Cards.rules' | translate }}</button>
   </div> -->
   <div class="playing-buttons right d-flex flex-column gap-2">
-    <button class="btn py-2 px-3 btn-warning" (click)="throw()" [ngClass]="{ 'd-none': selectedCards.length < 1 }">
+    <button *ngIf="validThrow$ | async" class="btn py-2 px-3 btn-warning" (click)="throw()">
       {{ 'Cards.throw' | translate }}
     </button>
     <!-- <button class="btn btn-danger">button4</button> -->

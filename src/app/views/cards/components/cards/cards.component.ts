@@ -1,6 +1,7 @@
 import { moveItemInArray } from '@angular/cdk/drag-drop'
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Card } from '@app/core/models/card'
+import { Subject } from 'rxjs'
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators'
 import { MurlanService } from '../../murlan.service'
 
@@ -20,19 +21,22 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.isTable) {
-      this.murlan.userCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$))
+      this.murlan.PlayerCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => {
+        this.cards = cards
+      })
+    } else {
+      this.murlan.TableCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => {
+        this.cards = cards
+      })
     }
   }
 
   drop(event: any) {
-    if (!this.isTable) {
-      moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
-    }
+    moveItemInArray(this.cards, event.previousIndex, event.currentIndex)
   }
 
-  selectCard(i: number) {
-    this.cards[i].selected = !this.cards[i].selected
-    this.changedSelected.emit(this.cards.filter((c) => c.selected).slice())
+  toggleCard(index: number) {
+    this.murlan.toggleCard(index)
   }
 
   ngOnDestroy() {
@@ -40,6 +44,3 @@ export class CardsComponent implements OnInit {
     this.destroyed$.complete()
   }
 }
-
-
-

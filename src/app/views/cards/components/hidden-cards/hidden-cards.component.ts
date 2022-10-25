@@ -21,11 +21,11 @@ export class HiddenCardsComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.playerNumber === 1) {
-      this.murlan.userOneCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+      this.murlan.UserOneCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
     } else if (this.playerNumber === 2) {
-      this.murlan.userTwoCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+      this.murlan.UserTwoCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
     } else if (this.playerNumber === 3) {
-      this.murlan.userThreeCards$.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
+      this.murlan.UserThreeCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
     }
 
     this.murlan.Game.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((res) => {

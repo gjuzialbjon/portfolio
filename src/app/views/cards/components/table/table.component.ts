@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { Themes } from '@app/core/enums/themes'
 import { ThemeService } from '@app/core/layout/theme.service'
 import { Card } from '@app/core/models/card'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { Observable, Subject } from 'rxjs'
+import { takeUntil } from 'rxjs/operators'
 import { MurlanService } from '../../murlan.service'
 import { RulesComponent } from '../rules/rules.component'
 
@@ -12,10 +13,14 @@ import { RulesComponent } from '../rules/rules.component'
   styles: [],
 })
 export class TableComponent implements OnInit {
+  validThrow$!: Observable<boolean>
+
   selectedCount = 0
   selectedCards: Card[] = []
   selectedCardsLI: HTMLLIElement[] = []
   cardsOnTable: Card[] = []
+
+  destroyed$ = new Subject()
 
   constructor(private murlan: MurlanService, private modalService: NgbModal, private themeService: ThemeService) {}
 
@@ -41,6 +46,7 @@ export class TableComponent implements OnInit {
         if (rules) {
           console.log('Starting the game with the rules ', rules)
           this.murlan.startGame()
+          this.validThrow$ = this.murlan.ValidThrow.pipe(takeUntil(this.destroyed$))
         } else {
           console.warn('No rules specified')
         }
@@ -50,6 +56,7 @@ export class TableComponent implements OnInit {
 
   throw() {
     console.log('Pressed throw btn ')
+    // this.murlan.
   }
 
   changedSelected(cards: Card[]) {
@@ -64,5 +71,10 @@ export class TableComponent implements OnInit {
     this.selectedCardsLI = selectedCardsLI
 
     console.log('Selected LI', selectedCardsLI)
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.next()
+    this.destroyed$.complete()
   }
 }
