@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Phases } from '@app/core/enums/phase'
 import { Subject } from 'rxjs'
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators'
 import { MurlanService } from '../../murlan.service'
@@ -11,9 +12,7 @@ import { MurlanService } from '../../murlan.service'
 export class HiddenCardsComponent implements OnInit {
   @Input() playerNumber = 0
   @Input() vertical = true
-  @Input() startCount = 14
-  throwing = false
-  hiddenCards: any[] = [...Array(this.startCount).keys()]
+  hiddenCards: any[] = []
 
   destroyed$ = new Subject()
 
@@ -28,7 +27,12 @@ export class HiddenCardsComponent implements OnInit {
       this.murlan.UserThreeCards.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((cards) => (this.hiddenCards = cards))
     }
 
-    this.murlan.Game.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((res) => {
+    this.murlan.Game.pipe(distinctUntilChanged(), takeUntil(this.destroyed$)).subscribe((step) => {
+      if(step && step.phase === Phases.throw) {
+        
+      }
+
+
       // if (res && res.player === this.playerNumber) {
       //   console.log(res)
       //   const cardsToThrow = this.hiddenCards.slice(0, res?.cards.length)
