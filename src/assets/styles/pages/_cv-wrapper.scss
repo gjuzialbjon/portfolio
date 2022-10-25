@@ -80,6 +80,7 @@
 }
 
 .skill__name {
+  font-weight: 700;
   color: var(--skill_clr);
 }
 
@@ -184,7 +185,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
 
@@ -193,6 +194,11 @@
     font-size: 28px;
     margin-right: 2px;
   }
+}
+
+.profile-pic > img {
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .usr-name {
@@ -248,5 +254,15 @@
   .cv__right {
     max-width: 100%;
     padding: $cvRightMobilePadding;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  p.usr-name {
+    font-size: 1.5rem;
+  }
+
+  p.usr-role {
+    font-size: .8rem;
   }
 }

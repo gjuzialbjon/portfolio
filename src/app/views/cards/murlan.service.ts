@@ -4,6 +4,7 @@ import { Phases } from '@app/core/enums/phase'
 import { Steps } from '@app/core/enums/steps'
 import { Card } from '@app/core/models/card'
 import { BehaviorSubject } from 'rxjs'
+import { single } from 'rxjs/operators'
 import { PlayerThrow } from './enums/player-throw.interface'
 
 @Injectable({
@@ -11,6 +12,10 @@ import { PlayerThrow } from './enums/player-throw.interface'
 })
 export class MurlanService {
   game = new BehaviorSubject<Steps | null>(null)
+  rules: any[] = []
+
+  suits = ['spade', 'diamond', 'heart', 'club']
+  values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
   cardsOnTable: Card[] = []
   playerCards: Card[] = []
@@ -28,13 +33,11 @@ export class MurlanService {
 
   deckOfCards: Card[] = []
 
-  isPlayersTurn = true
-  isPlayersHand = false
+  lastThrownUser: number = -1 //* ID of user who played last
+  currentTurnUser: number = 4 //* ID of user who is currently playing
+
   handOnTable = Hands.empty
   selectedHand!: Hands
-
-  suits = ['spade', 'diamond', 'heart', 'club']
-  values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
   constructor() {}
 
@@ -71,11 +74,14 @@ export class MurlanService {
   }
 
   //* Game start procedure
-  startGame() {
+  startGame(rules: any[]) {
+    this.rules = rules
     this.cardsOnTable = []
     this.generateCards()
 
     this.deckOfCards.sort(() => 0.5 - Math.random()) //* Shuffle cards
+    this.cardsOnTable$.next(this.cardsOnTable)
+    this.validThrow$.next(false)
 
     this.playerCards = this.deckOfCards.slice(0, 14)
     this.userOneCards = this.deckOfCards.slice(14, 27)
@@ -86,6 +92,8 @@ export class MurlanService {
     this.userOneCards$.next(this.userOneCards.slice())
     this.userTwoCards$.next(this.userTwoCards.slice())
     this.userThreeCards$.next(this.userThreeCards.slice())
+
+    this.sortPlayerCards()
   }
 
   toggleCard(index: number) {
@@ -94,10 +102,15 @@ export class MurlanService {
     this.playerCards = newCards
     this.playerCards$.next(newCards)
 
-    this.checkValidThrow()
+    this.checkValidPlayerThrow()
   }
 
-  checkValidThrow() {
+  checkValidPlayerThrow() {
+    if (this.currentTurnUser !== 4) {
+      this.validThrow$.next(false)
+      return
+    }
+
     const selected = this.playerCards.filter((c) => c.selected)
 
     this.selectedHand = Hands.empty
@@ -123,6 +136,35 @@ export class MurlanService {
       }
     } else if (selected.length == 1) {
       this.selectedHand = Hands.single
+    }
+
+    if (this.lastThrownUser !== 4 && this.lastThrownUser !== -1) {
+      switch (this.handOnTable) {
+        case Hands.single | Hands.pair | Hands.triple:
+          if (selected[0].value <= this.cardsOnTable[0].value && (this.selectedHand === Hands.bomb || this.selectedHand === Hands.flush)) {
+            this.selectedHand = Hands.empty
+          }
+          break
+        case Hands.bomb:
+          if (this.selectedHand === Hands.bomb) {
+            if (selected[0].value < this.cardsOnTable[0].value) {
+              this.selectedHand = Hands.empty
+            }
+          } else {
+            this.selectedHand = this.selectedHand === Hands.flush ? this.selectedHand : Hands.empty
+          }
+          break
+
+        case Hands.flush:
+          if (this.selectedHand === Hands.flush) {
+          } else {
+            this.selectedHand = Hands.empty
+          }
+          break
+
+        default:
+          break
+      }
     }
 
     console.log('CURRENT HAND ', this.selectedHand)
@@ -174,6 +216,11 @@ export class MurlanService {
 
   areCardsSameSuit(cards: Card[]) {
     return cards.every((c) => c.suit === cards[0].suit)
+  }
+
+  sortPlayerCards() {
+    this.playerCards.sort((x, y) => x.value - y.value)
+    this.playerCards$.next(this.playerCards.slice())
   }
 
   //* Getters

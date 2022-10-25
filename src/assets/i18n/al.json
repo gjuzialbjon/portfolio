@@ -23,7 +23,8 @@
     "shuffle": "Perziej",
     "throw": "Hidhi",
     "rules": "Rregullat",
-    "start": "Fillo lojen"
+    "start": "Fillo lojen",
+    "sort": "Rendit"
   },
   "Rules": {
     "select": "Zgjidh rregullat",
@@ -33,6 +34,7 @@
     "straight_plus_one": "Straights should be same size and cards only one card higher? (3-4-5-6-7 and 4-5-6-7-8 but not 7-8-9-10-J)"
   },
   "CV": {
+    "showPic": "Shto foton te CV-ja",
     "personal": "personale",
     "email": "Adresa e-mailit",
     "tel": "Numri telefonit",
@@ -70,13 +72,11 @@
   },
   "Work": {
     "software": "Zhvillues softueri",
-    "bring": "Implemetimi i modeleve duke përdorur HTML, CSS, JavaScript",
     "expand": "Shtimi i featurave, përsosja e kodit dhe përmirësimi i proceseve",
     "freelance": "Zhvillues softueri i pavarur",
     "design": "Dizenjimi i frontendit duke përdorur frameworke te Javascriptit si Angular",
     "work": "Punë me programuesit e tjerë dhe me klientët për të përmbushur kërkesat, synimet dhe funksionalitet e dëshiruara",
     "libraries": "Ndaj projektin e sondazhit ne disa librari Angulari",
-    "questions": "Shto pyetje te reja te projekti i sondazhit",
     "restructure": "Ristrukturo projektin sipas sitemapti te ri",
     "filters": "Dizenjo dhe implemento filtra globale per projektin e backoffice",
     "graphql": "Perdor Apollo GraphQL per te komunikuar me serverin",

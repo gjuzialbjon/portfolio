@@ -10,6 +10,7 @@ import html2canvas from 'html2canvas'
 export class CvWrapperComponent implements OnInit {
   @ViewChild('cv') cv!: ElementRef
 
+  showPic = true
   downloading = false
 
   skills = [

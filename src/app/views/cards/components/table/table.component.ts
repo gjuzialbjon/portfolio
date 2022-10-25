@@ -25,9 +25,12 @@ export class TableComponent implements OnInit {
   constructor(private murlan: MurlanService, private modalService: NgbModal, private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    this.openRules()
+    // this.openRules()
 
-    this.murlan.Game.subscribe((step) => {
+    this.murlan.startGame([])
+    this.validThrow$ = this.murlan.ValidThrow.pipe(takeUntil(this.destroyed$))
+
+    this.murlan.Game.pipe(takeUntil(this.destroyed$)).subscribe((step) => {
       console.log(step)
     })
   }
@@ -44,8 +47,7 @@ export class TableComponent implements OnInit {
       .then((rules) => {
         if (rules) {
           console.log('Starting the game with the rules ', rules)
-          this.murlan.startGame()
-          this.validThrow$ = this.murlan.ValidThrow.pipe(takeUntil(this.destroyed$))
+          this.murlan.startGame(rules)
         } else {
           console.warn('No rules specified')
         }
@@ -53,8 +55,11 @@ export class TableComponent implements OnInit {
       .catch((err) => console.warn(err))
   }
 
+  sortCards() {
+    this.murlan.sortPlayerCards()
+  }
+
   throw() {
-    console.log('Pressed throw btn ')
     this.murlan.throwCards()
   }
 
