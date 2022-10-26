@@ -53,7 +53,9 @@
 
 @include media-breakpoint-down(lg) {
   .playing-table {
-    min-height: 223px;
+    // min-height: 223px;
+    min-height: 207px;
+    padding: 3.5rem 2rem;
 
     .cards-table {
       min-height: 75px;
@@ -80,6 +82,14 @@
           margin-left: -1.7rem;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+   .playing-table {
+    .user-cards {
+      bottom: -90px;
     }
   }
 }

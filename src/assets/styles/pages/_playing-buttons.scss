@@ -20,6 +20,12 @@
 
 @media (max-width: 650px) {
   .playing-buttons {
-    bottom: -85%;
+    bottom: -200px;
+  }
+}
+
+@media (max-width: 540px) {
+  .playing-buttons {
+    bottom: -170px;
   }
 }

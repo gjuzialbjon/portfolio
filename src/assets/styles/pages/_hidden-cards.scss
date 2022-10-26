@@ -102,7 +102,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .hidden-user.user1 {
     .playing-user-icon {
       margin-right: 1rem;
@@ -110,6 +110,8 @@
   }
 
   .hidden-user.user2 {
+    top: -2.8rem;
+
     .playing-user-icon {
       margin-bottom: 0.7rem;
     }
