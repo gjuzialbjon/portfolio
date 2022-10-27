@@ -1,31 +1,102 @@
 import { Injectable } from '@angular/core'
+import { CardSuits } from '@app/core/enums/card-suits'
+import { CardValues } from '@app/core/enums/card-values'
 import { Card } from '@app/core/models/card'
+import { Groups } from '@app/core/models/groups'
 
 @Injectable({
   providedIn: 'root',
 })
 export class HelpersService {
-  suits = ['spade', 'diamond', 'heart', 'club']
-  values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-
   constructor() {}
 
+  //* For "AI" players only
+  groupCards(cs: Card[]) {
+    let cards = this.getSortedDeepCopy(cs)
+
+    const groups: Groups = {
+      singles: <Card[]>[],
+      pairs: <Card[][]>[],
+      triples: <Card[][]>[],
+      bombs: <Card[][]>[],
+      straights: <Card[][]>[],
+      flushes: <Card[][]>[],
+    }
+
+    groups.singles = [...cards]
+
+    //* Get all possible pairs
+    if (cards.length >= 2) {
+      for (let i = 0; i < cards.length - 1; i++) {
+        if (this.areCardsSameValue(cards.slice(i, i + 2))) {
+          groups.pairs.push([cards[i], cards[i + 1]])
+        }
+      }
+    }
+
+    //* Get all possible triples
+    if (cards.length >= 3) {
+      for (let i = 0; i < cards.length - 2; i++) {
+        if (this.areCardsSameValue(cards.slice(i, i + 3))) {
+          groups.triples.push([cards[i], cards[i + 1], cards[i + 2]])
+        }
+      }
+    }
+
+    //* Get all possible bombs
+    if (cards.length >= 4) {
+      for (let i = 0; i < cards.length - 3; i++) {
+        if (this.areCardsSameValue(cards.slice(i, i + 4))) {
+          groups.bombs.push([cards[i], cards[i + 1], cards[i + 2], cards[i + 3]])
+        }
+      }
+    }
+
+    //* Get all possible straights
+    const straightsCopy = this.getSortedDeepCopy(cards, 'value')
+    const filteredRepeated = straightsCopy.filter((c, i, a) => a.findIndex((c2) => c2.value === c.value) === i)
+
+    if (filteredRepeated.length >= 5) {
+      for (let i = 0; i < filteredRepeated.length - 4; i++) {
+        for (let j = filteredRepeated.length - 1; j > i + 4; j--) {
+          const isStraight = this.isStraight(filteredRepeated.slice(i, j))
+          if (isStraight.length > 1) {
+            groups.straights.push(isStraight)
+          }
+        }
+      }
+    }
+
+    console.log('Straights ', groups.straights)
+
+    //* Get all possible flushes
+    if (cards.length >= 5) {
+    }
+
+    // console.log('groups ', groups)
+
+    return groups
+  }
+
+  getSortedDeepCopy(cards: Card[], property = 'playValue') {
+    const callbackF = property === 'value' ? (x: Card, y: Card) => x.value - y.value : (x: Card, y: Card) => x.playValue - y.playValue
+    return (JSON.parse(JSON.stringify(cards)) as Card[]).sort(callbackF)
+  }
+
+  canHaveStraightWithBomb(cards: Card[]) {}
+  isPairPartOfTriple(value: number, cards: Card[]) {}
+  isPairPartOfBomb(value: number, cards: Card[]) {}
+  isTriplePartOfBomb(value: number, cards: Card[]) {}
+  isSinglePartOfAny(value: number, groups: Groups) {}
+
+  //* For both types of players
   generateAndShuffleCards() {
     const deck = []
 
-    for (let s = 0; s < this.suits.length; s++) {
-      for (let v = 0; v < this.values.length; v++) {
-        const value = this.values[v]
-        const suit = this.suits[s]
-
-        let playValue = value
-
-        if (playValue === 2) {
-          playValue = 15
-        } else if (playValue === 1) {
-          playValue = 14
-        }
-
+    for (const suit in CardSuits) {
+      for (const v of Object.values(CardValues)) {
+        const value = +v
+        let playValue = value <= +CardValues.Two ? value + 13 : value
         deck.push({ value, suit, playValue })
       }
     }
@@ -62,7 +133,7 @@ export class HelpersService {
   }
 
   areCardsSameValue(cards: Card[]) {
-    return cards.every((c) => c.value === cards[0].value)
+    return cards.every((c) => c.value === cards[0].value && c.value !== 14) //! No pair of Jokers
   }
 
   areCardsSameSuit(cards: Card[]) {

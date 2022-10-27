@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Hands } from '@app/core/enums/hands'
-import { Phases } from '@app/core/enums/phase'
+import { Players } from '@app/core/enums/players'
 import { Steps } from '@app/core/enums/steps'
 import { Card } from '@app/core/models/card'
 import { BehaviorSubject } from 'rxjs'
@@ -39,6 +39,13 @@ export class MurlanService {
 
   constructor(private helpers: HelpersService) {}
 
+  calculateNextThrow() {
+    const cards = this.currentTurnUser == 1 ? this.userOneCards : this.currentTurnUser == 2 ? this.userTwoCards : this.userThreeCards
+
+    ////////! Start of o MESS ////////////
+    const { singles, pairs, triples, bombs, straights, flushes } = this.helpers.groupCards(cards)
+  }
+
   throw(player: number, cards: Card[]) {
     // this.game.next({ player, cards })
   }
@@ -70,6 +77,11 @@ export class MurlanService {
       this.playerCards = this.playerCards.filter((c) => !c.selected)
       this.playerCards$.next(this.playerCards.slice())
       this.checkValidPlayerThrow()
+
+      this.lastThrownUser = Players.player
+      this.currentTurnUser = Players.three
+
+      this.calculateNextThrow()
     }, 1000)
   }
 
@@ -89,6 +101,11 @@ export class MurlanService {
     this.userThreeCards = this.deckOfCards.slice(40, 54)
 
     this.sortPlayersCards()
+
+    this.helpers.groupCards(this.userOneCards)
+    this.helpers.groupCards(this.userTwoCards)
+    this.helpers.groupCards(this.userThreeCards)
+    this.helpers.groupCards(this.playerCards)
   }
 
   toggleCard(index: number) {
@@ -127,6 +144,7 @@ export class MurlanService {
       this.selectedPlayerHand = Hands.single
     }
 
+    //* If not player's hand, check what's on table
     if (this.lastThrownUser !== 4) {
       if (this.handOnTable !== Hands.empty) {
         switch (this.selectedPlayerHand) {
@@ -163,7 +181,6 @@ export class MurlanService {
               this.selectedPlayerHand = Hands.empty
             }
             break
-
           default:
             break
         }

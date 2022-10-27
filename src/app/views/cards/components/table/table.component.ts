@@ -26,13 +26,16 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     // this.openRules()
-
-    this.murlan.startGame([])
+    this.shuffleAgain()
     this.validThrow$ = this.murlan.ValidThrow.pipe(takeUntil(this.destroyed$))
 
     this.murlan.Game.pipe(takeUntil(this.destroyed$)).subscribe((step) => {
       console.log(step)
     })
+  }
+
+  shuffleAgain() {
+    this.murlan.startGame([])
   }
 
   openRules() {
