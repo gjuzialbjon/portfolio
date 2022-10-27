@@ -5,7 +5,8 @@
 
   <ul class="hidden-cards" [ngClass]="{ vertical: vertical }">
     <li *ngFor="let card of hiddenCards; let i = index" [id]="'hidden' + playerNumber + i" class="hidden-card">
-      <img src="assets/media/suits/back.svg" class="hidden-card-img" alt="" />
+      <!-- <img src="assets/media/suits/back.svg" class="hidden-card-img" alt="" /> -->
+      <div class="value">{{card.value + ' ' + card.suit}}</div>
     </li>
   </ul>
 </div>

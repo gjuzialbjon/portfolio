@@ -26,6 +26,16 @@
 
 .hidden-card {
   border-radius: 5px;
+  position: relative;
+
+  .value {
+    // position: absolute;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 }
 
 .other-user-wrapper {
@@ -52,6 +62,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: .2rem;
 
   &.vertical {
     margin-top: 2.7rem;
@@ -59,7 +70,11 @@
 
     .hidden-card {
       transform: rotate(90deg);
-      margin-top: -2.2rem;
+      // margin-top: -2.2rem;
+
+      .value {
+        transform: rotate(270deg);
+      }
     }
   }
 
@@ -67,7 +82,7 @@
     justify-content: center;
 
     .hidden-card {
-      margin-left: -1.3rem;
+      // margin-left: -1.3rem;
     }
   }
 

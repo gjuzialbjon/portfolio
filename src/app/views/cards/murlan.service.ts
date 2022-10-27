@@ -6,6 +6,7 @@ import { Card } from '@app/core/models/card'
 import { BehaviorSubject } from 'rxjs'
 import { single } from 'rxjs/operators'
 import { PlayerThrow } from './enums/player-throw.interface'
+import { HelpersService } from './helpers.service'
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +14,6 @@ import { PlayerThrow } from './enums/player-throw.interface'
 export class MurlanService {
   game = new BehaviorSubject<Steps | null>(null)
   rules: any[] = []
-
-  suits = ['spade', 'diamond', 'heart', 'club']
-  values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
   cardsOnTable: Card[] = []
   playerCards: Card[] = []
@@ -37,15 +35,15 @@ export class MurlanService {
   currentTurnUser: number = 4 //* ID of user who is currently playing
 
   handOnTable = Hands.empty
-  selectedHand!: Hands
+  selectedPlayerHand!: Hands
 
-  constructor() {}
+  constructor(private helpers: HelpersService) {}
 
   throw(player: number, cards: Card[]) {
     // this.game.next({ player, cards })
   }
 
-  throwCards() {
+  throwPlayerCards() {
     let selected = this.playerCards.filter((c) => c.selected)
 
     let count = -(selected.length - 1) / 2
@@ -55,31 +53,33 @@ export class MurlanService {
       c.throwing = true
     })
 
+    this.validThrow$.next(false)
+    this.handOnTable = this.selectedPlayerHand
+
     setTimeout(() => {
       selected.forEach((c) => {
         c.throwing = false
       })
 
       if (selected.length >= 5) {
-        selected = this.isStraight(selected) as Card[]
+        selected = this.helpers.isStraight(selected) as Card[]
       }
 
       this.cardsOnTable = [...selected]
-      this.handOnTable = this.selectedHand
-      this.selectedHand = Hands.empty
       this.cardsOnTable$.next(this.cardsOnTable.slice())
       this.playerCards = this.playerCards.filter((c) => !c.selected)
       this.playerCards$.next(this.playerCards.slice())
+      this.checkValidPlayerThrow()
     }, 1000)
   }
 
   //* Game start procedure
   startGame(rules: any[]) {
     this.rules = rules
+    this.handOnTable = Hands.empty
     this.cardsOnTable = []
-    this.generateCards()
+    this.deckOfCards = this.helpers.generateAndShuffleCards()
 
-    this.deckOfCards.sort(() => 0.5 - Math.random()) //* Shuffle cards
     this.cardsOnTable$.next(this.cardsOnTable)
     this.validThrow$.next(false)
 
@@ -88,12 +88,7 @@ export class MurlanService {
     this.userTwoCards = this.deckOfCards.slice(27, 40)
     this.userThreeCards = this.deckOfCards.slice(40, 54)
 
-    this.playerCards$.next(this.playerCards.slice())
-    this.userOneCards$.next(this.userOneCards.slice())
-    this.userTwoCards$.next(this.userTwoCards.slice())
-    this.userThreeCards$.next(this.userThreeCards.slice())
-
-    this.sortPlayerCards()
+    this.sortPlayersCards()
   }
 
   toggleCard(index: number) {
@@ -111,116 +106,84 @@ export class MurlanService {
       return
     }
 
-    const selected = this.playerCards.filter((c) => c.selected)
+    let selected = this.playerCards.filter((c) => c.selected)
 
-    this.selectedHand = Hands.empty
+    //* Two jokers in one
+    if (selected.length > 1 && selected.find((c) => c.value === 14)) {
+      this.validThrow$.next(false)
+      return
+    }
+
+    this.selectedPlayerHand = Hands.empty
 
     if (selected.length >= 5) {
-      const hand = this.isStraight(selected)
-      if (hand && this.areCardsSameSuit(hand)) {
-        this.selectedHand = Hands.flush
-      } else if (hand) {
-        this.selectedHand = Hands.straight
+      selected = this.helpers.isStraight(selected)
+      if (selected.length > 1) {
+        this.selectedPlayerHand = this.helpers.areCardsSameSuit(selected) ? Hands.flush : Hands.straight
       }
-    } else if (selected.length == 4) {
-      if (this.areCardsSameValue(selected)) {
-        this.selectedHand = Hands.bomb
-      }
-    } else if (selected.length == 3) {
-      if (this.areCardsSameValue(selected)) {
-        this.selectedHand = Hands.triple
-      }
-    } else if (selected.length == 2) {
-      if (this.areCardsSameValue(selected)) {
-        this.selectedHand = Hands.pair
-      }
+    } else if (selected.length >= 2 && selected.length <= 4 && this.helpers.areCardsSameValue(selected)) {
+      this.selectedPlayerHand = selected.length //* Same as pair, triple or bomb
     } else if (selected.length == 1) {
-      this.selectedHand = Hands.single
+      this.selectedPlayerHand = Hands.single
     }
 
-    if (this.lastThrownUser !== 4 && this.lastThrownUser !== -1) {
-      switch (this.handOnTable) {
-        case Hands.single | Hands.pair | Hands.triple:
-          if (selected[0].value <= this.cardsOnTable[0].value && (this.selectedHand === Hands.bomb || this.selectedHand === Hands.flush)) {
-            this.selectedHand = Hands.empty
-          }
-          break
-        case Hands.bomb:
-          if (this.selectedHand === Hands.bomb) {
-            if (selected[0].value < this.cardsOnTable[0].value) {
-              this.selectedHand = Hands.empty
+    if (this.lastThrownUser !== 4) {
+      if (this.handOnTable !== Hands.empty) {
+        switch (this.selectedPlayerHand) {
+          case Hands.single:
+            if (this.handOnTable !== Hands.single || selected[0].value <= this.cardsOnTable[0].value) {
+              this.selectedPlayerHand = Hands.empty
             }
-          } else {
-            this.selectedHand = this.selectedHand === Hands.flush ? this.selectedHand : Hands.empty
-          }
-          break
+            break
+          case Hands.pair:
+            if (this.handOnTable !== Hands.pair || selected[0].value <= this.cardsOnTable[0].value) {
+              this.selectedPlayerHand = Hands.empty
+            }
+            break
+          case Hands.triple:
+            if (this.handOnTable !== Hands.triple || selected[0].value < this.cardsOnTable[0].value) {
+              this.selectedPlayerHand = Hands.empty
+            }
+            break
+          case Hands.bomb:
+            if (this.handOnTable === Hands.bomb) {
+              if (selected[0].value < this.cardsOnTable[0].value) {
+                this.selectedPlayerHand = Hands.empty
+              }
+            } else if (this.handOnTable === Hands.flush) {
+              this.selectedPlayerHand = Hands.empty
+            }
+            break
+          case Hands.flush:
+            if (this.handOnTable === Hands.flush) {
+              if (selected[0].value <= this.cardsOnTable[0].value) {
+                this.selectedPlayerHand = Hands.empty
+              }
+            } else {
+              this.selectedPlayerHand = Hands.empty
+            }
+            break
 
-        case Hands.flush:
-          if (this.selectedHand === Hands.flush) {
-          } else {
-            this.selectedHand = Hands.empty
-          }
-          break
-
-        default:
-          break
+          default:
+            break
+        }
       }
     }
 
-    console.log('CURRENT HAND ', this.selectedHand)
-
-    this.validThrow$.next(this.selectedHand !== Hands.empty)
+    this.validThrow$.next(this.selectedPlayerHand !== Hands.empty)
   }
 
   //* Helpers
-  generateCards() {
-    for (let s = 0; s < this.suits.length; s++) {
-      for (let v = 0; v < this.values.length; v++) {
-        const value = this.values[v]
-        const suit = this.suits[s]
-        this.deckOfCards.push({ value, suit })
-      }
-    }
+  sortPlayersCards() {
+    this.playerCards.sort((x, y) => x.playValue - y.playValue)
+    this.userOneCards.sort((x, y) => x.playValue - y.playValue)
+    this.userTwoCards.sort((x, y) => x.playValue - y.playValue)
+    this.userThreeCards.sort((x, y) => x.playValue - y.playValue)
 
-    const blackJoker = { value: 14, suit: 'club' }
-    const redJoker = { value: 14, suit: 'heart' }
-
-    this.deckOfCards.push(...[redJoker, blackJoker])
-  }
-
-  isStraight(cards: Card[]) {
-    cards = cards.sort((x, y) => x.value - y.value)
-
-    if (cards[cards.length - 1].value == 14) {
-      return false
-    }
-
-    let hasAce = cards[0].value == 1 && cards[cards.length - 1].value == 13
-
-    for (let i = hasAce ? 2 : 1; i < cards.length; i++) {
-      if (cards[i].value - cards[i - 1].value > 1 || cards[i].value == cards[i - 1].value) {
-        return false
-      }
-    }
-
-    if (hasAce) {
-      cards.push(cards.shift() as Card)
-    }
-
-    return cards
-  }
-
-  areCardsSameValue(cards: Card[]) {
-    return cards.every((c) => c.value === cards[0].value)
-  }
-
-  areCardsSameSuit(cards: Card[]) {
-    return cards.every((c) => c.suit === cards[0].suit)
-  }
-
-  sortPlayerCards() {
-    this.playerCards.sort((x, y) => x.value - y.value)
     this.playerCards$.next(this.playerCards.slice())
+    this.userOneCards$.next(this.userOneCards.slice())
+    this.userTwoCards$.next(this.userTwoCards.slice())
+    this.userThreeCards$.next(this.userThreeCards.slice())
   }
 
   //* Getters

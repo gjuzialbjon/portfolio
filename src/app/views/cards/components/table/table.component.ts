@@ -56,11 +56,11 @@ export class TableComponent implements OnInit {
   }
 
   sortCards() {
-    this.murlan.sortPlayerCards()
+    this.murlan.sortPlayersCards()
   }
 
   throw() {
-    this.murlan.throwCards()
+    this.murlan.throwPlayerCards()
   }
 
   ngOnDestroy() {

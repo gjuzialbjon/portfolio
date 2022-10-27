@@ -39,6 +39,10 @@ export class CardsComponent implements OnInit {
     this.murlan.toggleCard(index)
   }
 
+  trackByFn(index: number, item: Card) {
+    return item.value + item.suit
+  }
+
   ngOnDestroy() {
     this.destroyed$.next()
     this.destroyed$.complete()
