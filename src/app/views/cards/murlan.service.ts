@@ -15,6 +15,7 @@ export class MurlanService {
   game = new BehaviorSubject<Steps | null>(null)
   rules: any[] = []
 
+  playedCards: Card[] = []
   cardsOnTable: Card[] = []
   playerCards: Card[] = []
   userOneCards: Card[] = []
@@ -31,8 +32,8 @@ export class MurlanService {
 
   deckOfCards: Card[] = []
 
-  lastThrownUser: number = -1 //* ID of user who played last
-  currentTurnUser: number = 4 //* ID of user who is currently playing
+  lastThrownUser!: number  //* ID of user who played last
+  currentTurnUser: number = Players.player //* ID of user who is currently playing
 
   handOnTable = Hands.empty
   selectedPlayerHand!: Hands
@@ -43,7 +44,7 @@ export class MurlanService {
     const cards = this.currentTurnUser == 1 ? this.userOneCards : this.currentTurnUser == 2 ? this.userTwoCards : this.userThreeCards
 
     ////////! Start of o MESS ////////////
-    const { singles, pairs, triples, bombs, straights, flushes } = this.helpers.groupCards(cards)
+    const { singles, pairs, triples, bombs, straights, flushes } = this.helpers.groupCards(cards, Players.player)
   }
 
   throw(player: number, cards: Card[]) {
@@ -80,7 +81,8 @@ export class MurlanService {
 
       this.lastThrownUser = Players.player
       this.currentTurnUser = Players.three
-
+      this.playedCards = [...this.playedCards, ...this.cardsOnTable]
+      
       this.calculateNextThrow()
     }, 1000)
   }
@@ -89,6 +91,8 @@ export class MurlanService {
   startGame(rules: any[]) {
     this.rules = rules
     this.handOnTable = Hands.empty
+    this.currentTurnUser = Players.player
+    this.playedCards = []
     this.cardsOnTable = []
     this.deckOfCards = this.helpers.generateAndShuffleCards()
 
@@ -102,10 +106,10 @@ export class MurlanService {
 
     this.sortPlayersCards()
 
-    this.helpers.groupCards(this.userOneCards)
-    this.helpers.groupCards(this.userTwoCards)
-    this.helpers.groupCards(this.userThreeCards)
-    this.helpers.groupCards(this.playerCards)
+    // this.helpers.groupCards(this.userOneCards, Players.one)
+    // this.helpers.groupCards(this.userTwoCards, Players.two)
+    // this.helpers.groupCards(this.userThreeCards, Players.three)
+    this.helpers.groupCards(this.playerCards, Players.player)
   }
 
   toggleCard(index: number) {

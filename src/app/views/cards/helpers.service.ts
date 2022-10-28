@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { CardSuits } from '@app/core/enums/card-suits'
 import { CardValues } from '@app/core/enums/card-values'
+import { Players } from '@app/core/enums/players'
 import { Card } from '@app/core/models/card'
 import { Groups } from '@app/core/models/groups'
 
@@ -11,19 +12,17 @@ export class HelpersService {
   constructor() {}
 
   //* For "AI" players only
-  groupCards(cs: Card[]) {
+  groupCards(cs: Card[], turn: Players) {
     let cards = this.getSortedDeepCopy(cs)
 
     const groups: Groups = {
-      singles: <Card[]>[],
-      pairs: <Card[][]>[],
-      triples: <Card[][]>[],
-      bombs: <Card[][]>[],
-      straights: <Card[][]>[],
-      flushes: <Card[][]>[],
+      singles: [],
+      pairs: [],
+      triples: [],
+      bombs: [],
+      straights: [],
+      flushes: [],
     }
-
-    groups.singles = [...cards]
 
     //* Get all possible pairs
     if (cards.length >= 2) {
@@ -57,8 +56,8 @@ export class HelpersService {
     const filteredRepeated = straightsCopy.filter((c, i, a) => a.findIndex((c2) => c2.value === c.value) === i)
 
     if (filteredRepeated.length >= 5) {
-      for (let i = 0; i < filteredRepeated.length - 4; i++) {
-        for (let j = filteredRepeated.length - 1; j > i + 4; j--) {
+      for (let i = 0; i < filteredRepeated.length - 3; i++) {
+        for (let j = filteredRepeated.length; j > i + 4; j--) {
           const isStraight = this.isStraight(filteredRepeated.slice(i, j))
           if (isStraight.length > 1) {
             groups.straights.push(isStraight)
@@ -67,13 +66,83 @@ export class HelpersService {
       }
     }
 
-    console.log('Straights ', groups.straights)
-
     //* Get all possible flushes
-    if (cards.length >= 5) {
+    if (cards.length >= 5 && groups.straights.length > 0) {
+      const hearts = straightsCopy.filter((c) => c.suit === CardSuits.heart)
+      const diamonds = straightsCopy.filter((c) => c.suit === CardSuits.diamond)
+      const clubs = straightsCopy.filter((c) => c.suit === CardSuits.club)
+      const spades = straightsCopy.filter((c) => c.suit === CardSuits.spade)
+
+      if (hearts.length >= 5) {
+        for (let i = 0; i < hearts.length - 4; i++) {
+          for (let j = hearts.length; j > i + 4; j--) {
+            const isFlush = this.isStraight(hearts.slice(i, j), false)
+            if (isFlush.length > 1) {
+              groups.flushes.push(isFlush)
+            }
+          }
+        }
+      }
+
+      if (diamonds.length >= 5) {
+        for (let i = 0; i < diamonds.length - 4; i++) {
+          for (let j = diamonds.length; j > i + 4; j--) {
+            const isFlush = this.isStraight(diamonds.slice(i, j), false)
+            if (isFlush.length > 1) {
+              groups.flushes.push(isFlush)
+            }
+          }
+        }
+      }
+
+      if (spades.length >= 5) {
+        for (let i = 0; i < spades.length - 4; i++) {
+          for (let j = spades.length; j > i + 4; j--) {
+            const isFlush = this.isStraight(spades.slice(i, j), false)
+            if (isFlush.length > 1) {
+              groups.flushes.push(isFlush)
+            }
+          }
+        }
+      }
+
+      if (clubs.length >= 5) {
+        for (let i = 0; i < clubs.length - 4; i++) {
+          for (let j = clubs.length; j > i + 4; j--) {
+            const isFlush = this.isStraight(clubs.slice(i, j), false)
+            if (isFlush.length > 1) {
+              groups.flushes.push(isFlush)
+            }
+          }
+        }
+      }
     }
 
-    // console.log('groups ', groups)
+    //* Get all singles
+    const allSingles = []
+    for (const singles of cards) {
+      let found = false
+
+      for (const group of Object.values(groups)) {
+        for (const arr of group) {
+          for (const ccard of arr) {
+            if (ccard.suit === singles.suit && ccard.value === singles.value) {
+              found = true
+              break
+            }
+          }
+          if (found) break
+        }
+      }
+
+      if (!found) {
+        allSingles.push(singles)
+      }
+    }
+
+    groups.singles = allSingles
+
+    console.log('groups ', groups)
 
     return groups
   }
@@ -88,6 +157,9 @@ export class HelpersService {
   isPairPartOfBomb(value: number, cards: Card[]) {}
   isTriplePartOfBomb(value: number, cards: Card[]) {}
   isSinglePartOfAny(value: number, groups: Groups) {}
+  canRemoveAceFromStraight(straight: Card[], cards: Card[]) {}
+  canRemoveTwoFromStraight(straight: Card[], cards: Card[]) {}
+  canRemoveCardAndStillBeFlush(card: Card, flush: Card[]) {}
 
   //* For both types of players
   generateAndShuffleCards() {
@@ -110,8 +182,10 @@ export class HelpersService {
     return deck
   }
 
-  isStraight(cards: Card[]) {
-    cards = cards.sort((x, y) => x.value - y.value)
+  isStraight(cards: Card[], sort = true) {
+    if (sort) {
+      cards.sort((x, y) => x.value - y.value)
+    }
 
     if (cards[cards.length - 1].value == 14) {
       return []

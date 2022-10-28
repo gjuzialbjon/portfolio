@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
     this.validThrow$ = this.murlan.ValidThrow.pipe(takeUntil(this.destroyed$))
 
     this.murlan.Game.pipe(takeUntil(this.destroyed$)).subscribe((step) => {
-      console.log(step)
+      // console.log(step)
     })
   }
 
