@@ -3,6 +3,7 @@ import { Hands } from '@app/core/enums/hands'
 import { Players } from '@app/core/enums/players'
 import { Steps } from '@app/core/enums/steps'
 import { Card } from '@app/core/models/card'
+import { UserPossibleThrow } from '@app/core/models/user-throw'
 import { BehaviorSubject } from 'rxjs'
 import { single } from 'rxjs/operators'
 import { PlayerThrow } from './enums/player-throw.interface'
@@ -15,6 +16,7 @@ export class MurlanService {
   game = new BehaviorSubject<Steps | null>(null)
   rules: any[] = []
 
+  leastCardsOnHands: number = 100
   playedCards: Card[] = []
   cardsOnTable: Card[] = []
   playerCards: Card[] = []
@@ -32,7 +34,7 @@ export class MurlanService {
 
   deckOfCards: Card[] = []
 
-  lastThrownUser!: number  //* ID of user who played last
+  lastThrownUser!: number //* ID of user who played last
   currentTurnUser: number = Players.player //* ID of user who is currently playing
 
   handOnTable = Hands.empty
@@ -41,14 +43,82 @@ export class MurlanService {
   constructor(private helpers: HelpersService) {}
 
   calculateNextThrow() {
+    const possibleThrows: UserPossibleThrow[] = []
     const cards = this.currentTurnUser == 1 ? this.userOneCards : this.currentTurnUser == 2 ? this.userTwoCards : this.userThreeCards
 
-    ////////! Start of o MESS ////////////
+    ////////////////! Start of o MESS //////////////////////
     const { singles, pairs, triples, bombs, straights, flushes } = this.helpers.groupCards(cards, Players.player)
+
+    switch (this.handOnTable) {
+      case Hands.single:
+        //* Watch out for other players to not win if you can
+        if (this.leastCardsOnHands === 1) {
+        } else if (this.leastCardsOnHands === 2) {
+        } else {
+          if (bombs.length === 0 && flushes.length === 0) {
+            if (singles.length) {
+              //* Find lowest single to beat the single on table
+              for (const single of singles) {
+                if (single.playValue > this.cardsOnTable[0].value) {
+                  possibleThrows.push({ priority: 1, cards: [single] })
+                }
+              }
+            }
+            //* If no single card bigger check pairs, triples or straights
+            if (possibleThrows.length === 0) {
+              if (pairs.length) {
+                for (const pair of pairs) {
+                  if (pair[0].value > this.cardsOnTable[0].value) {
+                    possibleThrows.push({ priority: 0.8, cards: [pair[0]], mightSkip: true })
+                  }
+                }
+              }
+
+              if (triples.length) {
+                for (const triple of triples) {
+                  if (triple[0].value > this.cardsOnTable[0].value && this.helpers.isCardPartOfBombOrFlush(triple[0], bombs, flushes)) {
+                    possibleThrows.push({ priority: 0.8, cards: [triple[0]], mightSkip: true })
+                  }
+                }
+              }
+
+              if(straights.length) {
+                // for (const straight of straights) {
+                //   for (let index = 0; index < array.length; index++) {
+                //     const element = array[index];
+                //     iterator
+                //   }
+                // }
+              }
+            }
+            
+          } else if (bombs.length > 1 && flushes.length === 0) {
+          } else if (bombs.length === 0 && flushes.length === 1) {
+          }
+        }
+
+        //* Add more cases
+        break
+      case Hands.pair:
+        break
+      case Hands.triple:
+        break
+      case Hands.bomb:
+        break
+      case Hands.straight:
+        break
+      case Hands.flush:
+        break
+
+      default:
+        break
+    }
   }
 
-  throw(player: number, cards: Card[]) {
+  throwUser(user: number, cards: Card[]) {
     // this.game.next({ player, cards })
+
+    console.log('USER NR ', user, ' played ', cards)
   }
 
   throwPlayerCards() {
@@ -80,9 +150,9 @@ export class MurlanService {
       this.checkValidPlayerThrow()
 
       this.lastThrownUser = Players.player
-      this.currentTurnUser = Players.three
+      this.currentTurnUser = Players.one
       this.playedCards = [...this.playedCards, ...this.cardsOnTable]
-      
+
       this.calculateNextThrow()
     }, 1000)
   }

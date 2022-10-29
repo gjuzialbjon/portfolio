@@ -29,7 +29,8 @@ app-cards {
   flex: 0 1 90px;
   min-width: 90px;
   max-height: 136.5px;
-  aspect-ratio: math.div(3.3, 5) !important;
+  // aspect-ratio: math.div(3.3, 5) !important;
+  aspect-ratio: math.div(227,315) !important;
   border: var(--playing_card_border);
   border-radius: 7px;
   padding: 1.8rem;

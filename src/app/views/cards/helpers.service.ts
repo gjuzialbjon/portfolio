@@ -142,8 +142,6 @@ export class HelpersService {
 
     groups.singles = allSingles
 
-    console.log('groups ', groups)
-
     return groups
   }
 
@@ -153,6 +151,9 @@ export class HelpersService {
   }
 
   canHaveStraightWithBomb(cards: Card[]) {}
+  isCardPartOfBombOrFlush(card: Card, bombs: Card[][], flushes: Card[][]) {
+    return false
+  }
   isPairPartOfTriple(value: number, cards: Card[]) {}
   isPairPartOfBomb(value: number, cards: Card[]) {}
   isTriplePartOfBomb(value: number, cards: Card[]) {}
