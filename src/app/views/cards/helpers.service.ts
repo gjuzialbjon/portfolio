@@ -157,7 +157,6 @@ export class HelpersService {
   isPairPartOfTriple(value: number, cards: Card[]) {}
   isPairPartOfBomb(value: number, cards: Card[]) {}
   isTriplePartOfBomb(value: number, cards: Card[]) {}
-  isSinglePartOfAny(value: number, groups: Groups) {}
   canRemoveAceFromStraight(straight: Card[], cards: Card[]) {}
   canRemoveTwoFromStraight(straight: Card[], cards: Card[]) {}
   canRemoveCardAndStillBeFlush(card: Card, flush: Card[]) {}

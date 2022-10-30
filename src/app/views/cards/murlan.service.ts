@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Hands } from '@app/core/enums/hands'
 import { Players } from '@app/core/enums/players'
+import { Priorities } from '@app/core/enums/priorities'
 import { Steps } from '@app/core/enums/steps'
 import { Card } from '@app/core/models/card'
 import { UserPossibleThrow } from '@app/core/models/user-throw'
@@ -59,39 +60,69 @@ export class MurlanService {
             if (singles.length) {
               //* Find lowest single to beat the single on table
               for (const single of singles) {
-                if (single.playValue > this.cardsOnTable[0].value) {
-                  possibleThrows.push({ priority: 1, cards: [single] })
+                if (single.playValue > this.cardsOnTable[0].playValue) {
+                  possibleThrows.push({ priority: Priorities.single, cards: [single] })
                 }
               }
             }
             //* If no single card bigger check pairs, triples or straights
-            if (possibleThrows.length === 0) {
+            if (/*possibleThrows.length === 0*/ true) {
               if (pairs.length) {
                 for (const pair of pairs) {
-                  if (pair[0].value > this.cardsOnTable[0].value) {
-                    possibleThrows.push({ priority: 0.8, cards: [pair[0]], mightSkip: true })
+                  if (pair[0].playValue > this.cardsOnTable[0].playValue) {
+                    possibleThrows.push({ priority: Priorities.singleFromPair, cards: [pair[0]], mightSkip: true })
                   }
                 }
               }
 
               if (triples.length) {
                 for (const triple of triples) {
-                  if (triple[0].value > this.cardsOnTable[0].value && this.helpers.isCardPartOfBombOrFlush(triple[0], bombs, flushes)) {
-                    possibleThrows.push({ priority: 0.8, cards: [triple[0]], mightSkip: true })
+                  if (triple[0].value > this.cardsOnTable[0].playValue && this.helpers.isCardPartOfBombOrFlush(triple[0], bombs, flushes)) {
+                    possibleThrows.push({ priority: Priorities.singleFromTriple, cards: [triple[0]], mightSkip: true })
                   }
                 }
               }
 
-              if(straights.length) {
-                // for (const straight of straights) {
-                //   for (let index = 0; index < array.length; index++) {
-                //     const element = array[index];
-                //     iterator
-                //   }
-                // }
+              if (straights.length) {
+                for (const straight of straights) {
+                  for (let i = 0; i < straight.length; i++) {
+                    if (straight.length > 5) {
+                      const newStraight = JSON.parse(JSON.stringify(straight)) as Card[]
+
+                      if (newStraight.length >= 5) {
+                        for (let j = 0; j < newStraight.length; j++) {
+                          const card = straight[j]
+
+                          if (card.playValue > this.cardsOnTable[0].playValue && this.helpers.isStraight(newStraight.splice(j, 1), false)) {
+                            possibleThrows.push({ priority: Priorities.singleFromStraight, cards: [card], mightSkip: true })
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              if (flushes.length) {
+                for (const flush of flushes) {
+                  for (let i = 0; i < flush.length; i++) {
+                    if (flush.length > 5) {
+                      const newFlush = JSON.parse(JSON.stringify(flush)) as Card[]
+
+                      if (newFlush.length >= 5) {
+                        for (let j = 0; j < newFlush.length; j++) {
+                          const card = flush[j]
+
+                          if (card.playValue > this.cardsOnTable[0].playValue && this.helpers.isStraight(newFlush.splice(j, 1), false)) {
+                            possibleThrows.push({ priority: Priorities.singleFromFlush, cards: [card], mightSkip: true })
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
-            
           } else if (bombs.length > 1 && flushes.length === 0) {
           } else if (bombs.length === 0 && flushes.length === 1) {
           }
@@ -113,6 +144,8 @@ export class MurlanService {
       default:
         break
     }
+
+    console.log('Possible throws ', possibleThrows)
   }
 
   throwUser(user: number, cards: Card[]) {
@@ -150,7 +183,7 @@ export class MurlanService {
       this.checkValidPlayerThrow()
 
       this.lastThrownUser = Players.player
-      this.currentTurnUser = Players.one
+      this.currentTurnUser = Players.two
       this.playedCards = [...this.playedCards, ...this.cardsOnTable]
 
       this.calculateNextThrow()
@@ -270,6 +303,8 @@ export class MurlanService {
     this.userOneCards.sort((x, y) => x.playValue - y.playValue)
     this.userTwoCards.sort((x, y) => x.playValue - y.playValue)
     this.userThreeCards.sort((x, y) => x.playValue - y.playValue)
+
+    console.log('cards ', this.playedCards)
 
     this.playerCards$.next(this.playerCards.slice())
     this.userOneCards$.next(this.userOneCards.slice())
