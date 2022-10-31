@@ -3,5 +3,7 @@ export enum Priorities {
   singleFromPair = 2,
   singleFromTriple = 3,
   singleFromStraight = 4,
-  singleFromFlush = 5
+  singleFromFlush = 5,
+  flush = 6,
+  bomb = 7
 }

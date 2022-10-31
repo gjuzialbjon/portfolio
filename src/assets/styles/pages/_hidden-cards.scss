@@ -29,7 +29,6 @@
   position: relative;
 
   .value {
-    // position: absolute;
     background: #000;
     top: 0;
     bottom: 0;
@@ -42,6 +41,9 @@
   display: flex;
 
   &:not(.vertical) {
+    padding: .2rem 1rem;
+    overflow: hidden;
+    max-width: 100vw;
     @include flex-center(false);
   }
 
@@ -62,7 +64,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: .2rem;
+  gap: 0.2rem;
 
   &.vertical {
     margin-top: 2.7rem;
@@ -70,7 +72,7 @@
 
     .hidden-card {
       transform: rotate(90deg);
-      // margin-top: -2.2rem;
+      margin-top: -2.2rem;
 
       .value {
         transform: rotate(270deg);
@@ -82,7 +84,7 @@
     justify-content: center;
 
     .hidden-card {
-      // margin-left: -1.3rem;
+      margin-left: -1.3rem;
     }
   }
 

@@ -142,6 +142,8 @@ export class HelpersService {
 
     groups.singles = allSingles
 
+    console.log(groups)
+
     return groups
   }
 
