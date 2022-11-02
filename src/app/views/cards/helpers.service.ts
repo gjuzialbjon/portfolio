@@ -153,7 +153,23 @@ export class HelpersService {
   }
 
   canHaveStraightWithBomb(cards: Card[]) {}
-  isCardPartOfBombOrFlush(card: Card, bombs: Card[][], flushes: Card[][]) {
+  areCardsPartOfBombOrFlush(cards: Card[], bombs: Card[][], flushes: Card[][]) {
+    for (const card of cards) {
+      for (const bomb of bombs) {
+        for (const c of bomb) {
+          if (card.value === c.value && c.suit === card.suit) {
+            return true
+          }
+        }
+      }
+      for (const flush of flushes) {
+        for (const c of flush) {
+          if (card.value === c.value && c.suit === card.suit) {
+            return true
+          }
+        }
+      }
+    }
     return false
   }
   isPairPartOfTriple(value: number, cards: Card[]) {}

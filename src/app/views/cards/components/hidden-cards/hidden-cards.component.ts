@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit } from '@angular/core'
 import { Phases } from '@app/core/enums/phase'
 import { Subject } from 'rxjs'
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators'
@@ -16,7 +16,9 @@ export class HiddenCardsComponent implements OnInit {
 
   destroyed$ = new Subject()
 
-  constructor(private murlan: MurlanService) {}
+  constructor(private murlan: MurlanService) {
+  
+  }
 
   ngOnInit(): void {
     if (this.playerNumber === 1) {

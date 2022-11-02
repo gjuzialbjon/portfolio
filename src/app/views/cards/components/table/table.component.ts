@@ -62,6 +62,10 @@ export class TableComponent implements OnInit {
     this.murlan.sortPlayersCards()
   }
 
+  pass() {
+    this.murlan.pass()
+  }
+
   throw() {
     this.murlan.throwPlayerCards()
   }

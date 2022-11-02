@@ -4,9 +4,14 @@
   </div>
 
   <ul class="hidden-cards" [ngClass]="{ vertical: vertical }">
-    <li *ngFor="let card of hiddenCards; let i = index" [id]="'hidden' + playerNumber + i" class="hidden-card">
+    <li
+      *ngFor="let card of hiddenCards; let i = index"
+      [id]="'hidden' + card.value + card.suit"
+      class="hidden-card"
+      [ngClass]="{ thrown: card.throwing }"
+    >
       <img src="assets/media/suits/back.svg" class="hidden-card-img" alt="" />
-      <!-- <div class="value">{{card.playValue + ' ' + card.suit}}</div> -->
+      <!-- <div class="value">{{ card.playValue + ' ' + card.suit }}</div> -->
     </li>
   </ul>
 </div>
