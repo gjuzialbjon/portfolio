@@ -24,7 +24,8 @@
     "throw": "Hidhi",
     "rules": "Rregullat",
     "start": "Fillo lojen",
-    "sort": "Rendit"
+    "sort": "Rendit",
+    "pass": "Pas"
   },
   "Rules": {
     "select": "Zgjidh rregullat",
