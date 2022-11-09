@@ -46,12 +46,40 @@ export class MurlanService {
   calculateNextThrow() {
     const possibleThrows: UserPossibleThrow[] = []
     const cards = this.currentTurnUser == 1 ? this.userOneCards : this.currentTurnUser == 2 ? this.userTwoCards : this.userThreeCards
+    if (this.currentTurnUser === this.lastThrownUser || !this.lastThrownUser) this.handOnTable = Hands.empty
 
     ////////////////! Start of o MESS //////////////////////
     const { singles, pairs, triples, bombs, straights, flushes } = this.helpers.groupCards(cards, Players.player)
 
     //* Check if user can beat the current cards on table
     switch (this.handOnTable) {
+      //! User starts of user has thrown last
+      case Hands.empty:
+        for (const straight of straights) {
+          possibleThrows.push({ priority: Priorities.straight, cards: straight })
+        }
+
+        for (const triple of triples) {
+          if (!this.helpers.areCardsPartOfBombOrFlush(triple, bombs, flushes)) {
+            possibleThrows.push({ priority: Priorities.triple, cards: triple, below10: triple[0].playValue < 10 })
+          }
+        }
+
+        for (const single of singles) {
+          possibleThrows.push({ priority: Priorities.single, cards: [single], below10: single.playValue < 10 })
+        }
+
+        for (const pair of pairs) {
+          if (!this.helpers.areCardsPartOfBombOrFlush(pair, bombs, flushes)) {
+            possibleThrows.push({ priority: Priorities.pair, cards: pair, below10: pair[0].playValue < 10 })
+          }
+        }
+
+        for (const bomb of bombs) possibleThrows.push({ priority: Priorities.bomb, cards: bomb, mightSkip: true })
+        for (const flush of flushes) possibleThrows.push({ priority: Priorities.flush, cards: flush, mightSkip: true })
+
+        break
+
       //! Single on table
       case Hands.single:
         //* Find lowest single to beat the card on table
@@ -208,8 +236,11 @@ export class MurlanService {
 
     //* User decides on what he wants to throw
     if (this.lastThrownUser === this.currentTurnUser) {
+      console.log('User would throw ', possibleThrows[0].cards)
+      this.throwUser(Players.two, possibleThrows[0].cards)
     } else {
       if (possibleThrows.length) {
+        console.log('User would throw ', possibleThrows[0].cards)
         this.throwUser(Players.two, possibleThrows[0].cards)
       } else {
         this.currentTurnUser = Players.player
@@ -304,9 +335,9 @@ export class MurlanService {
     this.cardsOnTable$.next(this.cardsOnTable)
     this.validThrow$.next(false)
 
-    this.playerCards = this.deckOfCards.slice(0, 18) // 0, 13/14
+    this.playerCards = this.deckOfCards.slice(0, 14) // 0, 13/14
     // this.userOneCards = this.deckOfCards.slice(14, 27)
-    this.userTwoCards = this.deckOfCards.slice(27, 45) // 27/28, 40,41
+    this.userTwoCards = this.deckOfCards.slice(27, 41) // 27/28, 40,41
     // this.userThreeCards = this.deckOfCards.slice(40, 54)
 
     this.sortPlayersCards()

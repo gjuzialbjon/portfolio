@@ -8,5 +8,6 @@ export enum Priorities {
   bomb = 7,
   pair = 10,
   pairFromTriple = 11,
-  straight = 12
+  straight = 12,
+  triple = 13,
 }

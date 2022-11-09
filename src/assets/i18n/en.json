@@ -24,7 +24,8 @@
     "throw": "Throw",
     "rules": "Rules",
     "start": "Start game",
-    "sort":"Sort"
+    "sort":"Sort",
+    "pass" : "Skip"
   },
   "Rules": {
     "select": "Select rules",
