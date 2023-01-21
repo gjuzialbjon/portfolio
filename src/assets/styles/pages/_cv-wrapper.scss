@@ -101,7 +101,10 @@
 
 .cv__right__section {
   border-top: 1px solid var(--cv_right__section__border__clr);
-  margin-top: 1.5rem;
+
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
 
   .cv__section__title {
     margin-top: 0.7rem;
@@ -120,7 +123,7 @@
 
 .experience {
   .work {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.3rem;
 
     .role-date {
       display: flex;
@@ -263,6 +266,6 @@
   }
 
   p.usr-role {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
