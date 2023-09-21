@@ -16,7 +16,7 @@ export class CvWrapperComponent implements OnInit {
   skills = [
     {
       name: 'Angular',
-      rating: 87,
+      rating: 90,
       website: 'https://angular.io/',
     },
     {
@@ -66,7 +66,7 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'GraphQL',
-      rating: 83,
+      rating: 93,
       website: 'https://graphql.org/',
     },
     {
@@ -76,12 +76,12 @@ export class CvWrapperComponent implements OnInit {
     },
     {
       name: 'Scrum',
-      rating: 90,
+      rating: 95,
       website: 'https://www.scrum.org/',
     },
     {
       name: 'JIRA',
-      rating: 90,
+      rating: 95,
       website: 'https://www.atlassian.com/software/jira',
     },
   ]

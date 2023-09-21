@@ -53,6 +53,7 @@
     "native": "Native",
     "highly_proficient": "Highly proficient in speaking and in writing",
     "frontend": "Frontend Developer",
+    "senior_frontend": "Senior Frontend Developer",
     "work_experience": "work experience",
     "present": "Present",
     "studies": "studies",
@@ -82,7 +83,7 @@
     "develop": "Develop highly interactive web applications utilizing Angular, PrimeNG, HTML 5, SCSS, JavaScript, RxJs and NgRx",
     "design": "Design and implement web applications using different component libraries like Angular Material, NgBootstrap and Nebular",
     "work": "Work closely with programmers and clients to meet project requirements, goals, and desired functionalities",
-    "bmat1": "Maintain multi tenant SPA web applications and effectively migrate them to latest angular version",
+    "bmat1": "Maintain multi tenant web applications and effectively migrate them to latest angular version",
     "bmat2": "Use Nx, Angular, GraphQL, Angular Material and Tailwind to implement new features",
     "bmat3": "Take an active role in structuring our applications to make them easy to maintain and to ensure they are highly modularized"
   },
